@@ -10,7 +10,10 @@
 <meta property="og:description" content="Unggah website-mu, dapatkan link, langsung online. Simpel, cepat, tanpa ribet.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Clincoo">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)">
+<meta property="og:image" content="https://muzawwied.github.io/Clincoo./assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
@@ -119,11 +122,7 @@ body.dark-mode .lnd-dot.active { background:#fff; }
         <a href="#faq" class="hover:text-black transition-colors">FAQ</a>
       </nav>
       <div class="flex items-center gap-2.5">
-        <button id="theme-btn" class="w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-colors" aria-label="Ganti tema">
-          <svg class="w-4 h-4 hidden dark-show" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
-          <svg class="w-4 h-4 dark-hide" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
-        </button>
-        <a href="https://muzawwied.github.io/Clincoo./auth.html" class="hidden sm:inline-flex px-4 py-2 rounded-full border border-gray-200 text-sm font-semibold hover:bg-gray-50 transition-colors">Masuk</a>
+        <a href="https://muzawwied.github.io/Clincoo./" class="hidden sm:inline-flex px-4 py-2 rounded-full border border-gray-200 text-sm font-semibold hover:bg-gray-50 transition-colors">Masuk</a>
         <a href="https://muzawwied.github.io/Clincoo./" class="px-4 py-2 rounded-full bg-accent text-white text-sm font-semibold hover:bg-accent-hover transition-all active:scale-95">Mulai Gratis</a>
         <button id="menu-btn" class="md:hidden w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center" aria-label="Menu">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -220,7 +219,6 @@ body.dark-mode .lnd-dot.active { background:#fff; }
           <div class="shot"><img src="assets/shots/workspace.png" alt="Beranda Clincoo — daftar proyek" loading="lazy"></div>
           <div class="shot"><img src="assets/shots/proyek.png" alt="Workspace proyek Clincoo — file dan pengaturan" loading="lazy"></div>
           <div class="shot"><img src="assets/shots/editor.png" alt="Editor kode Clincoo — mengedit berkas di browser" loading="lazy"></div>
-          <div class="shot"><img src="assets/shots/komunitas.png" alt="Komunitas Clincoo — feed progres proyek" loading="lazy"></div>
         </div>
       </div>
       <button id="lnd-prev" aria-label="Sebelumnya" class="lnd-arrow absolute left-2 sm:-left-5 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white border border-gray-200 shadow-lg flex items-center justify-center hover:bg-gray-50 transition-all z-10"><svg class="w-4 h-4 text-gray-700" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m15 18-6-6 6-6"/></svg></button>
@@ -699,26 +697,13 @@ document.querySelectorAll('#mobile-menu a').forEach(function (a) {
   a.addEventListener('click', function () { document.getElementById('mobile-menu').classList.add('hidden'); });
 });
 
-// Theme toggle (pola Clincoo: key clincoo_theme)
+// Tema: ikut pengaturan sistem browser (prefers-color-scheme), tanpa toggle manual
 (function () {
-  var btn = document.getElementById('theme-btn');
-  function apply() {
-    var dark = document.body.classList.contains('dark-mode');
-    document.querySelectorAll('.dark-show').forEach(function (s) { s.classList.toggle('hidden', !dark); });
-    document.querySelectorAll('.dark-hide').forEach(function (s) { s.classList.toggle('hidden', dark); });
-  }
-  try {
-    var t = localStorage.getItem('clincoo_theme') || 'Sistem (Default)';
-    var d = (t === 'Gelap') || (t === 'Sistem (Default)' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
-    if (d) document.body.classList.add('dark-mode');
-  } catch (e) {}
+  var mq = window.matchMedia('(prefers-color-scheme: dark)');
+  function apply() { document.body.classList.toggle('dark-mode', mq.matches); }
   apply();
-  btn.addEventListener('click', function () {
-    document.body.classList.toggle('dark-mode');
-    var dark = document.body.classList.contains('dark-mode');
-    try { localStorage.setItem('clincoo_theme', dark ? 'Gelap' : 'Terang'); } catch (e) {}
-    apply();
-  });
+  if (mq.addEventListener) mq.addEventListener('change', apply);
+  else if (mq.addListener) mq.addListener(apply);
 })();
 
 // Smooth scroll
@@ -742,8 +727,7 @@ document.querySelectorAll('a[href^="#"]').forEach(function (a) {
   var caps=[
     ['Beranda — semua proyekmu dalam satu workspace','muzawwied.github.io/Clincoo.'],
     ['Workspace proyek — file, keamanan, environment, pengaturan','muzawwied.github.io/Clincoo./proyek/workspace'],
-    ['Editor kode — ngoding langsung di browser','muzawwied.github.io/Clincoo-Editor'],
-    ['Komunitas — bagikan progres proyekmu','muzawwied.github.io/Clincoo-Komunitas']
+    ['Editor kode — ngoding langsung di browser','muzawwied.github.io/Clincoo-Editor']
   ];
   for(var i=0;i<slides.length;i++){
     var d=document.createElement('button');
