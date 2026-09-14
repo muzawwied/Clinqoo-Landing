@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%0A%20%20%0A%20%20%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%2216%22%20fill%3D%22%23ffffff%22%2F%3E%0A%20%20%3Cg%20fill%3D%22%23000000%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M12.6%2012C12.9%209.2%2012.2%207%2011.1%207C9.8%207%208.5%209.2%208.8%2012Z%22%2F%3E%3Cpath%20d%3D%22M11.9%209.1C11.2%2010.1%2011.4%2011.1%2011.9%2011.6C12.4%2011.1%2012.7%2010.1%2011.9%209.1Z%22%20fill%3D%22%23ffffff%22%20opacity%3D%220.25%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M19.4%2012C19.1%209.2%2019.8%207%2020.9%207C22.2%207%2023.5%209.2%2023.2%2012Z%22%2F%3E%3Cpath%20d%3D%22M20.1%209.1C20.8%2010.1%2020.6%2011.1%2020.1%2011.6C19.6%2011.1%2019.3%2010.1%2020.1%209.1Z%22%20fill%3D%22%23ffffff%22%20opacity%3D%220.25%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M16%2027C24%2027%2028%2022.5%2028%2017C28%2012.5%2021%2011.5%2016%2011.5C11%2011.5%204%2012.5%204%2017C4%2022.5%208%2027%2016%2027Z%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%20%20%3Ccircle%20cx%3D%2212.5%22%20cy%3D%2217%22%20r%3D%221.5%22%20fill%3D%22%23ffffff%22%20opacity%3D%220.6%22%2F%3E%3Ccircle%20cx%3D%2219.5%22%20cy%3D%2217%22%20r%3D%221.5%22%20fill%3D%22%23ffffff%22%20opacity%3D%220.6%22%2F%3E%3Cpolygon%20points%3D%2216%2C20%2015%2C18.5%2017%2C18.5%22%20fill%3D%22%23ffffff%22%20opacity%3D%220.5%22%2F%3E%0A%3C%2Fsvg%3E">
+<title>Clincoo — Buat Website Profesional dengan AI</title>
+<meta name="description" content="Clincoo — platform pembuatan website dengan AI: template profesional, generate dari prompt, editor kode lengkap, deploy instan, domain kustom, dan ClincooPay.">
+<meta property="og:title" content="Clincoo — Buat Website Profesional dengan AI">
+<meta property="og:description" content="Dari prompt jadi website. Template, editor kode, deploy instan, semuanya dalam satu platform.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Clincoo">
+<meta name="theme-color" content="#ffffff">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config = { darkMode: ["class", ".dark-mode"] };</script>
+<style>
+:root { --accent-color:#000000; --accent-hover:#1f2937; }
+body { font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif; }
+h1,h2,.font-display { font-family:'Space Grotesk',sans-serif; }
+.bg-accent { background-color:var(--accent-color) !important; }
+.text-accent { color:var(--accent-color) !important; }
+.border-accent { border-color:var(--accent-color) !important; }
+.hover\:bg-accent-hover:hover { background-color:var(--accent-hover) !important; }
+
+/* ===== Dark mode (pola Clincoo) ===== */
+body.dark-mode { background:#0a0a0a !important; color:#f8fafc !important; }
+body.dark-mode .bg-white { background:#111111 !important; }
+body.dark-mode .text-gray-900, body.dark-mode .text-black { color:#f8fafc !important; }
+body.dark-mode .text-gray-700 { color:#cbd5e1 !important; }
+body.dark-mode .text-gray-600 { color:#94a3b8 !important; }
+body.dark-mode .text-gray-500 { color:#94a3b8 !important; }
+body.dark-mode .border-gray-100, body.dark-mode .border-gray-200 { border-color:#1e293b !important; }
+body.dark-mode .border-gray-800, body.dark-mode .border-gray-900 { border-color:#1e293b !important; }
+body.dark-mode .bg-gray-50, body.dark-mode .bg-gray-100 { background:#161616 !important; }
+body.dark-mode .hover\:bg-gray-50:hover, body.dark-mode .hover\:bg-gray-100:hover { background:#1a1a1a !important; }
+body.dark-mode .bg-accent { background-color:#ffffff !important; color:#000000 !important; }
+body.dark-mode .text-accent { color:#ffffff !important; }
+body.dark-mode .border-accent { border-color:#ffffff !important; }
+body.dark-mode [style*="background:#f8fafc"], body.dark-mode [style*="background:#f1f5f9"] { background:#161616 !important; }
+body.dark-mode .lnd-browser-dots span { background:#334155 !important; }
+body.dark-mode .lnd-code { color:#e2e8f0 !important; }
+
+/* ===== Animasi reveal on scroll ===== */
+.reveal { opacity:0; transform:translateY(28px); transition:opacity .7s cubic-bezier(.4,0,.2,1), transform .7s cubic-bezier(.4,0,.2,1); }
+.reveal.revealed { opacity:1; transform:translateY(0); }
+.reveal-l { opacity:0; transform:translateX(-32px); transition:all .8s cubic-bezier(.4,0,.2,1); }
+.reveal-l.revealed { opacity:1; transform:translateX(0); }
+.reveal-r { opacity:0; transform:translateX(32px); transition:all .8s cubic-bezier(.4,0,.2,1); }
+.reveal-r.revealed { opacity:1; transform:translateX(0); }
+
+/* ===== Marquee ===== */
+.marquee-track { display:flex; width:max-content; animation:marquee 28s linear infinite; }
+@keyframes marquee { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+
+/* ===== Floating ===== */
+@keyframes floaty { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-12px); } }
+.floaty { animation:floaty 5s ease-in-out infinite; }
+.floaty-2 { animation:floaty 6.5s ease-in-out infinite; animation-delay:.8s; }
+@keyframes pulse-soft { 0%,100% { box-shadow:0 0 0 0 rgba(0,0,0,.10); } 50% { box-shadow:0 0 0 14px rgba(0,0,0,0); } }
+.pulse-soft { animation:pulse-soft 2.4s ease-in-out infinite; }
+
+/* ===== Hero glow grid ===== */
+.hero-grid { background-image:linear-gradient(to right, rgba(0,0,0,.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,.05) 1px, transparent 1px); background-size:44px 44px; mask-image:radial-gradient(ellipse 80% 60% at 50% 0%, #000 60%, transparent 100%); -webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 0%, #000 60%, transparent 100%); }
+body.dark-mode .hero-grid { background-image:linear-gradient(to right, rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,.05) 1px, transparent 1px); }
+
+/* ===== Kursor typing ===== */
+.typing-caret::after { content:'|'; animation:caret 1s steps(1) infinite; }
+@keyframes caret { 50% { opacity:0; } }
+
+/* ===== Browser mockup ===== */
+.lnd-browser { border-radius:18px; border:1px solid #e5e7eb; overflow:hidden; }
+body.dark-mode .lnd-browser { border-color:#1e293b; }
+.lnd-browser-dots span { display:inline-block; width:10px; height:10px; border-radius:9999px; }
+
+/* ===== Kartu bento ===== */
+.bento { border-radius:24px; border:1px solid #f1f5f9; background:#fff; box-shadow:0 8px 30px rgba(0,0,0,.06); transition:transform .35s cubic-bezier(.4,0,.2,1), box-shadow .35s; }
+.bento:hover { transform:translateY(-6px); box-shadow:0 18px 48px rgba(0,0,0,.12); }
+body.dark-mode .bento { background:#111; border-color:#1e293b; box-shadow:none; }
+
+/* ===== FAQ accordion ===== */
+.faq-body { max-height:0; overflow:hidden; transition:max-height .45s cubic-bezier(.4,0,.2,1); }
+.faq-item.open .faq-chevron { transform:rotate(180deg); }
+.faq-chevron { transition:transform .35s; }
+
+/* ===== Step line ===== */
+.step-line { height:2px; background:linear-gradient(90deg,#e5e7eb,#111); }
+
+/* ===== Banner gradient text ===== */
+.text-shine { background:linear-gradient(110deg,#111 30%,#9ca3af 45%,#111 60%); background-size:220% 100%; -webkit-background-clip:text; background-clip:text; color:transparent; animation:shine 4s linear infinite; }
+body.dark-mode .text-shine { background:linear-gradient(110deg,#fff 30%,#64748b 45%,#fff 60%); background-size:220% 100%; -webkit-background-clip:text; background-clip:text; color:transparent; }
+@keyframes shine { to { background-position:-220% 0; } }
+
+/* ===== Slider testimoni ===== */
+.tst-track { display:flex; transition:transform .5s cubic-bezier(.4,0,.2,1); }
+.tst-viewport { overflow:hidden; }
+
+/* ===== Pricing highlight ===== */
+.plan-hot { border:2px solid var(--accent-color) !important; box-shadow:0 20px 50px rgba(0,0,0,.12); }
+
+/* ===== Progress scroll top ===== */
+#scroll-progress { position:fixed; top:0; left:0; height:3px; background:var(--accent-color); width:0%; z-index:60; transition:width .1s linear; }
+
+/* ===== Toast cta ===== */
+@keyframes pop-in { 0% { opacity:0; transform:scale(.9); } 100% { opacity:1; transform:scale(1); } }
+.pop-in { animation:pop-in .3s ease-out; }
+</style>
+</head>
+<body class="bg-white text-gray-900 antialiased">
+<div id="scroll-progress"></div>
+
+<!-- ================= NAVBAR ================= -->
+<header id="nav" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div id="nav-inner" class="flex items-center justify-between py-4 transition-all duration-300">
+      <a href="#" class="flex items-center gap-2.5">
+        <img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%0A%20%20%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%2216%22%20fill%3D%22%23000%22%2F%3E%0A%20%20%3Cg%20fill%3D%22%23fff%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M12.6%2012C12.9%209.2%2012.2%207%2011.1%207C9.8%207%208.5%209.2%208.8%2012Z%22%2F%3E%3Cpath%20d%3D%22M11.9%209.1C11.2%2010.1%2011.4%2011.1%2011.9%2011.6C12.4%2011.1%2012.7%2010.1%2011.9%209.1Z%22%20fill%3D%22%23000%22%20opacity%3D%220.25%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M19.4%2012C19.1%209.2%2019.8%207%2020.9%207C22.2%207%2023.5%209.2%2023.2%2012Z%22%2F%3E%3Cpath%20d%3D%22M20.1%209.1C20.8%2010.1%2020.6%2011.1%2020.1%2011.6C19.6%2011.1%2019.3%2010.1%2020.1%209.1Z%22%20fill%3D%22%23000%22%20opacity%3D%220.25%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M16%2027C24%2027%2028%2022.5%2028%2017C28%2012.5%2021%2011.5%2016%2011.5C11%2011.5%204%2012.5%204%2017C4%2022.5%208%2027%2016%2027Z%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E" alt="Clincoo" class="w-8 h-8 rounded-full">
+        <span class="font-display font-bold text-lg tracking-tight">Clincoo</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-gray-600">
+        <a href="#fitur" class="hover:text-black transition-colors">Fitur</a>
+        <a href="#cara-kerja" class="hover:text-black transition-colors">Cara Kerja</a>
+        <a href="#editor" class="hover:text-black transition-colors">Editor</a>
+        <a href="#harga" class="hover:text-black transition-colors">Harga</a>
+        <a href="#faq" class="hover:text-black transition-colors">FAQ</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <button id="theme-btn" class="w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-colors" aria-label="Ganti tema">
+          <svg class="w-4 h-4 hidden dark-show" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          <svg class="w-4 h-4 dark-hide" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+        </button>
+        <a href="https://muzawwied.github.io/Clincoo./auth.html" class="hidden sm:inline-flex px-4 py-2 rounded-full border border-gray-200 text-sm font-semibold hover:bg-gray-50 transition-colors">Masuk</a>
+        <a href="https://muzawwied.github.io/Clincoo./auth.html?mode=daftar" class="px-4 py-2 rounded-full bg-accent text-white text-sm font-semibold hover:bg-accent-hover transition-all active:scale-95">Mulai Gratis</a>
+        <button id="menu-btn" class="md:hidden w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center" aria-label="Menu">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden bg-white border border-gray-100 rounded-2xl shadow-xl p-3 mb-2">
+      <a href="#fitur" class="block px-4 py-3 rounded-xl hover:bg-gray-50 text-sm font-medium">Fitur</a>
+      <a href="#cara-kerja" class="block px-4 py-3 rounded-xl hover:bg-gray-50 text-sm font-medium">Cara Kerja</a>
+      <a href="#editor" class="block px-4 py-3 rounded-xl hover:bg-gray-50 text-sm font-medium">Editor</a>
+      <a href="#harga" class="block px-4 py-3 rounded-xl hover:bg-gray-50 text-sm font-medium">Harga</a>
+      <a href="#faq" class="block px-4 py-3 rounded-xl hover:bg-gray-50 text-sm font-medium">FAQ</a>
+      <a href="https://muzawwied.github.io/Clincoo./auth.html?mode=daftar" class="block mt-2 px-4 py-3 rounded-xl bg-accent text-white text-sm font-bold text-center">Mulai Gratis</a>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="relative overflow-hidden pt-32 sm:pt-40 pb-20">
+  <div class="hero-grid absolute inset-0 pointer-events-none"></div>
+  <div class="relative max-w-6xl mx-auto px-4 sm:px-6 text-center">
+    <div class="reveal inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gray-200 bg-white text-xs font-semibold text-gray-600 mb-7">
+      <span class="w-2 h-2 rounded-full bg-emerald-500 pulse-soft"></span>
+      Platform pembuatan website dengan AI — dari Indonesia
+    </div>
+    <h1 class="reveal font-display text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05]">
+      Dari <span class="text-accent">prompt</span> jadi<br class="hidden sm:block">
+      website <span id="hero-rotator" class="text-shine">profesional</span>
+    </h1>
+    <p class="reveal mt-6 text-base sm:text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
+      Clincoo menggabungkan chat AI, template siap pakai, editor kode lengkap, dan deploy instan dalam satu platform. Tulis idemu, AI yang membangun.
+    </p>
+    <div class="reveal mt-9 flex flex-col sm:flex-row items-center justify-center gap-3">
+      <a href="https://muzawwied.github.io/Clincoo./auth.html?mode=daftar" class="w-full sm:w-auto px-8 py-4 rounded-full bg-accent text-white font-bold text-base hover:bg-accent-hover transition-all active:scale-95 shadow-lg pulse-soft">
+        Mulai Gratis Sekarang
+      </a>
+      <a href="#cara-kerja" class="w-full sm:w-auto px-8 py-4 rounded-full border border-gray-300 font-semibold text-base hover:bg-gray-50 transition-all active:scale-95">
+        Lihat Cara Kerjanya
+      </a>
+    </div>
+    <p class="reveal mt-4 text-xs text-gray-400">Tanpa kartu kredit. Paket Starter gratis selamanya.</p>
+
+    <!-- Mockup browser -->
+    <div class="reveal mt-16 relative max-w-4xl mx-auto">
+      <div class="floaty absolute -left-4 sm:left-4 top-14 z-10 bg-white border border-gray-100 rounded-2xl shadow-xl px-4 py-3 text-left">
+        <div class="flex items-center gap-2 text-[11px] font-bold text-emerald-600"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> Deploy sukses</div>
+        <p class="text-[10px] text-gray-400 mt-0.5">clincoo-site.pages.dev · 42 detik</p>
+      </div>
+      <div class="floaty-2 absolute -right-2 sm:right-4 bottom-16 z-10 bg-white border border-gray-100 rounded-2xl shadow-xl px-4 py-3 text-left">
+        <div class="flex items-center gap-2 text-[11px] font-bold"><svg class="w-3.5 h-3.5 text-amber-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.562 3.266a.5.5 0 01.876 0L15.39 8.87a1 1 0 001.516.294L21.183 5.5a.5.5 0 01.798.519l-2.834 10.246a1 1 0 01-.956.734H5.81a1 1 0 01-.957-.734L2.02 6.019a.5.5 0 01.798-.519l4.276 3.664a1 1 0 001.516-.294z"/></svg> Tim AI berdiskusi</div>
+        <p class="text-[10px] text-gray-400 mt-0.5">3 agen membangun landing page…</p>
+      </div>
+      <div class="lnd-browser bg-white shadow-2xl">
+        <div class="flex items-center gap-2 px-4 py-3 bg-gray-50 border-b border-gray-100">
+          <div class="lnd-browser-dots flex items-center gap-1.5"><span style="background:#f87171"></span><span style="background:#fbbf24"></span><span style="background:#34d399"></span></div>
+          <div class="flex-1 mx-3">
+            <div class="bg-white border border-gray-100 rounded-full px-4 py-1 text-[10px] text-gray-400 text-left truncate">muzawwied.github.io/Clincoo.</div>
+          </div>
+        </div>
+        <div class="p-4 sm:p-6 text-left bg-white">
+          <div class="rounded-2xl border border-gray-100 bg-gray-50 p-4 mb-3">
+            <div class="flex items-start gap-3">
+              <div class="w-7 h-7 rounded-full bg-accent flex items-center justify-center shrink-0"><svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg></div>
+              <div class="flex-1">
+                <p class="text-xs font-bold">Buat landing page toko kopi dengan warna coklat hangat</p>
+                <p class="text-[10px] text-gray-400 mt-0.5">Kamu · baru saja</p>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center gap-2 mb-3 pl-8">
+            <div class="flex items-center gap-1.5 bg-white border border-gray-100 rounded-full px-3 py-1.5 text-[10px] font-medium text-gray-500"><span class="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse"></span> AI sedang menulis kode…</div>
+          </div>
+          <div class="grid grid-cols-3 gap-3">
+            <div class="rounded-xl bg-gray-100 h-20 animate-pulse"></div>
+            <div class="rounded-xl bg-gray-100 h-20 animate-pulse" style="animation-delay:.2s"></div>
+            <div class="rounded-xl bg-gray-100 h-20 animate-pulse" style="animation-delay:.4s"></div>
+          </div>
+          <div class="mt-3 rounded-xl bg-amber-50 h-3 w-2/3"></div>
+          <div class="mt-2 rounded-xl bg-gray-100 h-3 w-1/2"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MARQUEE KEUNGGULAN ================= -->
+<section class="py-10 border-y border-gray-100 overflow-hidden">
+  <div class="marquee-track">
+    <div class="flex items-center gap-10 pr-10 text-sm font-semibold text-gray-400 whitespace-nowrap" id="marquee-a"></div>
+    <div class="flex items-center gap-10 pr-10 text-sm font-semibold text-gray-400 whitespace-nowrap" id="marquee-b"></div>
+  </div>
+</section>
+
+<!-- ================= STATS ================= -->
+<section class="py-16 sm:py-20">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+      <div class="reveal bento p-6 text-center">
+        <p class="font-display text-3xl sm:text-4xl font-bold"><span class="stat" data-target="120">0</span>+</p>
+        <p class="text-xs text-gray-500 mt-1 font-medium">Template & proyek dibuat</p>
+      </div>
+      <div class="reveal bento p-6 text-center" style="transition-delay:.1s">
+        <p class="font-display text-3xl sm:text-4xl font-bold"><span class="stat" data-target="60">0</span> detik</p>
+        <p class="text-xs text-gray-500 mt-1 font-medium">Rata-rata deploy pertama</p>
+      </div>
+      <div class="reveal bento p-6 text-center" style="transition-delay:.2s">
+        <p class="font-display text-3xl sm:text-4xl font-bold"><span class="stat" data-target="99">0</span>,9%</p>
+        <p class="text-xs text-gray-500 mt-1 font-medium">Uptime website produksi</p>
+      </div>
+      <div class="reveal bento p-6 text-center" style="transition-delay:.3s">
+        <p class="font-display text-3xl sm:text-4xl font-bold"><span class="stat" data-target="5">0</span> detik</p>
+        <p class="text-xs text-gray-500 mt-1 font-medium">Balasan chat AI</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FITUR UTAMA (BENTO) ================= -->
+<section id="fitur" class="py-16 sm:py-24 scroll-mt-20">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <p class="reveal text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">Semua yang kamu butuhkan</p>
+      <h2 class="reveal font-display text-3xl sm:text-5xl font-bold tracking-tight">Satu platform,<br>semua fitur lengkap</h2>
+      <p class="reveal mt-4 text-gray-500 text-sm sm:text-base">Bukan cuma generator. Clincoo adalah ruang kerja penuh untuk merancang, membangun, dan merilis website.</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5" id="bento-grid"></div>
+  </div>
+</section>
+
+<!-- ================= CARA KERJA ================= -->
+<section id="cara-kerja" class="py-16 sm:py-24 bg-gray-50 scroll-mt-20">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <p class="reveal text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">Simpel banget</p>
+      <h2 class="reveal font-display text-3xl sm:text-5xl font-bold tracking-tight">Tiga langkah, website jadi</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="steps-grid"></div>
+    <div class="reveal mt-12 text-center">
+      <a href="https://muzawwied.github.io/Clincoo./auth.html?mode=daftar" class="inline-flex px-8 py-4 rounded-full bg-accent text-white font-bold hover:bg-accent-hover transition-all active:scale-95 shadow-lg">Coba Sekarang — Gratis</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EDITOR SHOWCASE ================= -->
+<section id="editor" class="py-16 sm:py-24 scroll-mt-20">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="reveal-l">
+        <p class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">Editor Kode Clincoo</p>
+        <h2 class="font-display text-3xl sm:text-5xl font-bold tracking-tight leading-tight">Kontrol penuh.<br>Setiap baris kode.</h2>
+        <p class="mt-5 text-gray-500 leading-relaxed">AI membangun versi pertamamu — kamu menyempurnakannya. Editor Clincoo punya file manager, live preview, dan asisten AI yang memahami seluruh proyekmu.</p>
+        <div class="mt-7 space-y-4" id="editor-points"></div>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="https://muzawwied.github.io/Clincoo-Editor/" class="px-6 py-3.5 rounded-full bg-accent text-white font-bold text-sm hover:bg-accent-hover transition-all active:scale-95">Buka Editor</a>
+          <a href="https://muzawwied.github.io/Clincoo./auth.html?mode=daftar" class="px-6 py-3.5 rounded-full border border-gray-300 font-semibold text-sm hover:bg-gray-50 transition-all">Daftar Dulu</a>
+        </div>
+      </div>
+      <div class="reveal-r">
+        <div class="lnd-browser bg-white shadow-2xl">
+          <div class="flex items-center gap-2 px-4 py-3 bg-gray-50 border-b border-gray-100">
+            <div class="lnd-browser-dots flex items-center gap-1.5"><span style="background:#f87171"></span><span style="background:#fbbf24"></span><span style="background:#34d399"></span></div>
+            <div class="text-[10px] text-gray-400 ml-2 font-mono">Clincoo Editor — index.html</div>
+          </div>
+          <div class="flex text-[10px] font-mono border-b border-gray-100">
+            <div class="px-4 py-2 bg-white border-r border-gray-100 font-bold text-gray-700">index.html</div>
+            <div class="px-4 py-2 text-gray-400 border-r border-gray-100">style.css</div>
+            <div class="px-4 py-2 text-gray-400">app.js</div>
+          </div>
+          <pre class="lnd-code p-5 text-[11px] leading-relaxed text-gray-700 overflow-hidden"><code>&lt;<span class="text-red-500 font-semibold">section</span> <span class="text-sky-600">class</span>=<span class="text-emerald-600">"hero"</span>&gt;
+  &lt;<span class="text-red-500 font-semibold">h1</span>&gt;Kopi Senja — Rasa Hangat&lt;/<span class="text-red-500 font-semibold">h1</span>&gt;
+  &lt;<span class="text-red-500 font-semibold">p</span>&gt;Biji arabika pilihan, disangkar
+     dengan cinta setiap pagi.&lt;/<span class="text-red-500 font-semibold">p</span>&gt;
+  &lt;<span class="text-red-500 font-semibold">button</span>&gt;<span class="cursor-write">▌</span>Pesan Sekarang&lt;/<span class="text-red-500 font-semibold">button</span>&gt;
+&lt;/<span class="text-red-500 font-semibold">section</span>&gt;</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= KOLABORASI AI ================= -->
+<section class="py-16 sm:py-24 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="reveal-l order-2 lg:order-1">
+        <div class="bg-white rounded-3xl border border-gray-100 shadow-xl p-5 space-y-3">
+          <div class="flex items-start gap-3">
+            <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center shrink-0"><svg class="w-4 h-4 text-purple-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2v-2a2 2 0 00-2-2H5a2 2 0 00-2 2v2a2 2 0 002 2z"/></svg></div>
+            <div><p class="text-xs font-bold text-purple-700">Desainer AI</p><p class="text-[11px] text-gray-500 leading-relaxed">Saya usul palet coklat-karamel dengan tipografi serif untuk kesan hangat.</p></div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-8 h-8 rounded-full bg-sky-100 flex items-center justify-center shrink-0"><svg class="w-4 h-4 text-sky-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg></div>
+            <div><p class="text-xs font-bold text-sky-700">Programmer AI</p><p class="text-[11px] text-gray-500 leading-relaxed">Struktur HTML siap. Saya tambahkan animasi scroll dan form pemesanan.</p></div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center shrink-0"><svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+            <div><p class="text-xs font-bold text-emerald-700">Reviewer AI</p><p class="text-[11px] text-gray-500 leading-relaxed">Semua link & meta SEO sudah dicek. Website siap deploy 🎉</p></div>
+          </div>
+          <div class="rounded-2xl bg-gray-50 border border-gray-100 p-3 flex items-center gap-2.5">
+            <span class="w-2 h-2 rounded-full bg-gray-400 animate-pulse"></span>
+            <p class="text-[11px] font-medium text-gray-500">Tim AI sedang menggabungkan hasil kerjanya…</p>
+          </div>
+        </div>
+      </div>
+      <div class="reveal-r order-1 lg:order-2">
+        <p class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">Mode Kolaborasi</p>
+        <h2 class="font-display text-3xl sm:text-5xl font-bold tracking-tight leading-tight">Satu perintah,<br>tim AI bekerja</h2>
+        <p class="mt-5 text-gray-500 leading-relaxed">Di mode Kolaborasi, beberapa agen AI dengan peran berbeda berdiskusi dan membangun bersama — desainer, programmer, sampai reviewer. Hasilnya lebih matang, lebih cepat.</p>
+        <div class="mt-7 rounded-2xl border border-amber-200 bg-amber-50 px-5 py-4 text-sm text-amber-800 font-medium">
+          ✨ Tersedia mulai paket Pro — upgrade kapan pun dari dalam Clincoo.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DEPLOY & DOMAIN ================= -->
+<section class="py-16 sm:py-24">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="reveal-l">
+        <p class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">Rilis ke dunia</p>
+        <h2 class="font-display text-3xl sm:text-5xl font-bold tracking-tight leading-tight">Deploy sekali klik,<br>domain kustom</h2>
+        <p class="mt-5 text-gray-500 leading-relaxed">Website langsung online di jaringan global dengan HTTPS otomatis. Hubungkan domain sendiri — atur DNS sekali, Clincoo yang sisanya.</p>
+        <div class="mt-7 grid grid-cols-1 sm:grid-cols-2 gap-3" id="deploy-points"></div>
+      </div>
+      <div class="reveal-r">
+        <div class="bg-white rounded-3xl border border-gray-100 shadow-xl p-6">
+          <div class="flex items-center justify-between mb-4">
+            <p class="text-sm font-bold">Status Deploy</p>
+            <span class="px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-600 text-[10px] font-bold">LIVE</span>
+          </div>
+          <div class="rounded-2xl bg-gray-50 border border-gray-100 p-4 font-mono text-[11px] text-gray-500 space-y-2">
+            <p><span class="text-gray-300">$</span> clincoo deploy</p>
+            <p class="text-gray-400">→ Mengunggah 24 berkas…</p>
+            <p class="text-gray-400">→ Membangun produksi…</p>
+            <p class="text-emerald-600 font-semibold">✓ Berhasil dalam 42 detik</p>
+          </div>
+          <div class="mt-4 flex items-center gap-2 rounded-2xl border border-gray-100 px-4 py-3">
+            <svg class="w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 009 9"/></svg>
+            <p class="text-xs font-medium text-gray-600">tokokopi.com</p>
+            <span class="ml-auto text-[10px] font-bold text-emerald-600">Terhubung</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CLINCOOPAY ================= -->
+<section class="py-16 sm:py-24 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="reveal bento p-8 sm:p-12 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center !rounded-[32px]">
+      <div>
+        <p class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">Metode pembayaran</p>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold tracking-tight leading-tight">ClincooPay — dompet digital untuk semua transaksi</h2>
+        <p class="mt-5 text-gray-500 leading-relaxed">Top up saldo via QRIS, bayar paket dan fitur premium langsung dari dompet. Saldo tersinkron otomatis antara Clincoo dan Wallet-mu, dijaga PIN pribadi.</p>
+        <div class="mt-7 flex flex-wrap gap-2.5" id="cpay-tags"></div>
+        <a href="https://muzawwied.github.io/Wallet/" class="mt-7 inline-flex px-6 py-3.5 rounded-full bg-accent text-white font-bold text-sm hover:bg-accent-hover transition-all active:scale-95">Coba ClincooPay</a>
+      </div>
+      <div class="relative">
+        <div class="floaty bg-white rounded-3xl border border-gray-100 shadow-xl p-6 max-w-xs mx-auto">
+          <div class="flex items-center justify-between mb-5">
+            <p class="text-xs font-bold text-gray-400 uppercase tracking-widest">Saldo ClincooPay</p>
+            <svg class="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+          </div>
+          <p class="font-display text-4xl font-bold tracking-tight">Rp 250.000</p>
+          <div class="flex gap-2 mt-5">
+            <div class="flex-1 rounded-xl bg-gray-50 border border-gray-100 py-2.5 text-center text-[10px] font-bold text-gray-600">Top Up QRIS</div>
+            <div class="flex-1 rounded-xl bg-gray-900 text-white py-2.5 text-center text-[10px] font-bold">Bayar Paket</div>
+          </div>
+          <div class="mt-4 rounded-xl bg-emerald-50 border border-emerald-100 px-3 py-2 text-[10px] font-semibold text-emerald-600 text-center">Tersinkron dengan Wallet · Aman dengan PIN</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONI ================= -->
+<section class="py-16 sm:py-24 overflow-hidden">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <p class="reveal text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">Kata pengguna</p>
+      <h2 class="reveal font-display text-3xl sm:text-5xl font-bold tracking-tight">Dipercaya para pembuat</h2>
+    </div>
+    <div class="reveal relative">
+      <div class="tst-viewport rounded-3xl">
+        <div class="tst-track" id="tst-track"></div>
+      </div>
+      <div class="flex items-center justify-center gap-3 mt-7">
+        <button id="tst-prev" class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-colors" aria-label="Sebelumnya"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m15 18-6-6 6-6"/></svg></button>
+        <div class="flex gap-1.5" id="tst-dots"></div>
+        <button id="tst-next" class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-colors" aria-label="Berikutnya"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m9 18 6-6-6-6"/></svg></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HARGA ================= -->
+<section id="harga" class="py-16 sm:py-24 bg-gray-50 scroll-mt-20">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <p class="reveal text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">Harga transparan</p>
+      <h2 class="reveal font-display text-3xl sm:text-5xl font-bold tracking-tight">Mulai gratis, upgrade saat siap</h2>
+      <p class="reveal mt-4 text-gray-500 text-sm sm:text-base">Tanpa biaya tersembunyi. Batalkan kapan saja.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto" id="pricing-grid"></div>
+    <p class="reveal text-center text-xs text-gray-400 mt-8">Semua harga dalam Rupiah. Pembayaran mudah via ClincooPay, QRIS, atau transfer.</p>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="faq" class="py-16 sm:py-24 scroll-mt-20">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-12">
+      <p class="reveal text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">Masih ragu?</p>
+      <h2 class="reveal font-display text-3xl sm:text-5xl font-bold tracking-tight">Pertanyaan umum</h2>
+    </div>
+    <div class="space-y-3" id="faq-list"></div>
+  </div>
+</section>
+
+<!-- ================= CTA BESAR ================= -->
+<section class="py-20 sm:py-28">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="reveal relative overflow-hidden rounded-[36px] bg-accent text-white text-center px-6 py-16 sm:py-24">
+      <div class="hero-grid absolute inset-0 opacity-20 pointer-events-none" style="filter:invert(1)"></div>
+      <div class="relative">
+        <h2 class="font-display text-3xl sm:text-6xl font-bold tracking-tight leading-tight">Website impianmu<br>menunggu dibangun</h2>
+        <p class="mt-5 text-white/70 text-sm sm:text-base max-w-xl mx-auto">Gabung gratis hari ini. Prompt pertamamu mungkin jadi website yang kamu banggakan besok.</p>
+        <a href="https://muzawwied.github.io/Clincoo./auth.html?mode=daftar" class="mt-9 inline-flex items-center gap-2 px-10 py-5 rounded-full bg-white text-gray-900 font-bold text-base hover:scale-105 transition-transform active:scale-95 shadow-2xl">
+          Mulai Gratis Sekarang
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+        </a>
+        <p class="mt-4 text-xs text-white/50">Starter gratis selamanya — tanpa kartu kredit</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="border-t border-gray-100 py-14">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
+      <div class="col-span-2 md:col-span-1">
+        <div class="flex items-center gap-2.5 mb-4">
+          <img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%0A%20%20%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%2216%22%20fill%3D%22%23000%22%2F%3E%0A%20%20%3Cg%20fill%3D%22%23fff%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M12.6%2012C12.9%209.2%2012.2%207%2011.1%207C9.8%207%208.5%209.2%208.8%2012Z%22%2F%3E%3Cpath%20d%3D%22M11.9%209.1C11.2%2010.1%2011.4%2011.1%2011.9%2011.6C12.4%2011.1%2012.7%2010.1%2011.9%209.1Z%22%20fill%3D%22%23000%22%20opacity%3D%220.25%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M19.4%2012C19.1%209.2%2019.8%207%2020.9%207C22.2%207%2023.5%209.2%2023.2%2012Z%22%2F%3E%3Cpath%20d%3D%22M20.1%209.1C20.8%2010.1%2020.6%2011.1%2020.1%2011.6C19.6%2011.1%2019.3%2010.1%2020.1%209.1Z%22%20fill%3D%22%23000%22%20opacity%3D%220.25%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M16%2027C24%2027%2028%2022.5%2028%2017C28%2012.5%2021%2011.5%2016%2011.5C11%2011.5%204%2012.5%204%2017C4%2022.5%208%2027%2016%2027Z%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E" alt="Clincoo" class="w-8 h-8 rounded-full">
+          <span class="font-display font-bold text-lg">Clincoo</span>
+        </div>
+        <p class="text-xs text-gray-500 leading-relaxed max-w-[240px]">Platform pembuatan website dengan AI. Template profesional, generate AI, editor kode, dan deploy instan.</p>
+        <div class="flex items-center gap-1 mt-5">
+          <a href="https://www.tiktok.com/@vylonium.vy" target="_blank" rel="noopener" aria-label="TikTok" class="w-8 h-8 flex items-center justify-center rounded-full text-gray-400 hover:text-black hover:bg-gray-50 transition-colors"><svg viewBox="0 0 24 24" fill="currentColor" class="w-3.5 h-3.5"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.9 2.9 0 1 1-2.31-2.83V9.37a6.36 6.36 0 1 0 5.76 6.35V8.71a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.14z"/></svg></a>
+          <a href="https://www.instagram.com/vylonium.vy" target="_blank" rel="noopener" aria-label="Instagram" class="w-8 h-8 flex items-center justify-center rounded-full text-gray-400 hover:text-black hover:bg-gray-50 transition-colors"><svg viewBox="0 0 24 24" fill="currentColor" class="w-3.5 h-3.5"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.012-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.688.072 4.947.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+          <a href="https://wa.me/6283849297259" target="_blank" rel="noopener" aria-label="WhatsApp" class="w-8 h-8 flex items-center justify-center rounded-full text-gray-400 hover:text-black hover:bg-gray-50 transition-colors"><svg viewBox="0 0 24 24" fill="currentColor" class="w-3.5 h-3.5"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.893c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652a11.98 11.98 0 0 0 5.71 1.448h.006c6.585 0 11.946-5.336 11.949-11.897 0-3.179-1.24-6.165-3.495-8.411M12.05 21.785h-.004a9.87 9.87 0 0 1-5.031-1.378l-.36-.214-3.742.976 1.005-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.002-5.45 4.457-9.884 9.942-9.884 2.652 0 5.145 1.035 7.021 2.91a9.83 9.83 0 0 1 2.909 6.99c-.003 5.45-4.458 9.884-9.995 9.884"/></svg></a>
+          <a href="https://github.com/muzawwied" target="_blank" rel="noopener" aria-label="GitHub" class="w-8 h-8 flex items-center justify-center rounded-full text-gray-400 hover:text-black hover:bg-gray-50 transition-colors"><svg viewBox="0 0 24 24" fill="currentColor" class="w-3.5 h-3.5"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <p class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4">Produk</p>
+        <ul class="space-y-2.5 text-sm text-gray-600">
+          <li><a href="https://muzawwied.github.io/Clincoo./" class="hover:text-black transition-colors">Clincoo App</a></li>
+          <li><a href="https://muzawwied.github.io/Clincoo-Editor/" class="hover:text-black transition-colors">Editor Kode</a></li>
+          <li><a href="https://muzawwied.github.io/Wallet/" class="hover:text-black transition-colors">ClincooPay</a></li>
+          <li><a href="#harga" class="hover:text-black transition-colors">Harga & Paket</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4">Fitur</p>
+        <ul class="space-y-2.5 text-sm text-gray-600">
+          <li><a href="#fitur" class="hover:text-black transition-colors">Generate AI</a></li>
+          <li><a href="#editor" class="hover:text-black transition-colors">Editor Kode</a></li>
+          <li><a href="#cara-kerja" class="hover:text-black transition-colors">Deploy Instan</a></li>
+          <li><a href="#harga" class="hover:text-black transition-colors">Mode Kolaborasi</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4">Bantuan</p>
+        <ul class="space-y-2.5 text-sm text-gray-600">
+          <li><a href="#faq" class="hover:text-black transition-colors">FAQ</a></li>
+          <li><a href="https://wa.me/6283849297259" target="_blank" rel="noopener" class="hover:text-black transition-colors">WhatsApp Support</a></li>
+          <li><a href="https://www.instagram.com/vylonium.vy" target="_blank" rel="noopener" class="hover:text-black transition-colors">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-gray-100 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p class="text-xs text-gray-400">© 2026 Clincoo — Dibuat dengan ❤️ di Indonesia</p>
+      <p class="text-xs text-gray-400">Starter gratis selamanya · Deploy instan · ClincooPay</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ================== DATA ================== */
+var MARQUEE_ITEMS = ['✦ Chat AI Cepat','✦ Template Profesional','✦ Editor Kode Lengkap','✦ Deploy Instan','✦ Domain Kustom','✦ Mode Kolaborasi AI','✦ ClincooPay','✦ Impor GitHub','✦ HTTPS Otomatis','✦ Dark Mode','✦ Tugas Terjadwal','✦ Notifikasi Real-time'];
+
+var BENTO = [
+  { icon:'M8 10h.01M12 10h.01M16 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0zM7 21v-2.13A8.966 8.966 0 0112 21a8.966 8.966 0 004.494-1.13A8.966 8.966 0 0112 21a8.966 8.966 0 01-5-1.13V21', title:'Chat AI 5 Detik', desc:'Tulis prompt, AI menjawab dalam hitungan detik — lengkap dengan kode siap pakai.' },
+  { icon:'M4 5a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H6a2 2 0 00-2 2v4a2 2 0 002 2h12', title:'Template Profesional', desc:'Puluhan template siap edit untuk toko, portofolio, landing page, dan lainnya.' },
+  { icon:'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4', title:'Editor Kode Lengkap', desc:'File manager, live preview, terminal, dan asisten AI dalam satu editor.' },
+  { icon:'M5 10l7-7m0 0l7 7m-7-7v18', title:'Deploy Instan', desc:'Website online di jaringan global dalam hitungan detik, sekali klik.' },
+  { icon:'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 009 9', title:'Domain Kustom', desc:'Hubungkan domain sendiri dengan panduan DNS otomatis dari Clincoo.' },
+  { icon:'M8.687 3.188a2 2 0 012.626 0L12 3.75l.687-.562a2 2 0 012.626 0 2 2 0 00.483.325l.814.4a2 2 0 011.096 2.031l-.087.903a2 2 0 00.227 1.04l.453.783a2 2 0 01-.217 2.305l-.597.68a2 2 0 00-.448.955l-.164.9a2 2 0 01-1.648 1.646l-.9.164a2 2 0 00-.955.448l-.68.597a2 2 0 01-2.305.217l-.783-.453a2 2 0 00-1.04-.227l-.903.087a2 2 0 01-2.031-1.096l-.4-.814a2 2 0 00-.325-.483 2 2 0 010-2.626L3.75 12l-.562-.687a2 2 0 010-2.626 2 2 0 00.325-.483l.4-.814a2 2 0 012.031-1.096l.903.087a2 2 0 001.04-.227l.783-.453a2 2 0 012.305.217l.68.597a2 2 0 00.955.448z', title:'Integrasi Webhook', desc:'Hubungkan layanan luar dengan webhook — notifikasi real-time langsung masuk.' },
+  { icon:'M15 7a2 2 0 012 2m4 0a6 6 0 01-6 6m0 0v-2m0 2H8m6-6V5a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2h-1', title:'Impor GitHub', desc:'Bawa repositori GitHub-mu ke workspace dan lanjutkan pengembangan di Clincoo.' },
+  { icon:'M12 15v2m-6 4v-2a2 2 0 012-2h8a2 2 0 012 2v2M8 7a2 2 0 11-4 0 2 2 0 014 0zm12 0a2 2 0 11-4 0 2 2 0 014 0zM7 21v-2.13A8.966 8.966 0 0112 21a8.966 8.966 0 004.494-1.13A8.966 8.966 0 0112 21a8.966 8.966 0 01-5-1.13V21', title:'Mode Kolaborasi AI', desc:'Tim AI berdiskusi dan membangun bersama untuk hasil yang lebih matang.' },
+  { icon:'M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z', title:'ClincooPay', desc:'Dompet digital internal — top up QRIS, bayar paket, saldo tersinkron.' },
+];
+
+var STEPS = [
+  { n:'1', title:'Tulis Prompt', desc:'Ceritakan website yang kamu mau dengan bahasa sehari-hari. Sertel lampirkan file atau referensi bila perlu.' },
+  { n:'2', title:'AI Membangun', desc:'Clincoo merancang struktur, menulis kode, dan menyusun halaman — kamu bisa pantau prosesnya secara real-time.' },
+  { n:'3', title:'Deploy & Bagikan', desc:'Sempurnakan di editor bila mau, lalu deploy sekali klik. Website-mu langsung online dengan HTTPS.' },
+];
+
+var EDITOR_POINTS = [
+  ['File manager lengkap', 'Atur berkas & folder, upload gambar, dan import proyek — semua drag & drop.'],
+  ['Live preview instan', 'Setiap perubahan tampil langsung di layar, tanpa refresh.'],
+  ['Asisten AI di editor', 'Tanya atau minta revisi kode langsung dari sidebar editor.'],
+];
+
+var DEPLOY_POINTS = [
+  ['HTTPS otomatis', 'Sertifikat SSL terpasang otomatis untuk semua website.'],
+  ['Jaringan global', 'Konten tersaji cepat dari titik terdekat pengunjung.'],
+  ['Deploy 2 klik', 'Dari editor ke online — tanpa konfigurasi server.'],
+  ['Build dashboard', 'Pantau riwayat & status deploy tiap proyek.'],
+];
+
+var CPAY_TAGS = ['Top Up QRIS','Sinkron Saldo','PIN Aman','Riwayat Transaksi','Tanpa Biaya Tersembunyi'];
+
+var TESTI = [
+  { name:'Rafi', role:'Pemilik Toko Kopi', text:'Awalnya cuma iseng. 20 menit kemudian website toko saya udah online, lengkap sama menu dan tombol pesan. Keren banget.', initial:'R', color:'bg-amber-100 text-amber-700' },
+  { name:'Dinda', role:'Desainer Freelance', text:'Editor kodenya bikin saya nyaman banget — rapi, cepat, dan AI-nya ngerti konteks proyek. Portofolio saya sekarang jauh lebih keren.', initial:'D', color:'bg-sky-100 text-sky-700' },
+  { name:'Bagus', role:'Mahasiswa Informatika', text:'Mode Kolaborasi itu sulap. Tiga AI berdiskusi beneran kayak tim developer. Hasilnya landing page organisasi kami juara lomba.', initial:'B', color:'bg-emerald-100 text-emerald-700' },
+  { name:'Salsa', role:'Pemilik Butik Online', text:'ClincooPay bikin bayar langganan gampang — top up QRIS dari dompet, langsung beres. Saldo selalu sinkron.', initial:'S', color:'bg-purple-100 text-purple-700' },
+  { name:'Aldi', role:'Content Creator', text:'Dari nol bisa coding? Sekarang iya. Saya cuma kasih prompt "bikin halaman jasa editing video" dan jadilah web profesional.', initial:'A', color:'bg-rose-100 text-rose-700' },
+  { name:'Nadia', role:'Pemilik Katering', text:'Domain kustomnya gampang banget dipasang, panduan DNS-nya jelas. Website katering saya sekarang kelihatan mahal.', initial:'N', color:'bg-teal-100 text-teal-700' },
+];
+
+var PLANS = [
+  { name:'Starter', price:'Gratis', per:'', tagline:'Untuk individu yang baru memulai.', hot:false,
+    items:[['Hingga 3 proyek aktif',1],['1 kolaborator per proyek',1],['Chat AI di setiap proyek',1],['3 template proyek siap pakai',1],['Tugas terjadwal & notifikasi',1],['Deploy web 2x per bulan',1],['Impor repository GitHub',0],['Mode Kolaborasi AI',0]], cta:'Mulai Gratis' },
+  { name:'Pro', price:'49K', per:'/bln', tagline:'Untuk profesional dan kreator aktif.', hot:true,
+    items:[['Hingga 10 proyek aktif',1],['Hingga 5 kolaborator per proyek',1],['Semua fitur Starter',1],['Deploy web hingga 25x per bulan',1],['Impor repository GitHub',1],['Mode Kolaborasi AI',1],['Ekspor data akun (JSON)',0]], cta:'Upgrade ke Pro' },
+  { name:'Bisnis', price:'129K', per:'/bln', tagline:'Untuk tim dan operasi skala besar.', hot:false,
+    items:[['Semua fitur Pro',1],['Hingga 50 proyek aktif',1],['Hingga 20 kolaborator per proyek',1],['Kontrol akses & keamanan lanjutan',1],['Deploy web tanpa batas',1],['Ekspor data akun (JSON)',1]], cta:'Mulai Bisnis' },
+];
+
+var FAQS = [
+  ['Apakah Clincoo benar-benar gratis?', 'Ya! Paket Starter gratis selamanya — 3 proyek aktif, chat AI, template, dan 2x deploy per bulan. Kamu hanya perlu upgrade kalau butuh fitur lebih besar seperti impor GitHub atau mode kolaborasi tim AI.'],
+  ['Aku nggak bisa coding sama sekali. Bisa pakai Clincoo?', 'Justru itu target kami. Kamu cukup menulis prompt dalam bahasa sehari-hari, AI yang menuliskan kodenya. Kalau mau belajar atau menyentuh kode, editor lengkap tersedia kapan pun.'],
+  ['Bagaimana cara deploy website-nya?', 'Sekali klik. Dari halaman proyek, tekan Deploy — Clincoo membangun dan mengunggah website ke jaringan global otomatis, lengkap dengan HTTPS. Rata-rata hanya butuh sekitar satu menit.'],
+  ['Bisa pakai domain sendiri?', 'Bisa. Fitur Domain Kustom memandu kamu mengatur DNS langkah demi langkah, lalu Clincoo otomatis memasang sertifikat SSL untuk domainmu.'],
+  ['Apa itu Mode Kolaborasi?', 'Mode di mana beberapa agen AI dengan peran berbeda (desainer, programmer, reviewer) berdiskusi dan membangun website bersama. Hasilnya biasanya lebih matang karena saling mengoreksi. Tersedia mulai paket Pro.'],
+  ['ClincooPay itu apa dan aman?', 'ClincooPay adalah dompet digital resmi Clincoo. Top up via QRIS, saldomu tersinkron otomatis antara Clincoo dan Wallet, dan setiap transaksi dijaga PIN pribadi. Clincoo tidak pernah menyimpan PIN kamu.'],
+  ['Kalau aku berhenti langganan, data proyekku hilang?', 'Tidak. Data & proyekmu tetap tersimpan di akunmu. Paket akan kembali ke Starter dan fitur premium nonaktif sampai kamu upgrade lagi. Di paket Bisnis, kamu juga bisa mengekspor seluruh data akun ke JSON.'],
+];
+
+/* ================== RENDER ================== */
+function el(html) { var d = document.createElement('div'); d.innerHTML = html.trim(); return d.firstElementChild; }
+function icn(d) { return '<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="'+d+'"/></svg>'; }
+
+// Marquee
+(function () {
+  var html = MARQUEE_ITEMS.map(function (t) { return '<span class="flex items-center gap-2">' + t + '</span>'; }).join('');
+  document.getElementById('marquee-a').innerHTML = html;
+  document.getElementById('marquee-b').innerHTML = html;
+})();
+
+// Bento
+(function () {
+  document.getElementById('bento-grid').innerHTML = BENTO.map(function (b, i) {
+    return '<div class="reveal bento p-6" style="transition-delay:' + ((i % 3) * .08) + 's">' +
+      '<div class="w-12 h-12 rounded-2xl bg-gray-100 flex items-center justify-center mb-5 text-gray-900">' + icn(b.icon) + '</div>' +
+      '<h3 class="font-bold text-base mb-2">' + b.title + '</h3>' +
+      '<p class="text-sm text-gray-500 leading-relaxed">' + b.desc + '</p></div>';
+  }).join('');
+})();
+
+// Steps
+(function () {
+  document.getElementById('steps-grid').innerHTML = STEPS.map(function (s, i) {
+    return '<div class="reveal text-center" style="transition-delay:' + (i * .12) + 's">' +
+      '<div class="w-16 h-16 rounded-full bg-accent text-white mx-auto flex items-center justify-center font-display text-2xl font-bold shadow-lg">' + s.n + '</div>' +
+      (i < 2 ? '<div class="step-line hidden md:block mx-auto mt-8 mb-0 max-w-[120px]"></div>' : '') +
+      '<h3 class="font-bold text-lg mt-6">' + s.title + '</h3>' +
+      '<p class="text-sm text-gray-500 leading-relaxed mt-2 max-w-xs mx-auto">' + s.desc + '</p></div>';
+  }).join('');
+})();
+
+// Editor & deploy points, cpay tags
+(function () {
+  document.getElementById('editor-points').innerHTML = EDITOR_POINTS.map(function (p) {
+    return '<div class="flex items-start gap-3"><div class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5"><svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20 6 9 17l-5-5"/></svg></div><div><p class="text-sm font-bold">' + p[0] + '</p><p class="text-xs text-gray-500 mt-0.5 leading-relaxed">' + p[1] + '</p></div></div>';
+  }).join('');
+  document.getElementById('deploy-points').innerHTML = DEPLOY_POINTS.map(function (p) {
+    return '<div class="rounded-2xl bg-gray-50 border border-gray-100 px-4 py-3.5"><p class="text-sm font-bold">' + p[0] + '</p><p class="text-xs text-gray-500 mt-0.5 leading-relaxed">' + p[1] + '</p></div>';
+  }).join('');
+  document.getElementById('cpay-tags').innerHTML = CPAY_TAGS.map(function (t) {
+    return '<span class="px-3.5 py-1.5 rounded-full border border-gray-200 text-xs font-semibold text-gray-600">' + t + '</span>';
+  }).join('');
+})();
+
+// Testimoni
+(function () {
+  var slides = TESTI.map(function (t) {
+    return '<div class="w-full shrink-0 px-1"><div class="bg-white rounded-3xl border border-gray-100 shadow-lg p-8 sm:p-10 text-center max-w-2xl mx-auto"><p class="text-amber-400 text-lg mb-3">★★★★★</p><p class="text-base sm:text-lg text-gray-700 leading-relaxed">&ldquo;' + t.text + '&rdquo;</p><div class="flex items-center justify-center gap-3 mt-6"><div class="w-10 h-10 rounded-full ' + t.color + ' font-bold text-sm flex items-center justify-center">' + t.initial + '</div><div class="text-left"><p class="text-sm font-bold">' + t.name + '</p><p class="text-xs text-gray-400">' + t.role + '</p></div></div></div></div>';
+  }).join('');
+  document.getElementById('tst-track').innerHTML = slides;
+  var idx = 0, track = document.getElementById('tst-track'), dots = document.getElementById('tst-dots');
+  dots.innerHTML = TESTI.map(function (t, i) { return '<button class="tst-dot rounded-full transition-all" data-i="' + i + '" style="width:6px;height:6px;background:' + (i === 0 ? '#111' : '#d1d5db') + '"></button>'; }).join('');
+  function go(i) {
+    idx = (i + TESTI.length) % TESTI.length;
+    track.style.transform = 'translateX(-' + (idx * 100) + '%)';
+    dots.querySelectorAll('.tst-dot').forEach(function (d, j) {
+      d.style.width = j === idx ? '18px' : '6px';
+      d.style.background = j === idx ? '#111' : '#d1d5db';
+    });
+  }
+  document.getElementById('tst-prev').addEventListener('click', function () { go(idx - 1); });
+  document.getElementById('tst-next').addEventListener('click', function () { go(idx + 1); });
+  dots.querySelectorAll('.tst-dot').forEach(function (d) { d.addEventListener('click', function () { go(parseInt(d.dataset.i)); }); });
+  setInterval(function () { go(idx + 1); }, 5000);
+})();
+
+// Pricing
+(function () {
+  var checkout = 'https://muzawwied.github.io/Clincoo./akun/langganan/upgrade/konfirmasi/?plan=';
+  document.getElementById('pricing-grid').innerHTML = PLANS.map(function (p) {
+    var items = p.items.map(function (it) {
+      return '<li class="flex items-start gap-2.5 text-[13px] ' + (it[1] ? 'text-gray-700' : 'text-gray-400 opacity-70') + '">' +
+        (it[1] ? '<svg class="w-4 h-4 shrink-0 text-gray-900 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20 6 9 17l-5-5"/></svg>'
+               : '<svg class="w-4 h-4 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M5 12h14"/></svg>') +
+        '<span>' + it[0] + '</span></li>';
+    }).join('');
+    return '<div class="reveal bento p-6 flex flex-col ' + (p.hot ? 'plan-hot relative' : '') + '">' +
+      (p.hot ? '<div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-white text-[10px] font-bold px-4 py-1 rounded-full uppercase tracking-wider whitespace-nowrap">Paling Populer</div>' : '') +
+      '<h3 class="font-display text-lg font-bold ' + (p.hot ? 'mt-1' : '') + '">' + p.name + '</h3>' +
+      '<p class="text-xs text-gray-500 mt-0.5">' + p.tagline + '</p>' +
+      '<div class="flex items-baseline my-5"><span class="font-display text-3xl font-bold">' + p.price + '</span><span class="text-xs text-gray-500 ml-1">' + p.per + '</span></div>' +
+      '<ul class="flex flex-col gap-2.5 mb-6 flex-1">' + items + '</ul>' +
+      '<a href="' + (p.name === 'Starter' ? 'https://muzawwied.github.io/Clincoo./auth.html?mode=daftar' : checkout + p.name + '&billing=Bulanan') + '" class="block w-full py-3.5 rounded-xl text-center text-sm font-bold transition-all active:scale-95 ' + (p.hot ? 'bg-accent text-white shadow-lg' : 'border-2 border-gray-200 hover:border-gray-900') + '">' + p.cta + '</a></div>';
+  }).join('');
+})();
+
+// FAQ
+(function () {
+  document.getElementById('faq-list').innerHTML = FAQS.map(function (f, i) {
+    return '<div class="faq-item reveal bento overflow-hidden" style="transition-delay:' + (i * .05) + 's">' +
+      '<button class="faq-head w-full flex items-center justify-between gap-4 px-6 py-5 text-left cursor-pointer">' +
+      '<span class="font-semibold text-sm sm:text-base">' + f[0] + '</span>' +
+      '<svg class="faq-chevron w-5 h-5 text-gray-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg></button>' +
+      '<div class="faq-body"><p class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">' + f[1] + '</p></div></div>';
+  }).join('');
+  document.querySelectorAll('.faq-item').forEach(function (item) {
+    item.querySelector('.faq-head').addEventListener('click', function () {
+      var body = item.querySelector('.faq-body');
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function (o) { o.classList.remove('open'); o.querySelector('.faq-body').style.maxHeight = null; });
+      if (!isOpen) { item.classList.add('open'); body.style.maxHeight = body.scrollHeight + 'px'; }
+    });
+  });
+})();
+
+/* ================== INTERAKSI ================== */
+// Reveal on scroll
+var io = new IntersectionObserver(function (entries) {
+  entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('revealed'); io.unobserve(e.target); } });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(function (r) { io.observe(r); });
+
+// Counter stats
+var statIO = new IntersectionObserver(function (entries) {
+  entries.forEach(function (e) {
+    if (!e.isIntersecting) return;
+    var span = e.target, target = parseInt(span.dataset.target), cur = 0;
+    var t0 = null;
+    function step(ts) {
+      if (!t0) t0 = ts;
+      var pr = Math.min((ts - t0) / 1400, 1);
+      span.textContent = Math.round(target * (1 - Math.pow(1 - pr, 3)));
+      if (pr < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+    statIO.unobserve(span);
+  });
+}, { threshold: 0.6 });
+document.querySelectorAll('.stat').forEach(function (s) { statIO.observe(s); });
+
+// Hero rotator kata
+(function () {
+  var words = ['profesional', 'portofolio', 'toko online', 'landing page', 'company profile'], i = 0, j = 0, del = false;
+  var node = document.getElementById('hero-rotator');
+  function tick() {
+    var w = words[i];
+    node.textContent = w.slice(0, j);
+    if (!del && j < w.length) { j++; setTimeout(tick, 70); }
+    else if (!del && j === w.length) { del = true; setTimeout(tick, 1800); }
+    else if (del && j > 0) { j--; setTimeout(tick, 35); }
+    else { del = false; i = (i + 1) % words.length; setTimeout(tick, 300); }
+  }
+  tick();
+})();
+
+// Navbar scroll & progress
+(function () {
+  var nav = document.getElementById('nav-inner'), prog = document.getElementById('scroll-progress');
+  window.addEventListener('scroll', function () {
+    var y = window.scrollY;
+    if (y > 20) {
+      nav.classList.add('bg-white/85', 'backdrop-blur-md', 'border', 'border-gray-100', 'rounded-2xl', 'px-4', 'mt-2', 'shadow-lg');
+      document.body.classList.contains('dark-mode') && nav.classList.add('dark:bg-[#0a0a0a]/85');
+    } else {
+      nav.classList.remove('bg-white/85', 'backdrop-blur-md', 'border', 'border-gray-100', 'rounded-2xl', 'px-4', 'mt-2', 'shadow-lg');
+    }
+    var h = document.documentElement;
+    prog.style.width = (y / (h.scrollHeight - h.clientHeight) * 100) + '%';
+  }, { passive: true });
+})();
+
+// Menu mobile
+document.getElementById('menu-btn').addEventListener('click', function () {
+  document.getElementById('mobile-menu').classList.toggle('hidden');
+});
+document.querySelectorAll('#mobile-menu a').forEach(function (a) {
+  a.addEventListener('click', function () { document.getElementById('mobile-menu').classList.add('hidden'); });
+});
+
+// Theme toggle (pola Clincoo: key clincoo_theme)
+(function () {
+  var btn = document.getElementById('theme-btn');
+  function apply() {
+    var dark = document.body.classList.contains('dark-mode');
+    document.querySelectorAll('.dark-show').forEach(function (s) { s.classList.toggle('hidden', !dark); });
+    document.querySelectorAll('.dark-hide').forEach(function (s) { s.classList.toggle('hidden', dark); });
+  }
+  try {
+    var t = localStorage.getItem('clincoo_theme') || 'Sistem (Default)';
+    var d = (t === 'Gelap') || (t === 'Sistem (Default)' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    if (d) document.body.classList.add('dark-mode');
+  } catch (e) {}
+  apply();
+  btn.addEventListener('click', function () {
+    document.body.classList.toggle('dark-mode');
+    var dark = document.body.classList.contains('dark-mode');
+    try { localStorage.setItem('clincoo_theme', dark ? 'Gelap' : 'Terang'); } catch (e) {}
+    apply();
+  });
+})();
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+  a.addEventListener('click', function (e) {
+    var id = a.getAttribute('href');
+    if (id.length > 1 && document.querySelector(id)) {
+      e.preventDefault();
+      document.querySelector(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
+</body>
+</html>
