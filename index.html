@@ -611,13 +611,34 @@ function icn(d) { return '<svg class="w-6 h-6" fill="none" stroke="currentColor"
         '<span>' + it[0] + '</span></li>';
     }).join('');
     return '<div class="reveal bento p-6 flex flex-col ' + (p.hot ? 'plan-hot relative' : '') + '">' +
-      (p.hot ? '<div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-white text-[10px] font-bold px-4 py-1 rounded-full uppercase tracking-wider whitespace-nowrap">Paling Populer</div>' : '') +
+      (p.hot ? '<div id="pro-ribbon" class="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-white text-[10px] font-bold px-4 py-1 rounded-full uppercase tracking-wider whitespace-nowrap">Discount</div>' : '') +
       '<h3 class="font-display text-lg font-bold ' + (p.hot ? 'mt-1' : '') + '">' + p.name + '</h3>' +
       '<p class="text-xs text-gray-500 mt-0.5">' + p.tagline + '</p>' +
-      '<div class="flex items-baseline my-5"><span class="font-display text-3xl font-bold">' + p.price + '</span><span class="text-xs text-gray-500 ml-1">' + p.per + '</span></div>' +
+      '<div id="pro-price-wrap" class="flex items-baseline my-5">' +
+      (p.hot ? '<span class="font-display text-3xl font-bold">Rp5.000</span><span class="text-xs text-gray-500 ml-1">/bln</span><span class="text-sm text-gray-400 line-through ml-2">Rp49.000</span>' + '<p class="w-full text-[10px] text-gray-500 mt-1" id="pro-promo-note">Promo 100 user pertama — sisa <span id="lnd-promo-rem">…</span> slot</p>' : '<span class="font-display text-3xl font-bold">' + p.price + '</span><span class="text-xs text-gray-500 ml-1">' + p.per + '</span>') + '</div>' +
       '<ul class="flex flex-col gap-2.5 mb-6 flex-1">' + items + '</ul>' +
       '<a href="' + (p.name === 'Starter' ? 'https://muzawwied.github.io/Clinqoo./' : checkout + p.name + '&billing=Bulanan') + '" class="block w-full py-3.5 rounded-full text-center text-sm font-bold transition-all active:scale-95 ' + (p.hot ? 'bg-accent text-white shadow-lg' : 'border border-gray-300 hover:border-gray-900 bg-white') + '">' + p.cta + '</a></div>';
   }).join('');
+})();
+
+// PROMO 100 USER PERTAMA — sinkron live: sisa slot & revert otomatis kalau promo selesai
+(function () {
+  try {
+    fetch('https://clincoo-be2.pages.dev/api/promo', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (p) {
+      var note = document.getElementById('pro-promo-note');
+      var ribbon = document.getElementById('pro-ribbon');
+      var wrap = document.getElementById('pro-price-wrap');
+      var active = p && p.active === true && p.remaining > 0;
+      if (!active) {
+        if (ribbon) ribbon.textContent = 'Paling Populer';
+        if (note) note.remove();
+        if (wrap) wrap.innerHTML = '<span class="font-display text-3xl font-bold">49K</span><span class="text-xs text-gray-500 ml-1">/bln</span>';
+        return;
+      }
+      var rem = document.getElementById('lnd-promo-rem');
+      if (rem) rem.textContent = String(p.remaining);
+    }).catch(function () {});
+  } catch (e) {}
 })();
 
 // FAQ
