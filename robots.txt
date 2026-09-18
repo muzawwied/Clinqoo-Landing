@@ -1,0 +1,3 @@
+# Clinqoo Landing — robots.txt
+User-agent: *
+Allow: /

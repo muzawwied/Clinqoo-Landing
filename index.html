@@ -3,782 +3,471 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png?v=8">
-  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
-<title>Clinqoo — Publikasikan Website-mu dengan Mudah</title>
-<meta name="description" content="Clinqoo — tempat publikasikan website-mu: unggah proyek, dapatkan link instan, domain kustom, HTTPS otomatis. Ada asisten AI kalau butuh bantuan.">
-<meta property="og:title" content="Clinqoo — Publikasikan Website-mu dengan Mudah">
-<meta property="og:description" content="Unggah website-mu, dapatkan link, langsung online. Simpel, cepat, tanpa ribet.">
+<title>Clinqoo — Publikasikan Situsmu dengan Mudah</title>
+<meta name="description" content="Publikasikan situsmu dengan mudah: bangun dengan AI, kelola di editor kode full-stack, dan deploy ke internet dari satu ruang kerja. Tanpa setup, mulai gratis.">
+<meta property="og:title" content="Clinqoo — Publikasikan Situsmu dengan Mudah">
+<meta property="og:description" content="Bangun dengan AI, kelola di editor kode, deploy ke internet — semuanya dalam satu tempat. Mulai gratis.">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Clinqoo">
-<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)">
-<meta property="og:image" content="https://muzawwied.github.io/Clinqoo./assets/og-image.png">
-<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://clinqoo.pages.dev/assets/og-image.png">
+<meta name="robots" content="index, follow">
+<link rel="icon" type="image/png" sizes="64x64" href="../assets/favicon.png">
+
+<link rel="stylesheet" href="/assets/tailwind.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
-<script>tailwind.config = { darkMode: ["class", ".dark-mode"] };</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"Clinqoo","url":"https://clinqoo.pages.dev/landing/","description":"Publikasikan situsmu dengan mudah — bangun dengan AI, kelola, dan deploy dari satu ruang kerja.","inLanguage":"id"}
+</script>
+
 <style>
-:root { --accent-color:#000000; --accent-hover:#1f2937; }
-body { font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif; }
-h1,h2,.font-display { font-family:'Space Grotesk',sans-serif; }
-.bg-accent { background-color:var(--accent-color) !important; }
-.text-accent { color:var(--accent-color) !important; }
-.border-accent { border-color:var(--accent-color) !important; }
-.hover\:bg-accent-hover:hover { background-color:var(--accent-hover) !important; }
-
-/* ===== Dark mode (pola Clinqoo) ===== */
-body.dark-mode { background:#0a0a0a !important; color:#f8fafc !important; }
-body.dark-mode .bg-white { background:#111111 !important; }
-body.dark-mode .text-gray-900, body.dark-mode .text-black { color:#f8fafc !important; }
-body.dark-mode .text-gray-700 { color:#cbd5e1 !important; }
-body.dark-mode .text-gray-600 { color:#94a3b8 !important; }
-body.dark-mode .text-gray-500 { color:#94a3b8 !important; }
-body.dark-mode .border-gray-100, body.dark-mode .border-gray-200 { border-color:#1e293b !important; }
-body.dark-mode .border-gray-300 { border-color:#334155 !important; }
-body.dark-mode .bg-gray-50, body.dark-mode .bg-gray-100 { background:#161616 !important; }
-body.dark-mode .hover\:bg-gray-50:hover { background:#1a1a1a !important; }
-body.dark-mode .bg-accent { background-color:#ffffff !important; color:#000000 !important; }
-body.dark-mode .text-accent { color:#ffffff !important; }
-body.dark-mode .border-accent { border-color:#ffffff !important; }
-body.dark-mode .lnd-browser { border-color:#1e293b; }
-body.dark-mode .lnd-browser-dots span { background:#334155 !important; }
-
-/* ===== Animasi reveal on scroll ===== */
-.reveal { opacity:0; transform:translateY(28px); transition:opacity .7s cubic-bezier(.4,0,.2,1), transform .7s cubic-bezier(.4,0,.2,1); }
-.reveal.revealed { opacity:1; transform:translateY(0); }
-.reveal-l { opacity:0; transform:translateX(-32px); transition:all .8s cubic-bezier(.4,0,.2,1); }
-.reveal-l.revealed { opacity:1; transform:translateX(0); }
-.reveal-r { opacity:0; transform:translateX(32px); transition:all .8s cubic-bezier(.4,0,.2,1); }
-.reveal-r.revealed { opacity:1; transform:translateX(0); }
-
-/* ===== Floating ===== */
-@keyframes floaty { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-12px); } }
-.floaty { animation:floaty 5s ease-in-out infinite; }
-.floaty-2 { animation:floaty 6.5s ease-in-out infinite; animation-delay:.8s; }
-
-/* ===== Hero grid ===== */
-.hero-grid { background-image:linear-gradient(to right, rgba(0,0,0,.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,.05) 1px, transparent 1px); background-size:44px 44px; mask-image:radial-gradient(ellipse 80% 60% at 50% 0%, #000 60%, transparent 100%); -webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 0%, #000 60%, transparent 100%); }
-body.dark-mode .hero-grid { background-image:linear-gradient(to right, rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,.05) 1px, transparent 1px); }
-
-/* ===== Text shine ===== */
-.text-shine { background:linear-gradient(110deg,#111 30%,#9ca3af 45%,#111 60%); background-size:220% 100%; -webkit-background-clip:text; background-clip:text; color:transparent; animation:shine 4s linear infinite; }
-body.dark-mode .text-shine { background:linear-gradient(110deg,#fff 30%,#64748b 45%,#fff 60%); background-size:220% 100%; -webkit-background-clip:text; background-clip:text; color:transparent; }
-@keyframes shine { to { background-position:-220% 0; } }
-
-/* ===== Browser mockup (radius kecil) ===== */
-.lnd-browser { border-radius:10px; border:1px solid #e5e7eb; overflow:hidden; background:#fff; }
-.lnd-browser-dots span { display:inline-block; width:10px; height:10px; border-radius:9999px; }
-
-/* ===== Kartu (radius kecil & rapi) ===== */
-.bento { border-radius:12px; border:1px solid #e5e7eb; background:#fff; transition:transform .35s cubic-bezier(.4,0,.2,1), box-shadow .35s; }
-.bento:hover { transform:translateY(-4px); box-shadow:0 12px 32px rgba(0,0,0,.08); }
-body.dark-mode .bento { background:#111; border-color:#1e293b; }
-
-/* ===== FAQ accordion ===== */
-.faq-body { max-height:0; overflow:hidden; transition:max-height .45s cubic-bezier(.4,0,.2,1); }
-.faq-item.open .faq-chevron { transform:rotate(180deg); }
-.faq-chevron { transition:transform .35s; }
-
-/* ===== Testimoni slider ===== */
-.tst-track { display:flex; transition:transform .5s cubic-bezier(.4,0,.2,1); }
-.tst-viewport { overflow:hidden; }
-
-/* ===== Pricing highlight ===== */
-.plan-hot { border:2px solid var(--accent-color) !important; }
-
-/* ===== Progress scroll ===== */
-#scroll-progress { position:fixed; top:0; left:0; height:2px; background:var(--accent-color); width:0%; z-index:60; }
-
-/* ===== Galeri carousel ===== */
-.lnd-shots { scrollbar-width:none; -ms-overflow-style:none; }
-.lnd-shots::-webkit-scrollbar { display:none; }
-.lnd-shots { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; }
-.lnd-shots .shot { flex:0 0 100%; scroll-snap-align:center; }
-.lnd-shots img { display:block; width:100%; height:auto; }
-.lnd-dot { transition:all .3s ease; }
-.lnd-dot.active { width:20px; background:#111; }
-body.dark-mode .lnd-dot.active { background:#fff; }
-.lnd-arrow:active { transform:scale(.92); }
+  body { font-family: 'Inter', sans-serif; }
+  ::-webkit-scrollbar { display: none; width: 0; height: 0; background: transparent; }
+  * { -ms-overflow-style: none; scrollbar-width: none; }
+  .font-display { font-family: 'Space Grotesk', 'Inter', sans-serif; }
+  @keyframes floatUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+  .rise { animation: floatUp .6s ease both; }
+  .rise-d1 { animation-delay: .08s; } .rise-d2 { animation-delay: .16s; } .rise-d3 { animation-delay: .24s; }
+  .card-hover { transition: transform .25s ease, box-shadow .25s ease; }
+  .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,.10); }
+  details.faq summary::-webkit-details-marker { display: none; }
+  details.faq summary { cursor: pointer; list-style: none; }
+  details.faq summary .chev { transition: transform .2s ease; }
+  details.faq[open] summary .chev { transform: rotate(180deg); }
 </style>
-</head>
-<body class="bg-white text-gray-900 antialiased">
-<div id="scroll-progress"></div>
 
-<!-- ================= HEADER ================= -->
-<header id="nav" class="fixed top-0 inset-x-0 z-50 bg-white border-b border-gray-100 transition-shadow duration-300">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6">
-    <div class="flex items-center justify-between h-16">
-      <a href="#" class="flex items-center gap-2.5">
-        <img src="https://muzawwied.github.io/Clinqoo./assets/favicon.svg" alt="Logo Clinqoo" class="w-7 h-7 rounded-full border border-gray-200">
-        <span class="font-display font-bold text-lg tracking-tight">Clinqoo</span>
+<script>
+  (function() {
+    try {
+      var t = localStorage.getItem('clinqoo_theme') || 'Sistem (Default)';
+      var isDark = (t === 'Gelap') || ((t === 'Sistem (Default)' || !t) && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      if (isDark) {
+        document.documentElement.classList.add('dark');
+        document.documentElement.style.colorScheme = 'dark';
+      } else {
+        document.documentElement.classList.remove('dark');
+        document.documentElement.style.colorScheme = 'light';
+      }
+    } catch(e) {}
+  })();
+</script>
+</head>
+<body class="bg-white dark:bg-[#0a0a0a] text-gray-900 dark:text-white min-h-screen antialiased">
+
+<!-- NAVBAR -->
+<header class="sticky top-0 z-40 border-b border-gray-100 dark:border-[#222] bg-white/90 dark:bg-[#0a0a0a]/90 backdrop-blur-md">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
+    <a href="/landing/" class="flex items-center gap-2">
+      <img src="../assets/logo-clinqoo.png" alt="Clinqoo" class="w-7 h-7 rounded-full shadow-sm">
+      <span class="font-bold text-[15px]">Clinqoo</span>
+    </a>
+    <nav class="hidden sm:flex items-center gap-6 text-sm text-gray-600 dark:text-gray-300">
+      <a href="#fitur" class="hover:text-black dark:hover:text-white transition-colors">Fitur</a>
+      <a href="#template" class="hover:text-black dark:hover:text-white transition-colors">Template</a>
+      <a href="#cara-kerja" class="hover:text-black dark:hover:text-white transition-colors">Cara Kerja</a>
+      <a href="#faq" class="hover:text-black dark:hover:text-white transition-colors">FAQ</a>
+    </nav>
+    <div class="flex items-center gap-2">
+      <a href="/auth/" class="px-5 py-2 text-sm font-semibold bg-black text-white dark:bg-white dark:text-black rounded-full hover:opacity-85 transition-opacity shadow-sm">
+        Daftar / Masuk
       </a>
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
-        <a href="#fitur" class="hover:text-black transition-colors">Fitur</a>
-        <a href="#cara-kerja" class="hover:text-black transition-colors">Cara Kerja</a>
-        <a href="#editor" class="hover:text-black transition-colors">Editor</a>
-        <a href="#harga" class="hover:text-black transition-colors">Harga</a>
-        <a href="#faq" class="hover:text-black transition-colors">FAQ</a>
-      </nav>
-      <div class="flex items-center gap-2.5">
-        <a href="https://muzawwied.github.io/Clinqoo./" class="hidden sm:inline-flex px-4 py-2 rounded-full border border-gray-200 text-sm font-semibold hover:bg-gray-50 transition-colors">Masuk</a>
-        <a href="https://muzawwied.github.io/Clinqoo./" class="px-4 py-2 rounded-full bg-accent text-white text-sm font-semibold hover:bg-accent-hover transition-all active:scale-95">Mulai Gratis</a>
-        <button id="menu-btn" class="md:hidden w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center" aria-label="Menu">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
-        </button>
-      </div>
-    </div>
-    <div id="mobile-menu" class="md:hidden hidden border-t border-gray-100 pt-2 pb-3">
-      <a href="#fitur" class="block px-4 py-2.5 hover:bg-gray-50 rounded-lg text-sm font-medium">Fitur</a>
-      <a href="#cara-kerja" class="block px-4 py-2.5 hover:bg-gray-50 rounded-lg text-sm font-medium">Cara Kerja</a>
-      <a href="#editor" class="block px-4 py-2.5 hover:bg-gray-50 rounded-lg text-sm font-medium">Editor</a>
-      <a href="#harga" class="block px-4 py-2.5 hover:bg-gray-50 rounded-lg text-sm font-medium">Harga</a>
-      <a href="#faq" class="block px-4 py-2.5 hover:bg-gray-50 rounded-lg text-sm font-medium">FAQ</a>
-      <a href="https://muzawwied.github.io/Clinqoo./" class="block mt-2 px-4 py-3 rounded-full bg-accent text-white text-sm font-bold text-center">Mulai Gratis</a>
     </div>
   </div>
 </header>
 
-<!-- ================= HERO ================= -->
-<section class="relative overflow-hidden pt-32 sm:pt-40 pb-20">
-  <div class="hero-grid absolute inset-0 pointer-events-none"></div>
-  <div class="relative max-w-6xl mx-auto px-4 sm:px-6 text-center">
-    <h1 class="reveal font-display text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05]">
-      Publikasikan website-mu,<br class="hidden sm:block">
-      <span id="hero-rotator" class="text-shine">langsung online</span>
-    </h1>
-    <p class="reveal mt-6 text-base sm:text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
-      Clinqoo adalah tempat mempublikasikan website. Unggah proyekmu, dapatkan link, dan website-mu online untuk semua orang. Kalau butuh bantuan, asisten AI siap membantu.
-    </p>
-    <div class="reveal mt-9 flex flex-col sm:flex-row items-center justify-center gap-3">
-      <a href="https://muzawwied.github.io/Clinqoo./" class="w-full sm:w-auto px-8 py-4 rounded-full bg-accent text-white font-bold text-base hover:bg-accent-hover transition-all active:scale-95 shadow-lg">
+<!-- HERO -->
+<section class="relative overflow-hidden">
+  <div id="hero-bg-light" class="absolute inset-0 bg-cover bg-center transition-opacity duration-700"></div>
+  <div id="hero-bg-dark" class="absolute inset-0 hidden dark:block bg-cover bg-center transition-opacity duration-700"></div>
+  <div class="relative max-w-6xl mx-auto px-4 sm:px-6 pt-24 pb-24 text-center">
+    <h1 id="hero-title" class="rise font-display font-bold text-4xl sm:text-5xl md:text-6xl tracking-tight max-w-3xl mx-auto leading-[1.08]"></h1>
+    <p id="hero-subtitle" class="rise rise-d1 text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mt-5 leading-relaxed"></p>
+    <div class="rise rise-d2 flex flex-col sm:flex-row items-center justify-center gap-3 mt-8">
+      <a href="/auth/" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-black text-white dark:bg-white dark:text-black font-semibold text-base hover:opacity-85 transition-opacity shadow-lg shadow-black/10">
         Mulai Gratis Sekarang
       </a>
-      <a href="#cara-kerja" class="w-full sm:w-auto px-8 py-4 rounded-full border border-gray-300 font-semibold text-base hover:bg-gray-50 transition-all active:scale-95">
-        Lihat Cara Kerjanya
+      <a href="/templates/" class="w-full sm:w-auto px-6 py-3.5 rounded-xl border border-gray-300 dark:border-[#2f2f2f] font-semibold text-base hover:bg-gray-50 dark:hover:bg-[#141414] transition-colors">
+        Lihat Galeri Template
       </a>
     </div>
-    <p class="reveal mt-4 text-xs text-gray-400">Tanpa kartu kredit. Paket Starter gratis selamanya.</p>
+    <p class="rise rise-d3 text-xs text-gray-500 dark:text-gray-500 mt-4">Gratis untuk memulai — tanpa kartu kredit.</p>
+  </div>
+</section>
+<script>
+(function () {
+  // Background diambil langsung dari aset halaman utama clinqoo.pages.dev (bg-light-morning / bg-dark-night2)
+  var lightUrl = '/assets/backgrounds/bg-light-morning.webp';
+  var darkUrl = '/assets/backgrounds/bg-dark-night2.webp';
+  var texts = [
+    { t: 'Dari ide ke online, dalam satu ruang kerja', s: 'Clinqoo memadukan <strong>editor kode full-stack</strong>, <strong>template siap pakai</strong>, dan <strong>deploy sekali klik</strong> — dibantu <strong>asisten AI</strong> di setiap langkah. Semuanya dari browser, tanpa setup.' },
+    { t: 'Ngoding, desain, deploy. Selesai hari ini.', s: '<strong>Asisten AI</strong> siap bantu dari nol sampai online. Pakai <strong>template siap pakai</strong> atau tulis kode sendiri di editor full-stack, lalu <strong>deploy sekali klik</strong>.' },
+    { t: 'Situsmu online, secepat kamu mengetik', s: 'Rancang dengan <strong>AI</strong>, sempurnakan di <strong>editor kode full-stack</strong>, publikasikan dengan <strong>satu klik</strong>. Tanpa install, tanpa ribet.' },
+    { t: 'Bangun situs impianmu, tanpa drama teknis', s: '<strong>Template siap pakai</strong>, <strong>editor full-stack</strong>, dan <strong>asisten AI</strong> yang siap membantu — semua dalam satu ruang kerja. Publikasikan cuma sekali klik.' },
+    { t: 'Ide di kepala, situs di internet — hari ini', s: 'Clinqoo gabungkan <strong>editor kode</strong>, <strong>template</strong>, dan <strong>asisten AI</strong> dalam satu tempat. Rancang, sempurnakan, dan <strong>deploy sekali klik</strong>.' }
+  ];
+  // Variasi posisi & tint tipis agar background yang sama tetap terasa berbeda tiap refresh
+  var positions = ['center', 'top', 'bottom', '30% 20%', '70% 30%', 'center 80%'];
+  var tints = [
+    { l: 'rgba(255,255,255,0.82)', d: 'rgba(10,10,10,0.72)' },
+    { l: 'rgba(238,242,255,0.82)', d: 'rgba(9,12,20,0.74)' },
+    { l: 'rgba(255,247,237,0.82)', d: 'rgba(18,10,6,0.74)' },
+    { l: 'rgba(236,253,245,0.82)', d: 'rgba(6,16,12,0.74)' }
+  ];
+  function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+  var pos = pick(positions);
+  var tint = pick(tints);
+  var copy = pick(texts);
+  var bgLight = document.getElementById('hero-bg-light');
+  var bgDark = document.getElementById('hero-bg-dark');
+  bgLight.style.backgroundPosition = pos;
+  bgDark.style.backgroundPosition = pos;
+  bgLight.style.backgroundImage = "linear-gradient(180deg, " + tint.l + " 0%, rgba(255,255,255,0.92) 55%, #ffffff 100%), url('" + lightUrl + "')";
+  bgDark.style.backgroundImage = "linear-gradient(180deg, " + tint.d + " 0%, rgba(10,10,10,0.85) 55%, #0a0a0a 100%), url('" + darkUrl + "')";
+  document.getElementById('hero-title').textContent = copy.t;
+  document.getElementById('hero-subtitle').innerHTML = copy.s;
+})();
+</script>
 
-    <!-- Mockup browser -->
-    <div class="reveal mt-16 relative max-w-4xl mx-auto">
-      <div class="floaty absolute -left-4 sm:left-4 top-14 z-10 bg-white border border-gray-200 rounded-lg shadow-xl px-4 py-3 text-left">
-        <div class="flex items-center gap-2 text-[11px] font-bold text-gray-900"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20 6 9 17l-5-5"/></svg> Website online</div>
-        <p class="text-[10px] text-gray-400 mt-0.5">tokokopi.pages.dev · 1 menit</p>
-      </div>
-      <div class="floaty-2 absolute -right-2 sm:right-4 bottom-16 z-10 bg-white border border-gray-200 rounded-lg shadow-xl px-4 py-3 text-left">
-        <div class="flex items-center gap-2 text-[11px] font-bold text-gray-900"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg> AI selesai membangun</div>
-        <p class="text-[10px] text-gray-400 mt-0.5">Siap untuk dipublikasikan</p>
-      </div>
-      <div class="lnd-browser shadow-2xl">
-        <div class="flex items-center gap-2 px-4 py-3 bg-gray-50 border-b border-gray-100">
-          <div class="lnd-browser-dots flex items-center gap-1.5"><span style="background:#e5e7eb"></span><span style="background:#e5e7eb"></span><span style="background:#e5e7eb"></span></div>
-          <div class="flex-1 mx-3">
-            <div class="bg-white border border-gray-100 rounded-full px-4 py-1 text-[10px] text-gray-400 text-left truncate">tokokopi.pages.dev</div>
-          </div>
-        </div>
-        <div class="p-4 sm:p-6 text-left bg-white">
-          <div class="rounded-lg border border-gray-100 bg-gray-50 p-4 mb-3">
-            <div class="flex items-start gap-3">
-              <div class="w-7 h-7 rounded-full bg-gray-900 flex items-center justify-center shrink-0"><svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg></div>
-              <div class="flex-1">
-                <p class="text-xs font-bold">Buat landing page toko kopi dengan warna coklat hangat</p>
-                <p class="text-[10px] text-gray-400 mt-0.5">Kamu · baru saja</p>
-              </div>
-            </div>
-          </div>
-          <div class="grid grid-cols-3 gap-3">
-            <div class="rounded-lg bg-gray-100 h-20 animate-pulse"></div>
-            <div class="rounded-lg bg-gray-100 h-20 animate-pulse" style="animation-delay:.2s"></div>
-            <div class="rounded-lg bg-gray-100 h-20 animate-pulse" style="animation-delay:.4s"></div>
-          </div>
-          <div class="mt-3 rounded-lg bg-gray-100 h-3 w-2/3"></div>
-          <div class="mt-2 rounded-lg bg-gray-100 h-3 w-1/2"></div>
-        </div>
-      </div>
+<!-- STRIP STATISTIK -->
+<section class="border-y border-gray-100 dark:border-[#1a1a1a] bg-gray-50/80 dark:bg-[#0d0d0d]">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+    <div>
+      <p class="font-display font-bold text-3xl">3</p>
+      <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Langkah dari ide ke online</p>
+    </div>
+    <div>
+      <p class="font-display font-bold text-3xl">5+</p>
+      <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Template siap pakai</p>
+    </div>
+    <div>
+      <p class="font-display font-bold text-3xl">1</p>
+      <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Ruang kerja lengkap</p>
+    </div>
+    <div>
+      <p class="font-display font-bold text-3xl">0</p>
+      <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Setup &amp; konfigurasi</p>
     </div>
   </div>
 </section>
 
-
-<!-- ================= GALERI TAMPILAN ASLI ================= -->
-<section id="galeri" class="py-16 sm:py-20 bg-gray-50 scroll-mt-20">
-  <div class="max-w-5xl mx-auto px-4 sm:px-6">
-    <h2 class="reveal text-2xl sm:text-4xl font-bold tracking-tight text-center">Lihat di dalam Clinqoo</h2>
-    <p class="reveal mt-3 text-sm sm:text-base text-gray-500 text-center max-w-xl mx-auto">Tampilan asli aplikasi dan editor — langsung dari Clinqoo, bukan ilustrasi.</p>
-    <div class="reveal mt-10 relative">
-      <div class="lnd-browser shadow-xl">
-        <div class="flex items-center gap-2 px-4 py-3 bg-gray-50 border-b border-gray-100">
-          <div class="lnd-browser-dots flex items-center gap-1.5"><span style="background:#e5e7eb"></span><span style="background:#e5e7eb"></span><span style="background:#e5e7eb"></span></div>
-          <div class="flex-1 mx-3">
-            <div id="lnd-shot-url" class="bg-white border border-gray-100 rounded-full px-4 py-1 text-[10px] text-gray-400 text-left truncate">muzawwied.github.io/Clinqoo.</div>
-          </div>
-        </div>
-        <div id="lnd-shots" class="lnd-shots">
-          <div class="shot"><img src="assets/shots/workspace.png" alt="Beranda Clinqoo — daftar proyek" loading="lazy"></div>
-          <div class="shot"><img src="assets/shots/proyek.png" alt="Workspace proyek Clinqoo — file dan pengaturan" loading="lazy"></div>
-          <div class="shot"><img src="assets/shots/editor.png" alt="Editor kode Clinqoo — mengedit berkas di browser" loading="lazy"></div>
-        </div>
+<!-- FITUR -->
+<section id="fitur" class="max-w-6xl mx-auto px-4 sm:px-6 py-20">
+  <div class="text-center mb-12">
+    <h2 class="font-display font-bold text-3xl sm:text-4xl tracking-tight">Semua yang kamu butuhkan untuk online</h2>
+    <p class="text-gray-600 dark:text-gray-400 mt-3 max-w-xl mx-auto">Satu ruang kerja lengkap — dari ide sampai situsmu hidup di internet.</p>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+    <div class="card-hover rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-gray-50/60 dark:bg-[#111] p-6 shadow-sm hover:shadow-md transition-shadow">
+      <div class="w-11 h-11 rounded-xl bg-black dark:bg-white text-white dark:text-black flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21 15-2-2-2 2"/><path d="M3 5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5Z"/><path d="M7 15h.01"/><path d="M11 15h2"/></svg>
       </div>
-      <button id="lnd-prev" aria-label="Sebelumnya" class="lnd-arrow absolute left-2 sm:-left-5 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white border border-gray-200 shadow-lg flex items-center justify-center hover:bg-gray-50 transition-all z-10"><svg class="w-4 h-4 text-gray-700" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m15 18-6-6 6-6"/></svg></button>
-      <button id="lnd-next" aria-label="Berikutnya" class="lnd-arrow absolute right-2 sm:-right-5 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white border border-gray-200 shadow-lg flex items-center justify-center hover:bg-gray-50 transition-all z-10"><svg class="w-4 h-4 text-gray-700" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m9 18 6-6-6-6"/></svg></button>
+      <h3 class="font-semibold text-base mt-4">Asisten AI</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 leading-relaxed">Butuh bantuan? AI Clinqoo siap membantu — memberi saran, menjelaskan, mencari referensi, sampai mengatur file workspace-mu. Kamu yang pegang kendali penuh atas situsmu.</p>
     </div>
-    <div class="reveal mt-6 flex items-center justify-center gap-2" id="lnd-dots"></div>
-    <p id="lnd-caption" class="reveal mt-3 text-center text-sm text-gray-500">Beranda — semua proyekmu dalam satu workspace</p>
+    <div class="card-hover rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-gray-50/60 dark:bg-[#111] p-6 shadow-sm hover:shadow-md transition-shadow">
+      <div class="w-11 h-11 rounded-xl bg-black dark:bg-white text-white dark:text-black flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      </div>
+      <h3 class="font-semibold text-base mt-4">Editor Kode Full-Stack</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 leading-relaxed">Editor modern berbasis Monaco dengan terminal, version control, dan live preview — bekerja langsung di browser, di mana saja.</p>
+    </div>
+    <div class="card-hover rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-gray-50/60 dark:bg-[#111] p-6 shadow-sm hover:shadow-md transition-shadow">
+      <div class="w-11 h-11 rounded-xl bg-black dark:bg-white text-white dark:text-black flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 12a9 9 0 1 1-2.64-6.35"/><polyline points="21.5 3 21.5 9 15.5 9"/></svg>
+      </div>
+      <h3 class="font-semibold text-base mt-4">Deploy Sekali Klik</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 leading-relaxed">Publish situsmu ke internet dalam sekali klik — atau suruh AI yang menekan tombol deploy-nya. Build cepat, HTTPS otomatis.</p>
+    </div>
+    <div class="card-hover rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-gray-50/60 dark:bg-[#111] p-6 shadow-sm hover:shadow-md transition-shadow">
+      <div class="w-11 h-11 rounded-xl bg-black dark:bg-white text-white dark:text-black flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+      </div>
+      <h3 class="font-semibold text-base mt-4">Template Siap Pakai</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 leading-relaxed">Portfolio, landing page SaaS, toko online top-up game, sampai aplikasi manajemen tugas — pilih, personalisasi, langsung jalan.</p>
+    </div>
+    <div class="card-hover rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-gray-50/60 dark:bg-[#111] p-6 shadow-sm hover:shadow-md transition-shadow">
+      <div class="w-11 h-11 rounded-xl bg-black dark:bg-white text-white dark:text-black flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <h3 class="font-semibold text-base mt-4">Kolaborasi &amp; Workspace</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 leading-relaxed">Workspace per-proyek dengan file &amp; folder, tim AI multi-ahli, dan sinkronisasi antar perangkat lewat akun Clinqoo-mu.</p>
+    </div>
+    <div class="card-hover rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-gray-50/60 dark:bg-[#111] p-6 shadow-sm hover:shadow-md transition-shadow">
+      <div class="w-11 h-11 rounded-xl bg-black dark:bg-white text-white dark:text-black flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>
+      </div>
+      <h3 class="font-semibold text-base mt-4">Aman &amp; Kamu Punya Datanya</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 leading-relaxed">Kode dan file proyekmu milikmu — ekspor kapan saja sebagai HTML tunggal atau arsip ZIP. Kebijakan privasi yang jelas dan transparan.</p>
+    </div>
   </div>
 </section>
 
-<!-- ================= STATS ================= -->
-<section class="py-16 sm:py-20 border-t border-gray-100">
+<!-- SOROTAN AI -->
+<section class="bg-gray-50/80 dark:bg-[#0d0d0d] border-y border-gray-100 dark:border-[#1a1a1a] py-20 relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-br from-transparent to-gray-100/50 dark:to-white/5 pointer-events-none"></div>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-10 md:gap-16 items-center relative z-10">
+    <div>
+      <h2 class="font-display font-bold text-3xl sm:text-4xl tracking-tight">Asisten AI yang siap membantu, kamu yang pegang kendali</h2>
+      <p class="text-gray-600 dark:text-gray-400 mt-4 leading-relaxed">
+        AI Clinqoo hadir sebagai asisten di ruang kerjamu: menjelaskan konsep, memberi saran kode,
+        mencari info terbaru, dan mengurus hal-hal kecil — sementara kamu fokus membangun dan mengelola situsmu.
+        Untuk pekerjaan yang lebih besar, aktifkan <span class="font-semibold text-black dark:text-white">Mode Kolaborasi</span> dan bekerja searah dengan tim AI multi-ahli.
+      </p>
+      <a href="/auth/" class="inline-block mt-6 px-5 py-3 rounded-xl bg-black text-white dark:bg-white dark:text-black font-semibold text-sm hover:opacity-85 transition-opacity shadow-sm hover:shadow-md">Coba Asisten AI &rarr;</a>
+    </div>
+    <ul class="space-y-4">
+      <li class="flex items-start gap-3">
+        <span class="mt-0.5 w-6 h-6 rounded-full bg-black dark:bg-white text-white dark:text-black flex items-center justify-center flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+        <div><p class="font-semibold text-sm">Akses workspace penuh</p><p class="text-sm text-gray-500 dark:text-gray-400 mt-0.5">Baca, tulis, dan atur file &amp; folder proyek langsung dari percakapan.</p></div>
+      </li>
+      <li class="flex items-start gap-3">
+        <span class="mt-0.5 w-6 h-6 rounded-full bg-black dark:bg-white text-white dark:text-black flex items-center justify-center flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+        <div><p class="font-semibold text-sm">Sandbox kode &amp; verifikasi</p><p class="text-sm text-gray-500 dark:text-gray-400 mt-0.5">Jalankan Python/CLI untuk menghitung dan menguji kode sebelum menjawab.</p></div>
+      </li>
+      <li class="flex items-start gap-3">
+        <span class="mt-0.5 w-6 h-6 rounded-full bg-black dark:bg-white text-white dark:text-black flex items-center justify-center flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+        <div><p class="font-semibold text-sm">Web search real-time</p><p class="text-sm text-gray-500 dark:text-gray-400 mt-0.5">Baca halaman web dan cari info terbaru saat menjawab pertanyaanmu.</p></div>
+      </li>
+      <li class="flex items-start gap-3">
+        <span class="mt-0.5 w-6 h-6 rounded-full bg-black dark:bg-white text-white dark:text-black flex items-center justify-center flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+        <div><p class="font-semibold text-sm">Deploy lewat percakapan</p><p class="text-sm text-gray-500 dark:text-gray-400 mt-0.5">Katakan saja &ldquo;deploy situsku&rdquo; — AI yang mempublikasikannya untukmu.</p></div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- SOROTAN EDITOR -->
+<section class="max-w-6xl mx-auto px-4 sm:px-6 py-20 grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+  <ul class="space-y-4 order-2 md:order-1">
+    <li class="flex items-start gap-3">
+      <span class="mt-0.5 w-6 h-6 rounded-full bg-black dark:bg-white text-white dark:text-black flex items-center justify-center flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+      <div><p class="font-semibold text-sm">Editor Monaco — standar VS Code</p><p class="text-sm text-gray-500 dark:text-gray-400 mt-0.5">Syntax highlighting, multi-tab, auto-save, dan command palette.</p></div>
+    </li>
+    <li class="flex items-start gap-3">
+      <span class="mt-0.5 w-6 h-6 rounded-full bg-black dark:bg-white text-white dark:text-black flex items-center justify-center flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+      <div><p class="font-semibold text-sm">Terminal bawaan</p><p class="text-sm text-gray-500 dark:text-gray-400 mt-0.5">ls, cat, grep, npm run — perintah favoritmu langsung dari browser.</p></div>
+    </li>
+    <li class="flex items-start gap-3">
+      <span class="mt-0.5 w-6 h-6 rounded-full bg-black dark:bg-white text-white dark:text-black flex items-center justify-center flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+      <div><p class="font-semibold text-sm">Version control ala git</p><p class="text-sm text-gray-500 dark:text-gray-400 mt-0.5">Commit, log, dan checkout versi — kembali ke versi mana pun kapan pun.</p></div>
+    </li>
+    <li class="flex items-start gap-3">
+      <span class="mt-0.5 w-6 h-6 rounded-full bg-black dark:bg-white text-white dark:text-black flex items-center justify-center flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+      <div><p class="font-semibold text-sm">Ekspor bebas</p><p class="text-sm text-gray-500 dark:text-gray-400 mt-0.5">Unduh proyek sebagai satu file HTML atau arsip ZIP — kodenya 100% milikmu.</p></div>
+    </li>
+  </ul>
+  <div class="order-1 md:order-2">
+    <h2 class="font-display font-bold text-3xl sm:text-4xl tracking-tight">Editor kode sekelas IDE, langsung di browser</h2>
+    <p class="text-gray-600 dark:text-gray-400 mt-4 leading-relaxed">
+      Mau turun tangan sendiri? Editor Clinqoo memberi kamu pengalaman coding yang familiar dan lengkap —
+      tanpa install apa pun, buka dari perangkat mana saja.
+    </p>
+    <a href="/auth/" class="inline-block mt-6 px-5 py-3 rounded-xl border border-gray-300 dark:border-[#2f2f2f] font-semibold text-sm hover:bg-gray-50 dark:hover:bg-[#141414] transition-colors shadow-sm hover:shadow-md">Buka Editor &rarr;</a>
+  </div>
+</section>
+
+<!-- TEMPLATE -->
+<section id="template" class="bg-gray-50/80 dark:bg-[#0d0d0d] border-y border-gray-100 dark:border-[#1a1a1a] py-20">
   <div class="max-w-6xl mx-auto px-4 sm:px-6">
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
-      <div class="reveal bento p-6 text-center">
-        <p class="font-display text-3xl sm:text-4xl font-bold"><span class="stat" data-target="120">0</span>+</p>
-        <p class="text-xs text-gray-500 mt-1 font-medium">Website dibangun & dipublikasikan</p>
-      </div>
-      <div class="reveal bento p-6 text-center" style="transition-delay:.1s">
-        <p class="font-display text-3xl sm:text-4xl font-bold"><span class="stat" data-target="1">0</span> menit</p>
-        <p class="text-xs text-gray-500 mt-1 font-medium">Rata-rata sampai website online</p>
-      </div>
-      <div class="reveal bento p-6 text-center" style="transition-delay:.2s">
-        <p class="font-display text-3xl sm:text-4xl font-bold"><span class="stat" data-target="3">0</span> langkah</p>
-        <p class="text-xs text-gray-500 mt-1 font-medium">Dari prompt sampai online</p>
-      </div>
-      <div class="reveal bento p-6 text-center" style="transition-delay:.3s">
-        <p class="font-display text-3xl sm:text-4xl font-bold"><span class="stat" data-target="0">0</span> coding</p>
-        <p class="text-xs text-gray-500 mt-1 font-medium">Yang perlu kamu kuasai</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= FITUR UTAMA ================= -->
-<section id="fitur" class="py-16 sm:py-24 scroll-mt-20">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6">
-    <div class="text-center max-w-2xl mx-auto mb-14">
-      <p class="reveal text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">Fokus kami</p>
-      <h2 class="reveal font-display text-3xl sm:text-5xl font-bold tracking-tight">Satu tempat untuk<br>publikasi semua website-mu</h2>
-      <p class="reveal mt-4 text-gray-500 text-sm sm:text-base">Unggah, atur domain, publikasikan — dan asisten AI membantu kalau kamu butuh. Simpel, cepat, tanpa ribet.</p>
-    </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="bento-grid"></div>
-  </div>
-</section>
-
-<!-- ================= CARA KERJA ================= -->
-<section id="cara-kerja" class="py-16 sm:py-24 bg-gray-50 scroll-mt-20">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6">
-    <div class="text-center max-w-2xl mx-auto mb-14">
-      <p class="reveal text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">Simpel banget</p>
-      <h2 class="reveal font-display text-3xl sm:text-5xl font-bold tracking-tight">Tiga langkah, website online</h2>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="steps-grid"></div>
-    <div class="reveal mt-12 text-center">
-      <a href="https://muzawwied.github.io/Clinqoo./" class="inline-flex px-8 py-4 rounded-full bg-accent text-white font-bold hover:bg-accent-hover transition-all active:scale-95 shadow-lg">Coba Sekarang — Gratis</a>
-    </div>
-  </div>
-</section>
-
-<!-- ================= EDITOR SHOWCASE ================= -->
-<section id="editor" class="py-16 sm:py-24 scroll-mt-20">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <div class="reveal-l">
-        <p class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">Editor Kode Clinqoo</p>
-        <h2 class="font-display text-3xl sm:text-5xl font-bold tracking-tight leading-tight">Mau sempurnakan sendiri?<br>Editor lengkap menunggu</h2>
-        <p class="mt-5 text-gray-500 leading-relaxed">Sebelum dipublikasikan, sempurnakan dulu di editor. Clinqoo punya file manager, live preview, dan asisten AI yang siap membantu — kalau kamu mau.</p>
-        <div class="mt-7 space-y-4" id="editor-points"></div>
-        <div class="mt-8 flex flex-wrap gap-3">
-          <a href="https://muzawwied.github.io/Clinqoo-Editor/" class="px-6 py-3.5 rounded-full bg-accent text-white font-bold text-sm hover:bg-accent-hover transition-all active:scale-95">Buka Editor</a>
-          <a href="https://muzawwied.github.io/Clinqoo./" class="px-6 py-3.5 rounded-full border border-gray-300 font-semibold text-sm hover:bg-gray-50 transition-all">Daftar Dulu</a>
-        </div>
-      </div>
-      <div class="reveal-r">
-        <div class="lnd-browser shadow-2xl">
-          <div class="flex items-center gap-2 px-4 py-3 bg-gray-50 border-b border-gray-100">
-            <div class="lnd-browser-dots flex items-center gap-1.5"><span style="background:#e5e7eb"></span><span style="background:#e5e7eb"></span><span style="background:#e5e7eb"></span></div>
-            <div class="text-[10px] text-gray-400 ml-2 font-mono">Clinqoo Editor — index.html</div>
-          </div>
-          <div class="flex text-[10px] font-mono border-b border-gray-100">
-            <div class="px-4 py-2 bg-white border-r border-gray-100 font-bold text-gray-700">index.html</div>
-            <div class="px-4 py-2 text-gray-400 border-r border-gray-100">style.css</div>
-            <div class="px-4 py-2 text-gray-400">app.js</div>
-          </div>
-          <pre class="lnd-code p-5 text-[11px] leading-relaxed text-gray-700 overflow-hidden"><code>&lt;<span class="text-gray-900 font-semibold">section</span> <span class="text-gray-500">class</span>=<span class="text-gray-500">"hero"</span>&gt;
-  &lt;<span class="text-gray-900 font-semibold">h1</span>&gt;Kopi Senja — Rasa Hangat&lt;/<span class="text-gray-900 font-semibold">h1</span>&gt;
-  &lt;<span class="text-gray-900 font-semibold">p</span>&gt;Biji arabika pilihan, disangrar
-     dengan cinta setiap pagi.&lt;/<span class="text-gray-900 font-semibold">p</span>&gt;
-  &lt;<span class="text-gray-900 font-semibold">button</span>&gt;Pesan Sekarang&lt;/<span class="text-gray-900 font-semibold">button</span>&gt;
-&lt;/<span class="text-gray-900 font-semibold">section</span>&gt;</code></pre>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= KOLABORASI AI ================= -->
-<section class="py-16 sm:py-24 bg-gray-50">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <div class="reveal-l order-2 lg:order-1">
-        <div class="bg-white rounded-xl border border-gray-200 p-5 space-y-3">
-          <div class="flex items-start gap-3">
-            <div class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center shrink-0"><svg class="w-4 h-4 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2v-2a2 2 0 00-2-2H5a2 2 0 00-2 2v2a2 2 0 002 2z"/></svg></div>
-            <div><p class="text-xs font-bold text-gray-900">Desainer AI</p><p class="text-[11px] text-gray-500 leading-relaxed">Saya usul tipografi besar dan tata letak yang bersih untuk halaman utama.</p></div>
-          </div>
-          <div class="flex items-start gap-3">
-            <div class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center shrink-0"><svg class="w-4 h-4 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg></div>
-            <div><p class="text-xs font-bold text-gray-900">Programmer AI</p><p class="text-[11px] text-gray-500 leading-relaxed">Struktur halaman siap. Tinggal gabungkan dan website siap dipublikasikan.</p></div>
-          </div>
-          <div class="rounded-lg bg-gray-50 border border-gray-100 p-3 flex items-center gap-2.5">
-            <span class="w-2 h-2 rounded-full bg-gray-400"></span>
-            <p class="text-[11px] font-medium text-gray-500">Tim AI sedang menggabungkan hasil kerjanya…</p>
-          </div>
-        </div>
-      </div>
-      <div class="reveal-r order-1 lg:order-2">
-        <p class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">Fitur bantuan</p>
-        <h2 class="font-display text-3xl sm:text-5xl font-bold tracking-tight leading-tight">Sibuk? Serahkan<br>ke asisten AI</h2>
-        <p class="mt-5 text-gray-500 leading-relaxed">AI di Clinqoo bukan penggantimu — cuma pembantu. Di mode Kolaborasi, beberapa agen AI berdiskusi menyiapkan halaman atau memperbaiki kode, lalu kamu yang memutuskan dan mempublikasikan.</p>
-        <div class="mt-7 rounded-lg border border-gray-200 bg-white px-5 py-4 text-sm text-gray-600 font-medium">
-          Tersedia mulai paket Pro — upgrade kapan pun dari dalam Clinqoo.
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= PUBLIKASIKAN ================= -->
-<section class="py-16 sm:py-24">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <div class="reveal-l">
-        <p class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">Publikasikan</p>
-        <h2 class="font-display text-3xl sm:text-5xl font-bold tracking-tight leading-tight">Sekali klik,<br>website-mu online</h2>
-        <p class="mt-5 text-gray-500 leading-relaxed">Ini inti Clinqoo. Unggah proyekmu, klik publikasikan, dan website-mu langsung online lengkap dengan HTTPS — atau pasang domain sendiri. Tanpa ribet.</p>
-        <div class="mt-7 grid grid-cols-1 sm:grid-cols-2 gap-3" id="deploy-points"></div>
-      </div>
-      <div class="reveal-r">
-        <div class="bg-white rounded-xl border border-gray-200 p-6">
-          <div class="flex items-center justify-between mb-4">
-            <p class="text-sm font-bold">Status Publikasi</p>
-            <span class="px-2.5 py-1 rounded-md bg-gray-900 text-white text-[10px] font-bold">ONLINE</span>
-          </div>
-          <div class="rounded-lg bg-gray-50 border border-gray-100 p-4 font-mono text-[11px] text-gray-500 space-y-2">
-            <p><span class="text-gray-300">$</span> publikasikan</p>
-            <p class="text-gray-400">→ Mengunggah 24 berkas…</p>
-            <p class="text-gray-400">→ Menyiapkan HTTPS…</p>
-            <p class="text-gray-900 font-semibold">✓ Online — tokokopi.pages.dev</p>
-          </div>
-          <div class="mt-4 flex items-center gap-2 rounded-lg border border-gray-200 px-4 py-3">
-            <svg class="w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 009 9"/></svg>
-            <p class="text-xs font-medium text-gray-600">tokokopi.com</p>
-            <span class="ml-auto text-[10px] font-bold text-gray-900">Terhubung</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= TESTIMONI ================= -->
-<section class="py-16 sm:py-24 overflow-hidden bg-gray-50">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6">
-    <div class="text-center max-w-2xl mx-auto mb-12">
-      <p class="reveal text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">Kata pengguna</p>
-      <h2 class="reveal font-display text-3xl sm:text-5xl font-bold tracking-tight">Sudah publikasikan, katanya</h2>
-    </div>
-    <div class="reveal relative">
-      <div class="tst-viewport">
-        <div class="tst-track" id="tst-track"></div>
-      </div>
-      <div class="flex items-center justify-center gap-4 mt-7">
-        <button id="tst-prev" class="w-10 h-10 rounded-full border border-gray-200 bg-white flex items-center justify-center hover:bg-gray-100 transition-colors" aria-label="Sebelumnya"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m15 18-6-6 6-6"/></svg></button>
-        <button id="tst-next" class="w-10 h-10 rounded-full border border-gray-200 bg-white flex items-center justify-center hover:bg-gray-100 transition-colors" aria-label="Berikutnya"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m9 18 6-6-6-6"/></svg></button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= HARGA ================= -->
-<section id="harga" class="py-16 sm:py-24 scroll-mt-20">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6">
-    <div class="text-center max-w-2xl mx-auto mb-14">
-      <p class="reveal text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">Harga transparan</p>
-      <h2 class="reveal font-display text-3xl sm:text-5xl font-bold tracking-tight">Mulai gratis, upgrade saat siap</h2>
-      <p class="reveal mt-4 text-gray-500 text-sm sm:text-base">Tanpa biaya tersembunyi. Batalkan kapan saja.</p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto" id="pricing-grid"></div>
-    <p class="reveal text-center text-xs text-gray-400 mt-8">Semua harga dalam Rupiah. Pembayaran mudah via ClinqooPay, QRIS, atau transfer.</p>
-  </div>
-</section>
-
-<!-- ================= FAQ ================= -->
-<section id="faq" class="py-16 sm:py-24 bg-gray-50 scroll-mt-20">
-  <div class="max-w-3xl mx-auto px-4 sm:px-6">
     <div class="text-center mb-12">
-      <p class="reveal text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">Masih ragu?</p>
-      <h2 class="reveal font-display text-3xl sm:text-5xl font-bold tracking-tight">Pertanyaan umum</h2>
+      <h2 class="font-display font-bold text-3xl sm:text-4xl tracking-tight">Mulai dari template, bukan dari nol</h2>
+      <p class="text-gray-600 dark:text-gray-400 mt-3">Klik untuk melihat demo langsung — semuanya bisa langsung kamu pakai dan ubah.</p>
     </div>
-    <div class="space-y-3" id="faq-list"></div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <a href="/demo/portfolio/" class="card-hover group rounded-xl overflow-hidden border border-gray-200 dark:border-[#1e1e1e] bg-white dark:bg-[#111] block">
+        <div class="aspect-[16/10] overflow-hidden"><img src="/assets/templates/portfolio.webp" alt="Pratinjau Portfolio Profesional" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"></div>
+        <div class="p-5"><h3 class="font-semibold">Portfolio Profesional</h3><p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Portfolio developer dengan bagian karya, layanan, blog, dan kontak.</p></div>
+      </a>
+      <a href="/demo/saas/" class="card-hover group rounded-xl overflow-hidden border border-gray-200 dark:border-[#1e1e1e] bg-white dark:bg-[#111] block">
+        <div class="aspect-[16/10] overflow-hidden"><img src="/assets/templates/saas.webp" alt="Pratinjau Landing Page SaaS" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"></div>
+        <div class="p-5"><h3 class="font-semibold">Landing Page SaaS</h3><p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Hero, fitur, showcase, testimoni, pricing, dan FAQ siap konversi.</p></div>
+      </a>
+      <a href="/demo/topup/" class="card-hover group rounded-xl overflow-hidden border border-gray-200 dark:border-[#1e1e1e] bg-white dark:bg-[#111] block">
+        <div class="aspect-[16/10] overflow-hidden"><img src="/assets/templates/topup.webp" alt="Pratinjau Top Up Game" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"></div>
+        <div class="p-5"><h3 class="font-semibold">Top Up Game</h3><p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Toko top up instan dengan katalog game dan metode pembayaran lengkap.</p></div>
+      </a>
+      <a href="/demo/tasks/" class="card-hover group rounded-xl overflow-hidden border border-gray-200 dark:border-[#1e1e1e] bg-white dark:bg-[#111] block">
+        <div class="aspect-[16/10] overflow-hidden"><img src="/assets/templates/tasks.webp" alt="Pratinjau Manajemen Tugas" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"></div>
+        <div class="p-5"><h3 class="font-semibold">Manajemen Tugas</h3><p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Dashboard statistik, papan kanban, kalender, dan laporan.</p></div>
+      </a>
+      <a href="/demo/properti/" class="card-hover group rounded-xl overflow-hidden border border-gray-200 dark:border-[#1e1e1e] bg-white dark:bg-[#111] block">
+        <div class="aspect-[16/10] overflow-hidden"><img src="/assets/templates/properti.webp" alt="Pratinjau Web Properti" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"></div>
+        <div class="p-5"><h3 class="font-semibold">Web Properti</h3><p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Katalog listing dengan filter, valuasi properti, dan layanan agen.</p></div>
+      </a>
+      <a href="/templates/" class="card-hover rounded-xl overflow-hidden border border-dashed border-gray-300 dark:border-[#2f2f2f] bg-white dark:bg-[#111] flex items-center justify-center p-5 text-center">
+        <div>
+          <p class="font-semibold">Lihat semua template di galeri &rarr;</p>
+          <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Termasuk template AI siap pakai untuk berbagai kebutuhan.</p>
+        </div>
+      </a>
+    </div>
   </div>
 </section>
 
-<!-- ================= CTA BESAR ================= -->
-<section class="py-20 sm:py-28">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6">
-    <div class="reveal relative overflow-hidden rounded-2xl bg-accent text-white text-center px-6 py-16 sm:py-24">
-      <div class="hero-grid absolute inset-0 opacity-20 pointer-events-none" style="filter:invert(1)"></div>
-      <div class="relative">
-        <h2 class="font-display text-3xl sm:text-6xl font-bold tracking-tight leading-tight">Website-mu siap<br>dipublikasikan?</h2>
-        <p class="mt-5 text-white/70 text-sm sm:text-base max-w-xl mx-auto">Gabung gratis hari ini. Unggah proyek pertamamu dan link-nya bisa kamu bagikan besok.</p>
-        <a href="https://muzawwied.github.io/Clinqoo./" class="mt-9 inline-flex items-center gap-2 px-10 py-5 rounded-full bg-white text-gray-900 font-bold text-base hover:scale-105 transition-transform active:scale-95 shadow-2xl">
-          Mulai Gratis Sekarang
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
-        </a>
-        <p class="mt-4 text-xs text-white/50">Starter gratis selamanya — tanpa kartu kredit</p>
+<!-- CARA KERJA -->
+<section id="cara-kerja" class="max-w-6xl mx-auto px-4 sm:px-6 py-20">
+  <div class="text-center mb-12">
+    <h2 class="font-display font-bold text-3xl sm:text-4xl tracking-tight">Dari ide ke online, tiga langkah</h2>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="text-center px-2">
+      <div class="w-10 h-10 rounded-full bg-black dark:bg-white text-white dark:text-black font-bold flex items-center justify-center mx-auto">1</div>
+      <h3 class="font-semibold mt-4">Ceritakan idemu</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 leading-relaxed">Mulai dari template siap pakai atau halaman kosong — asisten AI Clinqoo membantu menyiapkan struktur, konten, dan detail-detailnya.</p>
+    </div>
+    <div class="text-center px-2">
+      <div class="w-10 h-10 rounded-full bg-black dark:bg-white text-white dark:text-black font-bold flex items-center justify-center mx-auto">2</div>
+      <h3 class="font-semibold mt-4">Sempurnakan sesukamu</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 leading-relaxed">Buka editor kode full-stack dan ubah apa pun — terminal, file, dan version control tersedia. Minta bantuan AI kapan pun kamu butuh.</p>
+    </div>
+    <div class="text-center px-2">
+      <div class="w-10 h-10 rounded-full bg-black dark:bg-white text-white dark:text-black font-bold flex items-center justify-center mx-auto">3</div>
+      <h3 class="font-semibold mt-4">Deploy ke internet</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 leading-relaxed">Satu klik (atau satu perintah ke AI) dan situsmu hidup — siap dibagikan ke siapa saja.</p>
+    </div>
+  </div>
+</section>
+
+<!-- UNTUK SIAPA -->
+<section class="bg-gray-50/80 dark:bg-[#0d0d0d] border-y border-gray-100 dark:border-[#1a1a1a] py-20 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-tr from-transparent to-gray-100/50 dark:to-white/5 pointer-events-none"></div>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+    <div class="text-center mb-12">
+      <h2 class="font-display font-bold text-3xl sm:text-4xl tracking-tight">Dibuat untuk siapa saja yang ingin online</h2>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="card-hover rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-white dark:bg-[#111] p-6 text-center shadow-sm">
+        <p class="text-3xl">🎨</p>
+        <h3 class="font-semibold mt-3 text-sm">Portfolio &amp; Personal Brand</h3>
+        <p class="text-xs text-gray-500 dark:text-gray-400 mt-2 leading-relaxed">Tunjukkan karya dan jasa-mu dengan situs yang terlihat profesional dalam sehari.</p>
+      </div>
+      <div class="card-hover rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-white dark:bg-[#111] p-6 text-center shadow-sm">
+        <p class="text-3xl">🛒</p>
+        <h3 class="font-semibold mt-3 text-sm">UMKM &amp; Toko Online</h3>
+        <p class="text-xs text-gray-500 dark:text-gray-400 mt-2 leading-relaxed">Jualan online tanpa ribet — katalog produk, top up, sampai pembayaran.</p>
+      </div>
+      <div class="card-hover rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-white dark:bg-[#111] p-6 text-center shadow-sm">
+        <p class="text-3xl">🏢</p>
+        <h3 class="font-semibold mt-3 text-sm">Bisnis &amp; Properti</h3>
+        <p class="text-xs text-gray-500 dark:text-gray-400 mt-2 leading-relaxed">Halaman bisnis dan katalog listing yang mudah diperbarui kapan saja.</p>
+      </div>
+      <div class="card-hover rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-white dark:bg-[#111] p-6 text-center shadow-sm">
+        <p class="text-3xl">💻</p>
+        <h3 class="font-semibold mt-3 text-sm">Developer &amp; Agensi</h3>
+        <p class="text-xs text-gray-500 dark:text-gray-400 mt-2 leading-relaxed">Editor kode penuh dengan terminal dan git — plus asisten AI saat butuh bantuan.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================= FOOTER ================= -->
-<footer class="border-t border-gray-100 py-14">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
-      <div class="col-span-2 md:col-span-1">
-        <div class="flex items-center gap-2.5 mb-4">
-          <img src="https://muzawwied.github.io/Clinqoo./assets/favicon.svg" alt="Logo Clinqoo" class="w-8 h-8 rounded-full border border-gray-200">
-          <span class="font-display font-bold text-lg">Clinqoo</span>
-        </div>
-        <p class="text-xs text-gray-500 leading-relaxed max-w-[240px]">Tempat publikasikan website-mu. Unggah, publikasikan, dan asisten AI membantu kalau butuh.</p>
-        <div class="flex items-center gap-1 mt-5">
-          <a href="https://www.tiktok.com/@muzawwied" target="_blank" rel="noopener" aria-label="TikTok" class="w-8 h-8 flex items-center justify-center rounded-full text-gray-400 hover:text-black hover:bg-gray-50 transition-colors"><svg viewBox="0 0 24 24" fill="currentColor" class="w-3.5 h-3.5"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.9 2.9 0 1 1-2.31-2.83V9.37a6.36 6.36 0 1 0 5.76 6.35V8.71a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.14z"/></svg></a>
-          <a href="https://www.instagram.com/clinqoo.co?stkn=b2Zhajh3ZmtqMnd4" target="_blank" rel="noopener" aria-label="Instagram" class="w-8 h-8 flex items-center justify-center rounded-full text-gray-400 hover:text-black hover:bg-gray-50 transition-colors"><svg viewBox="0 0 24 24" fill="currentColor" class="w-3.5 h-3.5"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.012-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.688.072 4.947.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
-          <a href="https://wa.me/6283849297259" target="_blank" rel="noopener" aria-label="WhatsApp" class="w-8 h-8 flex items-center justify-center rounded-full text-gray-400 hover:text-black hover:bg-gray-50 transition-colors"><svg viewBox="0 0 24 24" fill="currentColor" class="w-3.5 h-3.5"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.893c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652a11.98 11.98 0 0 0 5.71 1.448h.006c6.585 0 11.946-5.336 11.949-11.897 0-3.179-1.24-6.165-3.495-8.411M12.05 21.785h-.004a9.87 9.87 0 0 1-5.031-1.378l-.36-.214-3.742.976 1.005-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.002-5.45 4.457-9.884 9.942-9.884 2.652 0 5.145 1.035 7.021 2.91a9.83 9.83 0 0 1 2.909 6.99c-.003 5.45-4.458 9.884-9.995 9.884"/></svg></a>
-        </div>
-      </div>
-      <div>
-        <p class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4">Produk</p>
-        <ul class="space-y-2.5 text-sm text-gray-600">
-          <li><a href="https://muzawwied.github.io/Clinqoo./" class="hover:text-black transition-colors">Clinqoo App</a></li>
-          <li><a href="https://muzawwied.github.io/Clinqoo-Editor/" class="hover:text-black transition-colors">Editor Kode</a></li>
-          <li><a href="https://muzawwied.github.io/Wallet/" class="hover:text-black transition-colors">ClinqooPay</a></li>
-          <li><a href="#harga" class="hover:text-black transition-colors">Harga &amp; Paket</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4">Fitur</p>
-        <ul class="space-y-2.5 text-sm text-gray-600">
-          <li><a href="#fitur" class="hover:text-black transition-colors">Bangun dengan AI</a></li>
-          <li><a href="#editor" class="hover:text-black transition-colors">Editor Kode</a></li>
-          <li><a href="#cara-kerja" class="hover:text-black transition-colors">Publikasi Instan</a></li>
-          <li><a href="#harga" class="hover:text-black transition-colors">Mode Kolaborasi</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4">Bantuan</p>
-        <ul class="space-y-2.5 text-sm text-gray-600">
-          <li><a href="#faq" class="hover:text-black transition-colors">FAQ</a></li>
-          <li><a href="https://wa.me/6283849297259" target="_blank" rel="noopener" class="hover:text-black transition-colors">WhatsApp Support</a></li>
-          <li><a href="https://www.instagram.com/clinqoo.co?stkn=b2Zhajh3ZmtqMnd4" target="_blank" rel="noopener" class="hover:text-black transition-colors">Instagram</a></li>
-        </ul>
-      </div>
+<!-- FAQ -->
+<section id="faq" class="max-w-3xl mx-auto px-4 sm:px-6 py-20">
+  <div class="text-center mb-10">
+    <h2 class="font-display font-bold text-3xl sm:text-4xl tracking-tight">Pertanyaan yang sering ditanya</h2>
+  </div>
+  <div class="space-y-3">
+    <details class="faq rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-gray-50/60 dark:bg-[#111] px-5 py-4">
+      <summary class="flex items-center justify-between gap-3 font-semibold text-sm">
+        Apa itu Clinqoo?
+        <svg class="chev w-4 h-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mt-3 leading-relaxed">Ruang kerja untuk membangun, mengelola, dan mempublikasikan situs web — editor kode full-stack, template, deploy, dan asisten AI dalam satu tempat, langsung dari browser.</p>
+    </details>
+    <details class="faq rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-gray-50/60 dark:bg-[#111] px-5 py-4">
+      <summary class="flex items-center justify-between gap-3 font-semibold text-sm">
+        Saya nggak bisa coding. Apakah Clinqoo cocok untuk saya?
+        <svg class="chev w-4 h-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mt-3 leading-relaxed">Bisa banget. Mulai dari template siap pakai lalu personalisasi sendiri — dan kalau macet, asisten AI siap membantu memberi saran dan solusi lewat percakapan.</p>
+    </details>
+    <details class="faq rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-gray-50/60 dark:bg-[#111] px-5 py-4">
+      <summary class="flex items-center justify-between gap-3 font-semibold text-sm">
+        Apakah gratis?
+        <svg class="chev w-4 h-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mt-3 leading-relaxed">Kamu bisa mulai gratis tanpa kartu kredit. Ada paket berbayar dengan kuota AI dan fitur yang lebih besar, seperti Mode Kolaborasi Tim AI.</p>
+    </details>
+    <details class="faq rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-gray-50/60 dark:bg-[#111] px-5 py-4">
+      <summary class="flex items-center justify-between gap-3 font-semibold text-sm">
+        Apakah kode dan situsnya milik saya?
+        <svg class="chev w-4 h-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mt-3 leading-relaxed">Ya. Proyekmu bisa diekspor kapan saja sebagai satu file HTML atau arsip ZIP — tanpa terkunci di platform.</p>
+    </details>
+    <details class="faq rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-gray-50/60 dark:bg-[#111] px-5 py-4">
+      <summary class="flex items-center justify-between gap-3 font-semibold text-sm">
+        Bagaimana cara mempublikasikan situsnya?
+        <svg class="chev w-4 h-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mt-3 leading-relaxed">Sekali klik dari dashboard, atau cukup bilang ke AI &ldquo;deploy situsku&rdquo; — situsmu langsung online dengan HTTPS.</p>
+    </details>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="max-w-6xl mx-auto px-4 sm:px-6 pb-20">
+  <div class="relative rounded-3xl overflow-hidden text-white text-center p-10 sm:p-16">
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image:url('/assets/backgrounds/cta-collage.webp')"></div>
+    <div class="absolute inset-0 bg-black/80"></div>
+    <div class="relative">
+      <h2 class="font-display font-bold text-3xl sm:text-4xl tracking-tight">Publikasikan situs pertamamu hari ini</h2>
+      <p class="text-white/70 mt-3 max-w-xl mx-auto">Daftar gratis, chat dengan asisten AI, dan lihat situsmu online hari ini juga. Tanpa setup, tanpa kartu kredit.</p>
+      <a href="/auth/" class="inline-block mt-7 px-7 py-3.5 rounded-xl bg-white text-black font-semibold text-base hover:opacity-85 transition-opacity">
+        Mulai Gratis Sekarang
+      </a>
     </div>
-    <div class="border-t border-gray-100 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-      <p class="text-xs text-gray-400">© 2026 Clinqoo — Dibuat dengan ❤️ di Indonesia</p>
-      <p class="text-xs text-gray-400">Starter gratis selamanya · Publikasi instan</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="border-t border-gray-100 dark:border-[#1e1e1e] bg-gray-50/60 dark:bg-[#0d0d0d]">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-14 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 text-sm">
+    <div class="col-span-2 sm:col-span-3 lg:col-span-1">
+      <a href="/landing/" class="flex items-center gap-2">
+        <img src="../assets/logo-clinqoo.png" alt="Clinqoo" class="w-6 h-6 rounded-full">
+        <span class="font-bold">Clinqoo</span>
+      </a>
+      <p class="text-gray-500 dark:text-gray-400 mt-3 leading-relaxed max-w-[220px]">Ruang kerja untuk membangun, mengelola, dan mempublikasikan situs web — langsung dari browser.</p>
+    </div>
+    <div>
+      <h4 class="font-semibold text-gray-900 dark:text-white mb-3">Produk</h4>
+      <ul class="space-y-2 text-gray-500 dark:text-gray-400">
+        <li><a href="#fitur" class="hover:text-black dark:hover:text-white transition-colors">Fitur</a></li>
+        <li><a href="/templates/" class="hover:text-black dark:hover:text-white transition-colors">Galeri Template</a></li>
+        <li><a href="/editor/" class="hover:text-black dark:hover:text-white transition-colors">Editor Kode</a></li>
+        <li><a href="#cara-kerja" class="hover:text-black dark:hover:text-white transition-colors">Cara Kerja</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-semibold text-gray-900 dark:text-white mb-3">Akun</h4>
+      <ul class="space-y-2 text-gray-500 dark:text-gray-400">
+        <li><a href="/auth/" class="hover:text-black dark:hover:text-white transition-colors">Daftar Gratis</a></li>
+        <li><a href="/auth/" class="hover:text-black dark:hover:text-white transition-colors">Masuk</a></li>
+        <li><a href="#faq" class="hover:text-black dark:hover:text-white transition-colors">FAQ</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-semibold text-gray-900 dark:text-white mb-3">Legal</h4>
+      <ul class="space-y-2 text-gray-500 dark:text-gray-400">
+        <li><a href="https://clinqoo-blog.pages.dev/legal/syarat-ketentuan/" class="hover:text-black dark:hover:text-white transition-colors">Syarat &amp; Ketentuan</a></li>
+        <li><a href="https://clinqoo-blog.pages.dev/legal/kebijakan-privasi/" class="hover:text-black dark:hover:text-white transition-colors">Kebijakan Privasi</a></li>
+        <li><a href="https://clinqoo-blog.pages.dev/legal/kebijakan-cookie/" class="hover:text-black dark:hover:text-white transition-colors">Kebijakan Cookie</a></li>
+        <li><a href="https://clinqoo-blog.pages.dev/legal/kebijakan-pembayaran/" class="hover:text-black dark:hover:text-white transition-colors">Kebijakan Pembayaran</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-semibold text-gray-900 dark:text-white mb-3">Kontak</h4>
+      <ul class="space-y-2 text-gray-500 dark:text-gray-400">
+        <li><a href="mailto:muzawwied@gmail.com" class="hover:text-black dark:hover:text-white transition-colors">muzawwied@gmail.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-gray-100 dark:border-[#1e1e1e]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-5 text-xs text-gray-500 dark:text-gray-400 text-center sm:text-left">
+      &copy; 2026 Clinqoo. Publikasikan situsmu dengan mudah.
     </div>
   </div>
 </footer>
 
-<script>
-/* ================== DATA ================== */
-var BENTO = [
-  { icon:'M5 10l7-7m0 0l7 7m-7-7v18', title:'Publikasi Instan', desc:'Unggah website-mu, klik publikasikan, langsung online. Satu tempat untuk semua website-mu.' },
-  { icon:'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 009 9', title:'Domain Kustom', desc:'Punya domain sendiri? Hubungkan sekali, website-mu jalan di domain-mu dengan HTTPS otomatis.' },
-  { icon:'M12 15v2m-6 4v-2a2 2 0 012-2h8a2 2 0 012 2v2M8 7a2 2 0 11-4 0 2 2 0 014 0zM7 21v-2.13A8.966 8.966 0 0112 21a8.966 8.966 0 004.494-1.13A8.966 8.966 0 0112 21a8.966 8.966 0 01-5-1.13V21', title:'Proyek Terorganisir', desc:'Kelola semua website-mu dalam satu workspace — rapi, tertata, gampang diakses.' },
-  { icon:'M15 7a2 2 0 012 2m4 0a6 6 0 01-6 6m0 0v-2m0 2H8m6-6V5a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2h-1', title:'Impor GitHub', desc:'Sudah punya proyek di GitHub? Impor langsung, lalu publikasikan di Clinqoo.' },
-  { icon:'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4', title:'Editor Kode', desc:'Edit website-mu langsung di Clinqoo — file manager dan live preview lengkap.' },
-  { icon:'M8 10h.01M12 10h.01M16 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0zM7 21v-2.13A8.966 8.966 0 0112 21a8.966 8.966 0 004.494-1.13A8.966 8.966 0 0112 21a8.966 8.966 0 01-5-1.13V21', title:'Asisten AI', desc:'Butuh bantuan? AI siap membantu memperbaiki kode atau menyiapkan halaman — kamu tetap yang memegang kendali.' },
-];
-
-var STEPS = [
-  { n:'1', title:'Siapkan Website-mu', desc:'Bangun sendiri atau impor dari GitHub. Belum punya? Asisten AI bantu menyiapkan.' },
-  { n:'2', title:'Unggah ke Clinqoo', desc:'Masukkan proyek ke workspace-mu. Semua berkas rapi, bisa diedit kapan pun lewat editor.' },
-  { n:'3', title:'Publikasikan', desc:'Klik publikasikan — website-mu online. Bagikan linknya ke siapa pun, selesai.' },
-];
-
-var EDITOR_POINTS = [
-  ['File manager lengkap', 'Atur berkas & folder, upload gambar, dan impor proyek — semua praktis.'],
-  ['Live preview instan', 'Setiap perubahan tampil langsung di layar, tanpa refresh.'],
-  ['Asisten AI di editor', 'Tanya atau minta revisi kode langsung dari sidebar editor.'],
-];
-
-var DEPLOY_POINTS = [
-  ['HTTPS otomatis', 'Sertifikat SSL terpasang otomatis untuk semua website.'],
-  ['Link instan', 'Dapat subdomain sendiri, langsung bisa dibagikan.'],
-  ['Domain sendiri', 'Ganti ke domain-mu kapan pun dengan panduan DNS.'],
-  ['Bagikan ke dunia', 'Website-mu online untuk semua orang, di semua perangkat.'],
-];
-
-var TESTI = [
-  { name:'Rafi', role:'Pemilik Toko Kopi', text:'Website toko saya online 20 menit setelah unggah — lengkap sama menu dan tombol pesan. Link-nya langsung kubagikan ke pelanggan.', initial:'R' },
-  { name:'Dinda', role:'Desainer Freelance', text:'Editor kodenya bikin saya nyaman banget — rapi, cepat, dan AI-nya ngerti konteks proyek. Portofolio saya sekarang jauh lebih keren.', initial:'D' },
-  { name:'Bagus', role:'Mahasiswa Informatika', text:'Mode Kolaborasi itu sulap. Beberapa AI berdiskusi beneran kayak tim developer. Website organisasi kami sekarang juara lomba.', initial:'B' },
-  { name:'Salsa', role:'Pemilik Butik Online', text:'Publikasinya gampang banget — sekali klik, link langsung jadi. Domain kustomnya juga gampang dipasang, panduan DNS-nya jelas.', initial:'S' },
-  { name:'Aldi', role:'Content Creator', text:'Impor proyek dari GitHub tinggal sekali klik, terus langsung bisa dipublikasikan. Nggak perlu setup apa-apa lagi.', initial:'A' },
-  { name:'Nadia', role:'Pemilik Katering', text:'Saya nggak ngerti coding sama sekali, tapi website katering saya sekarang kelihatan mahal dan bisa dilihat semua calon pelanggan.', initial:'N' },
-];
-
-var PLANS = [
-  { name:'Starter', price:'Gratis', per:'', tagline:'Untuk mulai membangun.', hot:false,
-    items:[['Hingga 3 proyek aktif',1],['1 kolaborator per proyek',1],['Chat AI di setiap proyek',1],['3 template proyek siap pakai',1],['Tugas terjadwal & notifikasi',1],['Publikasi web 2x per bulan',1],['Impor repository GitHub',0],['Mode Kolaborasi AI',0]], cta:'Mulai Gratis' },
-  { name:'Pro', price:'49K', per:'/bln', tagline:'Untuk kreator aktif.', hot:true,
-    items:[['Hingga 10 proyek aktif',1],['Hingga 5 kolaborator per proyek',1],['Semua fitur Starter',1],['Publikasi web hingga 25x per bulan',1],['Impor repository GitHub',1],['Mode Kolaborasi AI',1],['Ekspor data akun (JSON)',0]], cta:'Upgrade ke Pro' },
-  { name:'Bisnis', price:'129K', per:'/bln', tagline:'Untuk tim besar.', hot:false,
-    items:[['Semua fitur Pro',1],['Hingga 50 proyek aktif',1],['Hingga 20 kolaborator per proyek',1],['Kontrol akses & keamanan lanjutan',1],['Publikasi web tanpa batas',1],['Ekspor data akun (JSON)',1]], cta:'Mulai Bisnis' },
-];
-
-var FAQS = [
-  ['Apa itu Clinqoo?', 'Clinqoo adalah tempat mempublikasikan website. Kamu unggah atau impor proyek website-mu, klik publikasikan, dan website-mu langsung online. Ada juga asisten AI yang membantu kalau kamu butuh.'],
-  ['Apakah ada editor kodenya?', 'Ada. Editor kode bawaan Clinqoo bisa kamu pakai langsung di browser — lengkap dengan asisten AI yang siap membantu, tanpa perlu setup apapun.'],
-  ['Apakah Clinqoo gratis?', 'Paket Starter gratis selamanya — 3 proyek aktif dan publikasi 2x per bulan. Upgrade hanya kalau butuh lebih: proyek lebih banyak, impor GitHub, atau mode kolaborasi AI.'],
-  ['Aku nggak bisa coding. Tetap bisa pakai Clinqoo?', 'Bisa. Asisten AI membantu menyiapkan atau memperbaiki website-mu — kamu tinggal publikasikan. Kalau mau belajar, editor kodenya lengkap dan gampang dipakai.'],
-  ['Bagaimana cara mempublikasikan website?', 'Sekali klik dari halaman proyek. Clinqoo mengunggah website-mu ke jaringan global otomatis, lengkap dengan HTTPS. Rata-rata hanya butuh sekitar satu menit sampai link-nya bisa dibagikan.'],
-  ['Bisa pakai domain sendiri?', 'Bisa. Hubungkan domain-mu lewat fitur Domain Kustom — Clinqoo memandu pengaturan DNS langkah demi langkah dan memasang SSL otomatis.'],
-  ['Bisa impor proyek dari GitHub?', 'Bisa. Fitur Impor GitHub memindahkan repositori-mu ke workspace Clinqoo, lalu tinggal kamu publikasikan.'],
-  ['Kalau berhenti langganan, website saya hilang?', 'Tidak. Website-mu tetap online dan datamu tersimpan di akunmu. Paket kembali ke Starter dan fitur premium nonaktif sampai kamu upgrade lagi.'],
-];
-
-/* ================== RENDER ================== */
-function icn(d) { return '<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="'+d+'"/></svg>'; }
-
-// Bento
-(function () {
-  document.getElementById('bento-grid').innerHTML = BENTO.map(function (b, i) {
-    return '<div class="reveal bento p-6" style="transition-delay:' + ((i % 3) * .08) + 's">' +
-      '<div class="w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center mb-5 text-gray-900">' + icn(b.icon) + '</div>' +
-      '<h3 class="font-bold text-base mb-2">' + b.title + '</h3>' +
-      '<p class="text-sm text-gray-500 leading-relaxed">' + b.desc + '</p></div>';
-  }).join('');
-})();
-
-// Steps
-(function () {
-  document.getElementById('steps-grid').innerHTML = STEPS.map(function (s, i) {
-    return '<div class="reveal text-center" style="transition-delay:' + (i * .12) + 's">' +
-      '<div class="w-16 h-16 rounded-full bg-accent text-white mx-auto flex items-center justify-center font-display text-2xl font-bold shadow-lg">' + s.n + '</div>' +
-      '<h3 class="font-bold text-lg mt-6">' + s.title + '</h3>' +
-      '<p class="text-sm text-gray-500 leading-relaxed mt-2 max-w-xs mx-auto">' + s.desc + '</p></div>';
-  }).join('');
-})();
-
-// Editor & deploy points
-(function () {
-  document.getElementById('editor-points').innerHTML = EDITOR_POINTS.map(function (p) {
-    return '<div class="flex items-start gap-3"><div class="w-5 h-5 rounded-md bg-gray-100 text-gray-900 flex items-center justify-center shrink-0 mt-0.5"><svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20 6 9 17l-5-5"/></svg></div><div><p class="text-sm font-bold">' + p[0] + '</p><p class="text-xs text-gray-500 mt-0.5 leading-relaxed">' + p[1] + '</p></div></div>';
-  }).join('');
-  document.getElementById('deploy-points').innerHTML = DEPLOY_POINTS.map(function (p) {
-    return '<div class="rounded-lg bg-gray-50 border border-gray-100 px-4 py-3.5"><p class="text-sm font-bold">' + p[0] + '</p><p class="text-xs text-gray-500 mt-0.5 leading-relaxed">' + p[1] + '</p></div>';
-  }).join('');
-})();
-
-// Testimoni
-(function () {
-  var slides = TESTI.map(function (t) {
-    return '<div class="w-full shrink-0 px-1"><div class="bg-white rounded-xl border border-gray-200 p-8 sm:p-10 text-center max-w-2xl mx-auto"><p class="text-gray-900 text-lg mb-3">&#9733;&#9733;&#9733;&#9733;&#9733;</p><p class="text-base sm:text-lg text-gray-700 leading-relaxed">&ldquo;' + t.text + '&rdquo;</p><div class="flex items-center justify-center gap-3 mt-6"><div class="w-10 h-10 rounded-full bg-gray-100 text-gray-900 font-bold text-sm flex items-center justify-center">' + t.initial + '</div><div class="text-left"><p class="text-sm font-bold">' + t.name + '</p><p class="text-xs text-gray-400">' + t.role + '</p></div></div></div></div>';
-  }).join('');
-  document.getElementById('tst-track').innerHTML = slides;
-  var idx = 0, track = document.getElementById('tst-track');
-  function go(i) {
-    idx = (i + TESTI.length) % TESTI.length;
-    track.style.transform = 'translateX(-' + (idx * 100) + '%)';
-  }
-  document.getElementById('tst-prev').addEventListener('click', function () { go(idx - 1); });
-  document.getElementById('tst-next').addEventListener('click', function () { go(idx + 1); });
-  setInterval(function () { go(idx + 1); }, 5000);
-})();
-
-// Pricing
-(function () {
-  var checkout = 'https://muzawwied.github.io/Clinqoo./akun/langganan/upgrade/konfirmasi/?plan=';
-  document.getElementById('pricing-grid').innerHTML = PLANS.map(function (p) {
-    var items = p.items.map(function (it) {
-      return '<li class="flex items-start gap-2.5 text-[13px] ' + (it[1] ? 'text-gray-700' : 'text-gray-400 opacity-70') + '">' +
-        (it[1] ? '<svg class="w-4 h-4 shrink-0 text-gray-900 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20 6 9 17l-5-5"/></svg>'
-               : '<svg class="w-4 h-4 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M5 12h14"/></svg>') +
-        '<span>' + it[0] + '</span></li>';
-    }).join('');
-    return '<div class="reveal bento p-6 flex flex-col ' + (p.hot ? 'plan-hot relative' : '') + '">' +
-      (p.hot ? '<div id="pro-ribbon" class="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-white text-[10px] font-bold px-4 py-1 rounded-full uppercase tracking-wider whitespace-nowrap">Discount</div>' : '') +
-      '<h3 class="font-display text-lg font-bold ' + (p.hot ? 'mt-1' : '') + '">' + p.name + '</h3>' +
-      '<p class="text-xs text-gray-500 mt-0.5">' + p.tagline + '</p>' +
-      '<div id="pro-price-wrap" class="flex items-baseline my-5">' +
-      (p.hot ? '<span class="font-display text-3xl font-bold">Rp5.000</span><span class="text-xs text-gray-500 ml-1">/bln</span><span class="text-sm text-gray-400 line-through ml-2">Rp49.000</span>' + '<p class="w-full text-[10px] text-gray-500 mt-1" id="pro-promo-note">Promo 100 user pertama — sisa <span id="lnd-promo-rem">…</span> slot</p>' : '<span class="font-display text-3xl font-bold">' + p.price + '</span><span class="text-xs text-gray-500 ml-1">' + p.per + '</span>') + '</div>' +
-      '<ul class="flex flex-col gap-2.5 mb-6 flex-1">' + items + '</ul>' +
-      '<a href="' + (p.name === 'Starter' ? 'https://muzawwied.github.io/Clinqoo./' : checkout + p.name + '&billing=Bulanan') + '" class="block w-full py-3.5 rounded-full text-center text-sm font-bold transition-all active:scale-95 ' + (p.hot ? 'bg-accent text-white shadow-lg' : 'border border-gray-300 hover:border-gray-900 bg-white') + '">' + p.cta + '</a></div>';
-  }).join('');
-})();
-
-// PROMO 100 USER PERTAMA — sinkron live: sisa slot & revert otomatis kalau promo selesai
-(function () {
-  try {
-    fetch('https://clincoo-be2.pages.dev/api/promo', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (p) {
-      var note = document.getElementById('pro-promo-note');
-      var ribbon = document.getElementById('pro-ribbon');
-      var wrap = document.getElementById('pro-price-wrap');
-      var active = p && p.active === true && p.remaining > 0;
-      if (!active) {
-        if (ribbon) ribbon.textContent = 'Paling Populer';
-        if (note) note.remove();
-        if (wrap) wrap.innerHTML = '<span class="font-display text-3xl font-bold">49K</span><span class="text-xs text-gray-500 ml-1">/bln</span>';
-        return;
-      }
-      var rem = document.getElementById('lnd-promo-rem');
-      if (rem) rem.textContent = String(p.remaining);
-    }).catch(function () {});
-  } catch (e) {}
-})();
-
-// FAQ
-(function () {
-  document.getElementById('faq-list').innerHTML = FAQS.map(function (f, i) {
-    return '<div class="faq-item reveal bento overflow-hidden" style="transition-delay:' + (i * .05) + 's">' +
-      '<button class="faq-head w-full flex items-center justify-between gap-4 px-6 py-5 text-left cursor-pointer">' +
-      '<span class="font-semibold text-sm sm:text-base">' + f[0] + '</span>' +
-      '<svg class="faq-chevron w-5 h-5 text-gray-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7"/></svg></button>' +
-      '<div class="faq-body"><p class="px-6 pb-6 text-sm text-gray-500 leading-relaxed">' + f[1] + '</p></div></div>';
-  }).join('');
-  document.querySelectorAll('.faq-item').forEach(function (item) {
-    item.querySelector('.faq-head').addEventListener('click', function () {
-      var body = item.querySelector('.faq-body');
-      var isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(function (o) { o.classList.remove('open'); o.querySelector('.faq-body').style.maxHeight = null; });
-      if (!isOpen) { item.classList.add('open'); body.style.maxHeight = body.scrollHeight + 'px'; }
-    });
-  });
-})();
-
-/* ================== INTERAKSI ================== */
-// Reveal on scroll
-var io = new IntersectionObserver(function (entries) {
-  entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('revealed'); io.unobserve(e.target); } });
-}, { threshold: 0.12 });
-document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(function (r) { io.observe(r); });
-
-// Counter stats
-var statIO = new IntersectionObserver(function (entries) {
-  entries.forEach(function (e) {
-    if (!e.isIntersecting) return;
-    var span = e.target, target = parseInt(span.dataset.target), t0 = null;
-    function step(ts) {
-      if (!t0) t0 = ts;
-      var pr = Math.min((ts - t0) / 1200, 1);
-      span.textContent = Math.round(target * (1 - Math.pow(1 - pr, 3)));
-      if (pr < 1) requestAnimationFrame(step);
-    }
-    requestAnimationFrame(step);
-    statIO.unobserve(span);
-  });
-}, { threshold: 0.6 });
-document.querySelectorAll('.stat').forEach(function (s) { statIO.observe(s); });
-
-// Hero rotator kata
-(function () {
-  var words = ['langsung online', 'tanpa ribet', 'dalam hitungan menit', 'untuk semua orang'], i = 0, j = 0, del = false;
-  var node = document.getElementById('hero-rotator');
-  function tick() {
-    var w = words[i];
-    node.textContent = w.slice(0, j);
-    if (!del && j < w.length) { j++; setTimeout(tick, 70); }
-    else if (!del && j === w.length) { del = true; setTimeout(tick, 1800); }
-    else if (del && j > 0) { j--; setTimeout(tick, 35); }
-    else { del = false; i = (i + 1) % words.length; setTimeout(tick, 300); }
-  }
-  tick();
-})();
-
-// Navbar shadow & progress
-(function () {
-  var nav = document.getElementById('nav'), prog = document.getElementById('scroll-progress');
-  window.addEventListener('scroll', function () {
-    if (window.scrollY > 8) nav.classList.add('shadow-sm');
-    else nav.classList.remove('shadow-sm');
-    var h = document.documentElement;
-    prog.style.width = (window.scrollY / (h.scrollHeight - h.clientHeight) * 100) + '%';
-  }, { passive: true });
-})();
-
-// Menu mobile
-document.getElementById('menu-btn').addEventListener('click', function () {
-  document.getElementById('mobile-menu').classList.toggle('hidden');
-});
-document.querySelectorAll('#mobile-menu a').forEach(function (a) {
-  a.addEventListener('click', function () { document.getElementById('mobile-menu').classList.add('hidden'); });
-});
-
-// Tema: ikut pengaturan sistem browser (prefers-color-scheme), tanpa toggle manual
-(function () {
-  var mq = window.matchMedia('(prefers-color-scheme: dark)');
-  function apply() { document.body.classList.toggle('dark-mode', mq.matches); }
-  apply();
-  if (mq.addEventListener) mq.addEventListener('change', apply);
-  else if (mq.addListener) mq.addListener(apply);
-})();
-
-// Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(function (a) {
-  a.addEventListener('click', function (e) {
-    var id = a.getAttribute('href');
-    if (id.length > 1 && document.querySelector(id)) {
-      e.preventDefault();
-      document.querySelector(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  });
-});
-</script>
-<script>
-/* ===== Galeri carousel ===== */
-(function(){
-  var track=document.getElementById('lnd-shots'), dotsWrap=document.getElementById('lnd-dots'),
-      caption=document.getElementById('lnd-caption'), urlBar=document.getElementById('lnd-shot-url'),
-      slides=track?track.children:[], dots=[], timer=null, idx=0;
-  if(!track||!slides.length)return;
-  var caps=[
-    ['Beranda — semua proyekmu dalam satu workspace','muzawwied.github.io/Clinqoo.'],
-    ['Workspace proyek — file, keamanan, environment, pengaturan','muzawwied.github.io/Clinqoo./proyek/workspace'],
-    ['Editor kode — ngoding langsung di browser','muzawwied.github.io/Clinqoo-Editor']
-  ];
-  for(var i=0;i<slides.length;i++){
-    var d=document.createElement('button');
-    d.className='lnd-dot w-2 h-2 rounded-full bg-gray-300';
-    d.setAttribute('aria-label','Slide '+(i+1));
-    (function(n){d.addEventListener('click',function(){go(n);restart();});})(i);
-    dotsWrap.appendChild(d); dots.push(d);
-  }
-  function update(){
-    for(var i=0;i<dots.length;i++){dots[i].classList.toggle('active',i===idx);}
-    caption.textContent=caps[idx][0]; urlBar.textContent=caps[idx][1];
-  }
-  function go(n){
-    idx=(n+slides.length)%slides.length;
-    track.scrollTo({left:idx*track.clientWidth,behavior:'smooth'});
-    update();
-  }
-  function restart(){clearInterval(timer);timer=setInterval(function(){go(idx+1);},5000);}
-  document.getElementById('lnd-prev').addEventListener('click',function(){go(idx-1);restart();});
-  document.getElementById('lnd-next').addEventListener('click',function(){go(idx+1);restart();});
-  track.addEventListener('scroll',function(){
-    clearTimeout(track._t);track._t=setTimeout(function(){
-      var n=Math.round(track.scrollLeft/Math.max(1,track.clientWidth));
-      if(n!==idx){idx=(n+slides.length)%slides.length;update();}
-    },120);
-  },{passive:true});
-  ['pointerdown','touchstart','wheel'].forEach(function(ev){track.addEventListener(ev,function(){clearInterval(timer);},{passive:true});});
-  update(); restart();
-})();
-</script>
 </body>
 </html>
