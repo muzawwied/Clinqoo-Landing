@@ -1,23 +1,44 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+<script>(function(){var m={"clinqoo.pages.dev":"app.clincoo.buzz","clinqoo.biz.id":"app.clincoo.buzz","www.clinqoo.biz.id":"app.clincoo.buzz"};var t=m[location.hostname];if(t)location.replace("https://"+t+location.pathname+location.search+location.hash);})();</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Clinqoo — Publikasikan Situsmu dengan Mudah</title>
-<meta name="description" content="Publikasikan situsmu dengan mudah: bangun dengan AI, kelola di editor kode full-stack, dan deploy ke internet dari satu ruang kerja. Tanpa setup, mulai gratis.">
-<meta property="og:title" content="Clinqoo — Publikasikan Situsmu dengan Mudah">
-<meta property="og:description" content="Bangun dengan AI, kelola di editor kode, deploy ke internet — semuanya dalam satu tempat. Mulai gratis.">
+<title>Clincoo — Bangun & Publikasikan Situsmu dengan Mudah</title>
+<meta name="description" content="Bangun situs profesional dengan bantuan AI dan Monaco Editor, lalu publikasikan ke internet hanya dengan satu klik. Tanpa setup, tanpa ribet.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://www.clincoo.buzz/">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://clinqoo.pages.dev/assets/og-image.png">
-<meta name="robots" content="index, follow">
-<link rel="icon" type="image/png" sizes="64x64" href="../assets/favicon.png">
+<meta property="og:site_name" content="Clincoo">
+<meta property="og:locale" content="id_ID">
+<meta property="og:title" content="Clincoo — Bangun & Publikasikan Situsmu dengan Mudah">
+<meta property="og:description" content="Bangun situs profesional dengan bantuan AI dan Monaco Editor, lalu publikasikan ke internet hanya dengan satu klik. Tanpa setup, tanpa ribet.">
+<meta property="og:url" content="https://www.clincoo.buzz/">
+<meta property="og:image" content="https://app.clincoo.buzz/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="1200">
+<meta property="og:image:alt" content="Clincoo — ruang kerja untuk bikin dan publikasikan situs web">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Clincoo — Bangun & Publikasikan Situsmu dengan Mudah">
+<meta name="twitter:description" content="Bangun situs profesional dengan bantuan AI dan Monaco Editor, lalu publikasikan ke internet hanya dengan satu klik. Tanpa setup, tanpa ribet.">
+<meta name="twitter:image" content="https://app.clincoo.buzz/assets/og-image.png">
+<meta name="twitter:image:alt" content="Clincoo — Bangun & Publikasikan Situsmu dengan Mudah">
+<link rel="icon" type="image/png" sizes="64x64" href="https://app.clincoo.buzz/assets/favicon.png?v=9">
+<link rel="icon" type="image/png" sizes="32x32" href="https://app.clincoo.buzz/assets/favicon-32.png?v=9">
+<link rel="apple-touch-icon" href="https://app.clincoo.buzz/assets/icons/apple-touch-icon.png">
 
-<link rel="stylesheet" href="/assets/tailwind.css">
+<link rel="stylesheet" href="/tailwind.css?v=20260923a">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","name":"Clinqoo","url":"https://clinqoo.pages.dev/landing/","description":"Publikasikan situsmu dengan mudah — bangun dengan AI, kelola, dan deploy dari satu ruang kerja.","inLanguage":"id"}
+{"@context":"https://schema.org","@graph":[
+{"@type":"WebSite","@id":"https://www.clincoo.buzz/#website","name":"Clincoo","url":"https://www.clincoo.buzz/","description":"Ruang kerja untuk membangun, mengelola, dan mempublikasikan situs web — langsung dari browser.","inLanguage":"id"},
+{"@type":"Organization","@id":"https://www.clincoo.buzz/#organization","name":"Clincoo","url":"https://www.clincoo.buzz/","logo":"https://app.clincoo.buzz/assets/logo-clinqoo.png","sameAs":["https://www.tiktok.com/@clincoo.co?_r=1&_t=ZS-99qknXlhEXc"]},
+{"@type":"SoftwareApplication","name":"Clincoo","applicationCategory":"DeveloperApplication","operatingSystem":"Web","url":"https://www.clincoo.buzz/","description":"Ruang kerja untuk membangun dan mempublikasikan situs: template, Monaco Editor, asisten AI, dan deploy dari browser.","offers":{"@type":"Offer","price":"0","priceCurrency":"IDR"},"featureList":["Asisten AI","Editor kode full-stack","Deploy sekali klik","Template siap pakai"]}
+]}
 </script>
 
 <style>
@@ -28,8 +49,49 @@
   @keyframes floatUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
   .rise { animation: floatUp .6s ease both; }
   .rise-d1 { animation-delay: .08s; } .rise-d2 { animation-delay: .16s; } .rise-d3 { animation-delay: .24s; }
+  .header-cta { background: #000; color: #fff; min-height: 38px; box-shadow: 0 1px 3px rgba(0,0,0,.1); }
+  .header-cta:hover { background: #1f2937; }
+  .dark .header-cta { background: #fff; color: #000; box-shadow: 0 1px 3px rgba(0,0,0,.4); }
+  .dark .header-cta:hover { background: #e5e7eb; }
+  .menu-btn:hover { background: #f9fafb; }
+  .dark .menu-btn:hover { background: #202020; }
+  .menu-btn svg { width: 24px; height: 24px; }
+  .menu-overlay { position: fixed; inset: 0; z-index: 60; background: rgba(0,0,0,.45); opacity: 0; visibility: hidden; transition: opacity .3s ease, visibility .3s ease; }
+  .menu-overlay.open { opacity: 1; visibility: visible; }
+  .menu-sidebar { position: fixed; top: 0; right: 0; height: 100%; width: 320px; max-width: 85vw; z-index: 70; background: #fff; border-left: 1px solid #f3f4f6; box-shadow: -24px 0 48px rgba(0,0,0,.15); transform: translateX(100%); transition: transform .3s cubic-bezier(.22,.61,.36,1); display: flex; flex-direction: column; }
+  .menu-sidebar.open { transform: translateX(0); }
+  .dark .menu-sidebar { background: #0f0f0f; border-left-color: #222; box-shadow: -24px 0 48px rgba(0,0,0,.5); }
+  .menu-head { display: flex; align-items: center; justify-content: space-between; min-height: 68px; padding: 0 20px; border-bottom: 1px solid #f3f4f6; }
+  .dark .menu-head { border-bottom-color: #222; }
+  .menu-close { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 9999px; color: #4b5563; transition: background .2s ease; }
+  .menu-close:hover { background: #f3f4f6; }
+  .dark .menu-close { color: #9ca3af; }
+  .dark .menu-close:hover { background: #1f1f1f; }
+  .menu-close svg { width: 18px; height: 18px; }
+  .menu-body { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 4px; }
+  .menu-link { display: block; border-radius: 12px; padding: 12px 16px; font-size: 14px; font-weight: 500; color: #374151; transition: background .2s ease, color .2s ease; }
+  .menu-link:hover { background: #f3f4f6; color: #000; }
+  .dark .menu-link { color: #d1d5db; }
+  .dark .menu-link:hover { background: #1a1a1a; color: #fff; }
+  .menu-foot { padding: 16px 20px; border-top: 1px solid #f3f4f6; }
+  .dark .menu-foot { border-top-color: #222; }
+  .menu-cta { display: flex; align-items: center; justify-content: center; min-height: 44px; border-radius: 9999px; background: #000; color: #fff; font-size: 14px; font-weight: 700; transition: background .2s ease; }
+  .menu-cta:hover { background: #1f2937; }
+  .dark .menu-cta { background: #fff; color: #000; }
+  .dark .menu-cta:hover { background: #e5e7eb; }
+  @media (prefers-reduced-motion: no-preference) {
+    html { scroll-behavior: smooth; }
+    .sr { opacity: 0; transform: translateY(28px); transition: opacity .7s cubic-bezier(.22,.61,.36,1), transform .7s cubic-bezier(.22,.61,.36,1); }
+    .sr.sr-in { opacity: 1; transform: none; }
+  }
   .card-hover { transition: transform .25s ease, box-shadow .25s ease; }
   .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,.10); }
+  /* Card "Untuk Siapa" bukan CTA: no lift, no shadow, no animasi sama sekali */
+  #untuk-siapa .card-hover, #untuk-siapa .card-hover:hover,
+  #untuk-siapa .card-hover:active, #untuk-siapa .card-hover:focus,
+  #untuk-siapa .card-hover:focus-visible {
+    transform: none !important; box-shadow: none !important; transition: none !important;
+  }
   details.faq summary::-webkit-details-marker { display: none; }
   details.faq summary { cursor: pointer; list-style: none; }
   details.faq summary .chev { transition: transform .2s ease; }
@@ -51,59 +113,89 @@
     } catch(e) {}
   })();
 </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KMQ8WBZF6E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-KMQ8WBZF6E');
+</script>
 </head>
 <body class="bg-white dark:bg-[#0a0a0a] text-gray-900 dark:text-white min-h-screen antialiased">
 
 <!-- NAVBAR -->
 <header class="sticky top-0 z-40 border-b border-gray-100 dark:border-[#222] bg-white/90 dark:bg-[#0a0a0a]/90 backdrop-blur-md">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
-    <a href="/" class="flex items-center gap-2">
-      <img src="../assets/logo-clinqoo.png" alt="Clinqoo" class="w-7 h-7 rounded-full shadow-sm">
-      <span class="font-bold text-[15px]">Clinqoo</span>
+  <div class="mx-auto px-4 sm:px-6 min-h-[68px] py-2 flex items-center justify-between gap-3" style="max-width:80rem">
+    <a href="https://www.clincoo.buzz/" class="flex items-center gap-1.5 sm:gap-2.5 shrink-0" aria-label="Clincoo, kembali ke beranda">
+      <img src="https://app.clincoo.buzz/assets/logo-clinqoo.png" alt="" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full shadow-sm">
+      <span class="text-3xl tracking-tight leading-none" style="font-weight:800">Clincoo</span>
     </a>
-    <nav class="hidden sm:flex items-center gap-6 text-sm text-gray-600 dark:text-gray-300">
+    <nav class="hidden lg:flex items-center gap-5 text-sm text-gray-600 dark:text-gray-300">
       <a href="#fitur" class="hover:text-black dark:hover:text-white transition-colors">Fitur</a>
       <a href="#template" class="hover:text-black dark:hover:text-white transition-colors">Template</a>
+      <a href="#harga" class="hover:text-black dark:hover:text-white transition-colors">Harga</a>
+      <a href="#blog" class="hover:text-black dark:hover:text-white transition-colors">Blog</a>
       <a href="#cara-kerja" class="hover:text-black dark:hover:text-white transition-colors">Cara Kerja</a>
       <a href="#faq" class="hover:text-black dark:hover:text-white transition-colors">FAQ</a>
     </nav>
-    <div class="flex items-center gap-2">
-      <a href="https://clinqoo.pages.dev/auth/" class="px-5 py-2 text-sm font-semibold bg-black text-white dark:bg-white dark:text-black rounded-full hover:opacity-85 transition-opacity shadow-sm">
-        Daftar / Masuk
-      </a>
+    <div class="flex items-center gap-1 shrink-0" style="margin-right:-0.625rem">
+      <a href="https://app.clincoo.buzz" class="header-cta inline-flex items-center justify-center px-5 text-sm font-bold rounded-full transition-colors">Mulai Gratis</a>
+      <button id="menu-btn" class="menu-btn inline-flex items-center justify-center min-h-11 w-11 rounded-full transition-colors" aria-label="Buka menu" aria-expanded="false" aria-controls="menu-sidebar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16"/><path d="M4 12h10"/><path d="M4 17h13"/></svg>
+      </button>
     </div>
   </div>
 </header>
+<div id="menu-overlay" class="menu-overlay"></div>
+<aside id="menu-sidebar" class="menu-sidebar" aria-hidden="true" aria-label="Menu">
+  <div class="menu-head">
+    <span class="flex items-center gap-2">
+      <img src="https://app.clincoo.buzz/assets/logo-clinqoo.png" alt="" class="w-8 h-8 rounded-full shadow-sm">
+      <span class="text-xl tracking-tight" style="font-weight:800">Clincoo</span>
+    </span>
+    <button id="menu-close" class="menu-close" aria-label="Tutup menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+    </button>
+  </div>
+  <nav class="menu-body" aria-label="Menu utama">
+    <a href="#fitur" class="menu-link">Fitur</a>
+    <a href="#template" class="menu-link">Template</a>
+    <a href="#harga" class="menu-link">Harga</a>
+    <a href="#blog" class="menu-link">Blog</a>
+    <a href="#cara-kerja" class="menu-link">Cara Kerja</a>
+    <a href="#faq" class="menu-link">FAQ</a>
+  </nav>
+  <div class="menu-foot">
+    <a href="https://app.clincoo.buzz" class="menu-cta">Mulai Gratis</a>
+  </div>
+</aside>
 
 <!-- HERO -->
 <section class="relative overflow-hidden">
   <div id="hero-bg-light" class="absolute inset-0 bg-cover bg-center transition-opacity duration-700"></div>
   <div id="hero-bg-dark" class="absolute inset-0 hidden dark:block bg-cover bg-center transition-opacity duration-700"></div>
   <div class="relative max-w-6xl mx-auto px-4 sm:px-6 pt-24 pb-24 text-center">
-    <h1 id="hero-title" class="rise font-display font-bold text-4xl sm:text-5xl md:text-6xl tracking-tight max-w-3xl mx-auto leading-[1.08]"></h1>
-    <p id="hero-subtitle" class="rise rise-d1 text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mt-5 leading-relaxed"></p>
+    <h1 id="hero-title" class="rise font-display font-bold text-4xl sm:text-5xl md:text-6xl tracking-tight max-w-3xl mx-auto leading-[1.08]">Bangun situsmu. Publikasikan dengan mudah.</h1>
+    <p id="hero-subtitle" class="rise rise-d1 text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mt-5 leading-relaxed">Mulai dari <strong>template siap pakai</strong>, ubah sesuai kebutuhan di <strong>editor Monaco</strong>, lalu <strong>publikasikan dari dashboard</strong>. Asisten AI siap membantu saat kamu membutuhkan arahan.</p>
     <div class="rise rise-d2 flex flex-col sm:flex-row items-center justify-center gap-3 mt-8">
-      <a href="https://clinqoo.pages.dev/auth/" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-black text-white dark:bg-white dark:text-black font-semibold text-base hover:opacity-85 transition-opacity shadow-lg shadow-black/10">
-        Mulai Gratis Sekarang
+      <a href="https://app.clincoo.buzz" class="group w-full sm:w-auto px-7 py-3.5 rounded-full bg-black text-white dark:bg-white dark:text-black font-semibold text-base hover:opacity-85 transition-opacity shadow-lg shadow-black/10">
+        Mulai Bangun Sekarang
       </a>
-      <a href="https://clinqoo.pages.dev/templates/" class="w-full sm:w-auto px-6 py-3.5 rounded-xl border border-gray-300 dark:border-[#2f2f2f] font-semibold text-base hover:bg-gray-50 dark:hover:bg-[#141414] transition-colors">
+      <a href="https://app.clincoo.buzz/templates/" class="w-full sm:w-auto px-7 py-3.5 rounded-full border border-gray-300 dark:border-[#2f2f2f] font-semibold text-base hover:bg-gray-50 dark:hover:bg-[#141414] transition-colors">
         Lihat Galeri Template
       </a>
     </div>
-    <p class="rise rise-d3 text-xs text-gray-500 dark:text-gray-500 mt-4">Gratis untuk memulai — tanpa kartu kredit.</p>
+    <p class="rise rise-d3 text-xs text-gray-500 dark:text-gray-500 mt-4">Mulai dengan Starter gratis. Lihat rincian paket di <a href="#harga" class="underline underline-offset-2 hover:text-black dark:hover:text-white">daftar harga</a>.</p>
   </div>
 </section>
 <script>
 (function () {
   // Background diambil langsung dari aset halaman utama clinqoo.pages.dev (bg-light-morning / bg-dark-night2)
-  var lightUrl = '/assets/backgrounds/bg-light-morning.webp';
-  var darkUrl = '/assets/backgrounds/bg-dark-night2.webp';
+  var lightUrl = 'https://app.clincoo.buzz/assets/backgrounds/bg-light-morning.webp';
+  var darkUrl = 'https://app.clincoo.buzz/assets/backgrounds/bg-dark-night2.webp';
   var texts = [
-    { t: 'Dari ide ke online, dalam satu ruang kerja', s: 'Clinqoo memadukan <strong>editor kode full-stack</strong>, <strong>template siap pakai</strong>, dan <strong>deploy sekali klik</strong> — dibantu <strong>asisten AI</strong> di setiap langkah. Semuanya dari browser, tanpa setup.' },
-    { t: 'Ngoding, desain, deploy. Selesai hari ini.', s: '<strong>Asisten AI</strong> siap bantu dari nol sampai online. Pakai <strong>template siap pakai</strong> atau tulis kode sendiri di editor full-stack, lalu <strong>deploy sekali klik</strong>.' },
-    { t: 'Situsmu online, secepat kamu mengetik', s: 'Rancang dengan <strong>AI</strong>, sempurnakan di <strong>editor kode full-stack</strong>, publikasikan dengan <strong>satu klik</strong>. Tanpa install, tanpa ribet.' },
-    { t: 'Bangun situs impianmu, tanpa drama teknis', s: '<strong>Template siap pakai</strong>, <strong>editor full-stack</strong>, dan <strong>asisten AI</strong> yang siap membantu — semua dalam satu ruang kerja. Publikasikan cuma sekali klik.' },
-    { t: 'Ide di kepala, situs di internet — hari ini', s: 'Clinqoo gabungkan <strong>editor kode</strong>, <strong>template</strong>, dan <strong>asisten AI</strong> dalam satu tempat. Rancang, sempurnakan, dan <strong>deploy sekali klik</strong>.' }
+    { t: 'Bangun situsmu. Publikasikan dengan mudah.', s: 'Mulai dari <strong>template siap pakai</strong>, ubah sesuai kebutuhan di <strong>editor Monaco</strong>, lalu <strong>publikasikan dari dashboard</strong>. Asisten AI siap membantu saat kamu membutuhkan arahan.' },
+    { t: 'Dari ide menjadi situs yang siap dibagikan.', s: 'Kelola file proyek, edit kode di browser, cek hasilnya, lalu <strong>deploy situsmu</strong>.' }
   ];
   // Variasi posisi & tint tipis agar background yang sama tetap terasa berbeda tiap refresh
   var positions = ['center', 'top', 'bottom', '30% 20%', '70% 30%', 'center 80%'];
@@ -157,47 +249,35 @@
     <p class="text-gray-600 dark:text-gray-400 mt-3 max-w-xl mx-auto">Satu ruang kerja lengkap — dari ide sampai situsmu hidup di internet.</p>
   </div>
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-    <div class="card-hover rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-gray-50/60 dark:bg-[#111] p-6 shadow-sm hover:shadow-md transition-shadow">
-      <div class="w-11 h-11 rounded-xl bg-black dark:bg-white text-white dark:text-black flex items-center justify-center">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21 15-2-2-2 2"/><path d="M3 5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5Z"/><path d="M7 15h.01"/><path d="M11 15h2"/></svg>
-      </div>
+    <div class="rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-gray-50/60 dark:bg-[#111] p-6">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-500 dark:text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 8V4"/><circle cx="12" cy="3" r="1"/><rect x="5" y="8" width="14" height="11" rx="3"/><path d="M9.5 13h.01"/><path d="M14.5 13h.01"/><path d="M10 16.5h4"/><path d="M2 12v3"/><path d="M22 12v3"/></svg>
       <h3 class="font-semibold text-base mt-4">Asisten AI</h3>
-      <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 leading-relaxed">Butuh bantuan? AI Clinqoo siap membantu — memberi saran, menjelaskan, mencari referensi, sampai mengatur file workspace-mu. Kamu yang pegang kendali penuh atas situsmu.</p>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 leading-relaxed">Asisten AI siap menjelaskan kode, memberi saran, dan mengelola file di workspace. Kamu tetap pegang kendali penuh: tinjau hasil, rapikan di editor, lalu terbitkan dari dashboard.</p>
     </div>
-    <div class="card-hover rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-gray-50/60 dark:bg-[#111] p-6 shadow-sm hover:shadow-md transition-shadow">
-      <div class="w-11 h-11 rounded-xl bg-black dark:bg-white text-white dark:text-black flex items-center justify-center">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-      </div>
+    <div class="rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-gray-50/60 dark:bg-[#111] p-6">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-500 dark:text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
       <h3 class="font-semibold text-base mt-4">Editor Kode Full-Stack</h3>
-      <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 leading-relaxed">Editor modern berbasis Monaco dengan terminal, version control, dan live preview — bekerja langsung di browser, di mana saja.</p>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 leading-relaxed">Monaco Editor langsung di browser: edit file, buka pratinjau, pakai terminal, dan lacak riwayat versi. Ideal untuk mengembangkan situs tahap demi tahap.</p>
     </div>
-    <div class="card-hover rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-gray-50/60 dark:bg-[#111] p-6 shadow-sm hover:shadow-md transition-shadow">
-      <div class="w-11 h-11 rounded-xl bg-black dark:bg-white text-white dark:text-black flex items-center justify-center">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 12a9 9 0 1 1-2.64-6.35"/><polyline points="21.5 3 21.5 9 15.5 9"/></svg>
-      </div>
+    <div class="rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-gray-50/60 dark:bg-[#111] p-6">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-500 dark:text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="M12 12v9"/><path d="m16 16-4-4-4 4"/></svg>
       <h3 class="font-semibold text-base mt-4">Deploy Sekali Klik</h3>
-      <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 leading-relaxed">Publish situsmu ke internet dalam sekali klik — atau suruh AI yang menekan tombol deploy-nya. Build cepat, HTTPS otomatis.</p>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 leading-relaxed">Situs sudah siap? Buka menu Deploy, terbitkan dalam sekali klik, dan bagikan tautannya ke siapa saja.</p>
     </div>
-    <div class="card-hover rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-gray-50/60 dark:bg-[#111] p-6 shadow-sm hover:shadow-md transition-shadow">
-      <div class="w-11 h-11 rounded-xl bg-black dark:bg-white text-white dark:text-black flex items-center justify-center">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
-      </div>
+    <div class="rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-gray-50/60 dark:bg-[#111] p-6">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-500 dark:text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
       <h3 class="font-semibold text-base mt-4">Template Siap Pakai</h3>
-      <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 leading-relaxed">Portfolio, landing page SaaS, toko online top-up game, sampai aplikasi manajemen tugas — pilih, personalisasi, langsung jalan.</p>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 leading-relaxed">Tak perlu mulai dari nol. Pilih template portofolio, landing page, atau manajemen tugas, lalu ubah konten dan tampilannya sesukamu di editor.</p>
     </div>
-    <div class="card-hover rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-gray-50/60 dark:bg-[#111] p-6 shadow-sm hover:shadow-md transition-shadow">
-      <div class="w-11 h-11 rounded-xl bg-black dark:bg-white text-white dark:text-black flex items-center justify-center">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-      </div>
+    <div class="rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-gray-50/60 dark:bg-[#111] p-6">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-500 dark:text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
       <h3 class="font-semibold text-base mt-4">Kolaborasi &amp; Workspace</h3>
-      <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 leading-relaxed">Workspace per-proyek dengan file &amp; folder, tim AI multi-ahli, dan sinkronisasi antar perangkat lewat akun Clinqoo-mu.</p>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 leading-relaxed">Kelola file dan folder per proyek, lalu undang kolaborator untuk kerja bareng.</p>
     </div>
-    <div class="card-hover rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-gray-50/60 dark:bg-[#111] p-6 shadow-sm hover:shadow-md transition-shadow">
-      <div class="w-11 h-11 rounded-xl bg-black dark:bg-white text-white dark:text-black flex items-center justify-center">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>
-      </div>
+    <div class="rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-gray-50/60 dark:bg-[#111] p-6">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-500 dark:text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1 1 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
       <h3 class="font-semibold text-base mt-4">Aman &amp; Kamu Punya Datanya</h3>
-      <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 leading-relaxed">Kode dan file proyekmu milikmu — ekspor kapan saja sebagai HTML tunggal atau arsip ZIP. Kebijakan privasi yang jelas dan transparan.</p>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 leading-relaxed">Pekerjaanmu tersimpan aman di workspace dan bisa diekspor sebagai HTML atau ZIP. Kamu yang memeriksa dan mengatur semuanya sebelum dipublikasikan.</p>
     </div>
   </div>
 </section>
@@ -209,11 +289,10 @@
     <div>
       <h2 class="font-display font-bold text-3xl sm:text-4xl tracking-tight">Asisten AI yang siap membantu, kamu yang pegang kendali</h2>
       <p class="text-gray-600 dark:text-gray-400 mt-4 leading-relaxed">
-        AI Clinqoo hadir sebagai asisten di ruang kerjamu: menjelaskan konsep, memberi saran kode,
-        mencari info terbaru, dan mengurus hal-hal kecil — sementara kamu fokus membangun dan mengelola situsmu.
-        Untuk pekerjaan yang lebih besar, aktifkan <span class="font-semibold text-black dark:text-white">Mode Kolaborasi</span> dan bekerja searah dengan tim AI multi-ahli.
+        Asisten AI hadir untuk membantu memahami kode, memberi saran, dan menata file proyek.
+        Kamu tetap mengarahkan pengerjaan situs, meninjau setiap perubahan penting, dan memilih kapan situs siap diterbitkan.
       </p>
-      <a href="https://clinqoo.pages.dev/auth/" class="inline-block mt-6 px-5 py-3 rounded-xl bg-black text-white dark:bg-white dark:text-black font-semibold text-sm hover:opacity-85 transition-opacity shadow-sm hover:shadow-md">Coba Asisten AI &rarr;</a>
+      <a href="https://app.clincoo.buzz" class="inline-block mt-6 px-5 py-3 rounded-xl bg-black text-white dark:bg-white dark:text-black font-semibold text-sm hover:opacity-85 transition-opacity shadow-sm hover:shadow-md">Coba Asisten AI &rarr;</a>
     </div>
     <ul class="space-y-4">
       <li class="flex items-start gap-3">
@@ -230,7 +309,7 @@
       </li>
       <li class="flex items-start gap-3">
         <span class="mt-0.5 w-6 h-6 rounded-full bg-black dark:bg-white text-white dark:text-black flex items-center justify-center flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-        <div><p class="font-semibold text-sm">Deploy lewat percakapan</p><p class="text-sm text-gray-500 dark:text-gray-400 mt-0.5">Katakan saja &ldquo;deploy situsku&rdquo; — AI yang mempublikasikannya untukmu.</p></div>
+        <div><p class="font-semibold text-sm">Deploy lewat percakapan</p><p class="text-sm text-gray-500 dark:text-gray-400 mt-0.5">Buka menu Deploy untuk mempublikasikan hasil editanmu dari satu tempat.</p></div>
       </li>
     </ul>
   </div>
@@ -259,10 +338,10 @@
   <div class="order-1 md:order-2">
     <h2 class="font-display font-bold text-3xl sm:text-4xl tracking-tight">Editor kode sekelas IDE, langsung di browser</h2>
     <p class="text-gray-600 dark:text-gray-400 mt-4 leading-relaxed">
-      Mau turun tangan sendiri? Editor Clinqoo memberi kamu pengalaman coding yang familiar dan lengkap —
+      Mau turun tangan sendiri? Editor Clincoo memberi kamu pengalaman coding yang familiar dan lengkap —
       tanpa install apa pun, buka dari perangkat mana saja.
     </p>
-    <a href="https://clinqoo.pages.dev/auth/" class="inline-block mt-6 px-5 py-3 rounded-xl border border-gray-300 dark:border-[#2f2f2f] font-semibold text-sm hover:bg-gray-50 dark:hover:bg-[#141414] transition-colors shadow-sm hover:shadow-md">Buka Editor &rarr;</a>
+    <a href="https://app.clincoo.buzz" class="inline-block mt-6 px-5 py-3 rounded-xl border border-gray-300 dark:border-[#2f2f2f] font-semibold text-sm hover:bg-gray-50 dark:hover:bg-[#141414] transition-colors shadow-sm hover:shadow-md">Buka Editor &rarr;</a>
   </div>
 </section>
 
@@ -274,33 +353,94 @@
       <p class="text-gray-600 dark:text-gray-400 mt-3">Klik untuk melihat demo langsung — semuanya bisa langsung kamu pakai dan ubah.</p>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-      <a href="https://clinqoo.pages.dev/demo/portfolio/" class="card-hover group rounded-xl overflow-hidden border border-gray-200 dark:border-[#1e1e1e] bg-white dark:bg-[#111] block">
-        <div class="aspect-[16/10] overflow-hidden"><img src="/assets/templates/portfolio.webp" alt="Pratinjau Portfolio Profesional" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"></div>
+      <a href="https://app.clincoo.buzz/demo/portfolio/" class="card-hover group rounded-xl overflow-hidden border border-gray-200 dark:border-[#1e1e1e] bg-white dark:bg-[#111] block">
+        <div class="aspect-[16/10] overflow-hidden"><img src="https://app.clincoo.buzz/assets/templates/portfolio.webp" alt="Pratinjau Portfolio Profesional" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"></div>
         <div class="p-5"><h3 class="font-semibold">Portfolio Profesional</h3><p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Portfolio developer dengan bagian karya, layanan, blog, dan kontak.</p></div>
       </a>
-      <a href="https://clinqoo.pages.dev/demo/saas/" class="card-hover group rounded-xl overflow-hidden border border-gray-200 dark:border-[#1e1e1e] bg-white dark:bg-[#111] block">
-        <div class="aspect-[16/10] overflow-hidden"><img src="/assets/templates/saas.webp" alt="Pratinjau Landing Page SaaS" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"></div>
+      <a href="https://app.clincoo.buzz/demo/saas/" class="card-hover group rounded-xl overflow-hidden border border-gray-200 dark:border-[#1e1e1e] bg-white dark:bg-[#111] block">
+        <div class="aspect-[16/10] overflow-hidden"><img src="https://app.clincoo.buzz/assets/templates/saas.webp" alt="Pratinjau Landing Page SaaS" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"></div>
         <div class="p-5"><h3 class="font-semibold">Landing Page SaaS</h3><p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Hero, fitur, showcase, testimoni, pricing, dan FAQ siap konversi.</p></div>
       </a>
-      <a href="https://clinqoo.pages.dev/demo/topup/" class="card-hover group rounded-xl overflow-hidden border border-gray-200 dark:border-[#1e1e1e] bg-white dark:bg-[#111] block">
-        <div class="aspect-[16/10] overflow-hidden"><img src="/assets/templates/topup.webp" alt="Pratinjau Top Up Game" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"></div>
+      <a href="https://app.clincoo.buzz/demo/topup/" class="card-hover group rounded-xl overflow-hidden border border-gray-200 dark:border-[#1e1e1e] bg-white dark:bg-[#111] block">
+        <div class="aspect-[16/10] overflow-hidden"><img src="https://app.clincoo.buzz/assets/templates/topup.webp" alt="Pratinjau Top Up Game" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"></div>
         <div class="p-5"><h3 class="font-semibold">Top Up Game</h3><p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Toko top up instan dengan katalog game dan metode pembayaran lengkap.</p></div>
       </a>
-      <a href="https://clinqoo.pages.dev/demo/tasks/" class="card-hover group rounded-xl overflow-hidden border border-gray-200 dark:border-[#1e1e1e] bg-white dark:bg-[#111] block">
-        <div class="aspect-[16/10] overflow-hidden"><img src="/assets/templates/tasks.webp" alt="Pratinjau Manajemen Tugas" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"></div>
+      <a href="https://app.clincoo.buzz/demo/tasks/" class="card-hover group rounded-xl overflow-hidden border border-gray-200 dark:border-[#1e1e1e] bg-white dark:bg-[#111] block">
+        <div class="aspect-[16/10] overflow-hidden"><img src="https://app.clincoo.buzz/assets/templates/tasks.webp" alt="Pratinjau Manajemen Tugas" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"></div>
         <div class="p-5"><h3 class="font-semibold">Manajemen Tugas</h3><p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Dashboard statistik, papan kanban, kalender, dan laporan.</p></div>
       </a>
-      <a href="https://clinqoo.pages.dev/demo/properti/" class="card-hover group rounded-xl overflow-hidden border border-gray-200 dark:border-[#1e1e1e] bg-white dark:bg-[#111] block">
-        <div class="aspect-[16/10] overflow-hidden"><img src="/assets/templates/properti.webp" alt="Pratinjau Web Properti" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"></div>
+      <a href="https://app.clincoo.buzz/demo/properti/" class="card-hover group rounded-xl overflow-hidden border border-gray-200 dark:border-[#1e1e1e] bg-white dark:bg-[#111] block">
+        <div class="aspect-[16/10] overflow-hidden"><img src="https://app.clincoo.buzz/assets/templates/properti.webp" alt="Pratinjau Web Properti" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"></div>
         <div class="p-5"><h3 class="font-semibold">Web Properti</h3><p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Katalog listing dengan filter, valuasi properti, dan layanan agen.</p></div>
       </a>
-      <a href="https://clinqoo.pages.dev/templates/" class="card-hover rounded-xl overflow-hidden border border-dashed border-gray-300 dark:border-[#2f2f2f] bg-white dark:bg-[#111] flex items-center justify-center p-5 text-center">
-        <div>
-          <p class="font-semibold">Lihat semua template di galeri &rarr;</p>
-          <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Termasuk template AI siap pakai untuk berbagai kebutuhan.</p>
-        </div>
-      </a>
     </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section id="blog" class="max-w-6xl mx-auto px-4 sm:px-6 py-20">
+  <div class="text-center mb-12">
+    <h2 class="font-display font-bold text-3xl sm:text-4xl tracking-tight">Dari Blog Clincoo</h2>
+    <p class="text-gray-600 dark:text-gray-400 mt-3">Panduan, tips, dan update seputar membangun situs — belajar sambil membangun.</p>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+    <a href="https://blog.clincoo.buzz/panduan/memulai-dengan-clinqoo/" class="card-hover rounded-xl border border-gray-200 dark:border-[#1e1e1e] bg-white dark:bg-[#111] p-5 block">
+      <span class="inline-block text-xs font-semibold px-2 py-1 rounded-md bg-gray-100 dark:bg-[#1e1e1e] text-gray-600 dark:text-gray-400">Panduan</span>
+      <h3 class="font-semibold mt-3 leading-snug">Memulai dengan Clincoo: Dari Nol sampai Situs Pertama</h3>
+      <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">Panduan lengkap pemula: membuat akun, membuka editor, mengedit file pertama, hingga situs pertama kamu tayang.</p>
+    </a>
+    <a href="https://blog.clincoo.buzz/deploy/deploy-situs-pertama/" class="card-hover rounded-xl border border-gray-200 dark:border-[#1e1e1e] bg-white dark:bg-[#111] p-5 block">
+      <span class="inline-block text-xs font-semibold px-2 py-1 rounded-md bg-gray-100 dark:bg-[#1e1e1e] text-gray-600 dark:text-gray-400">Deploy</span>
+      <h3 class="font-semibold mt-3 leading-snug">Deploy Situs Pertamamu ke Internet dalam Hitungan Menit</h3>
+      <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">Dari editor ke alamat yang bisa dibuka siapa saja: begini cara menerbitkan situs lewat menu Deploy Clincoo.</p>
+    </a>
+    <a href="https://blog.clincoo.buzz/deploy/domain-kustom-dan-dns/" class="card-hover rounded-xl border border-gray-200 dark:border-[#1e1e1e] bg-white dark:bg-[#111] p-5 block">
+      <span class="inline-block text-xs font-semibold px-2 py-1 rounded-md bg-gray-100 dark:bg-[#1e1e1e] text-gray-600 dark:text-gray-400">Deploy</span>
+      <h3 class="font-semibold mt-3 leading-snug">Pakai Domain Sendiri: Dasar-dasar DNS untuk Pemilik Situs</h3>
+      <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">Alamat domain sendiri membuat situsmu terdengar serius. Ini yang perlu kamu tahu sebelum memakainya.</p>
+    </a>
+  </div>
+  <div class="text-center mt-8">
+    <a href="https://blog.clincoo.buzz/" class="inline-block mt-2 font-semibold text-sm text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors">Lihat semua artikel &rarr;</a>
+  </div>
+</section>
+
+<!-- HARGA PAKET -->
+<section id="harga" class="scroll-mt-24 border-y border-gray-100 dark:border-[#1e1e1e] bg-gray-50/70 dark:bg-[#0d0d0d] py-20">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <p class="text-xs font-bold uppercase tracking-[.18em] text-gray-500 dark:text-gray-400">Harga transparan</p>
+      <h2 class="font-display font-bold text-3xl sm:text-4xl tracking-tight mt-3">Pilih paket sesuai kebutuhanmu</h2>
+      <p class="text-gray-600 dark:text-gray-400 mt-3">Mulai gratis, lalu naikkan kapasitas proyek dan deploy saat kamu siap.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 items-stretch">
+      <article class="rounded-3xl border border-gray-200 dark:border-[#292929] bg-white dark:bg-[#141414] p-6 sm:p-7 flex flex-col">
+        <h3 class="font-display text-xl font-bold">Starter</h3><p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Untuk situs pertamamu.</p>
+        <p class="mt-7 font-display text-4xl font-bold">Gratis</p><p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Tanpa biaya langganan</p>
+        <ul class="space-y-3 text-sm text-gray-700 dark:text-gray-300 mt-7 mb-8 flex-1" aria-label="Fitur paket Starter">
+          <li>✓ Hingga 3 proyek aktif</li><li>✓ 1 kolaborator per proyek</li><li>✓ Chat AI 50 pesan/bulan (maks 10/hari)</li><li>✓ 3 template proyek siap pakai</li><li>✓ Deploy web 5x per bulan</li>
+        </ul>
+        <a href="https://app.clincoo.buzz" class="min-h-12 inline-flex items-center justify-center rounded-xl border border-gray-300 dark:border-gray-600 font-bold text-sm hover:bg-gray-100 dark:hover:bg-[#222] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">Mulai Gratis</a>
+      </article>
+      <article class="relative rounded-3xl border-2 border-black dark:border-white bg-white dark:bg-[#141414] p-6 sm:p-7 flex flex-col shadow-xl shadow-black/10">
+        <span class="absolute -top-3 right-6 rounded-full bg-black text-white dark:bg-white dark:text-black px-3 py-1 text-[11px] font-bold">Paling populer</span>
+        <h3 class="font-display text-xl font-bold">Pro</h3><p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Untuk kreator yang rutin menerbitkan.</p>
+        <p class="mt-7 font-display text-4xl font-bold" id="pro-price">Rp5.000<span class="text-base font-medium text-gray-500 dark:text-gray-400">/bulan</span> <span class="text-sm font-medium text-gray-400" style="text-decoration:line-through;color:#9ca3af;white-space:nowrap">Rp49.000</span></p><p class="text-xs text-gray-500 dark:text-gray-400 mt-1" id="pro-price-note">Promo 100 pengguna pertama, untuk akun yang memenuhi syarat.</p>
+        <ul class="space-y-3 text-sm text-gray-700 dark:text-gray-300 mt-7 mb-8 flex-1" aria-label="Fitur paket Pro">
+          <li>✓ Hingga 10 proyek aktif</li><li>✓ 5 kolaborator per proyek</li><li>✓ Chat AI 500 pesan/bulan (maks 50/hari)</li><li>✓ Deploy web 25x per bulan</li><li>✓ Impor repositori GitHub</li><li>✓ Semua fitur Starter</li>
+        </ul>
+        <a href="https://app.clincoo.buzz/akun/langganan/upgrade/" class="min-h-12 inline-flex items-center justify-center rounded-xl bg-black text-white dark:bg-white dark:text-black font-bold text-sm hover:bg-gray-800 dark:hover:bg-gray-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">Pilih Pro</a>
+      </article>
+      <article class="rounded-3xl border border-gray-200 dark:border-[#292929] bg-white dark:bg-[#141414] p-6 sm:p-7 flex flex-col">
+        <h3 class="font-display text-xl font-bold">Bisnis</h3><p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Untuk tim dan proyek lebih banyak.</p>
+        <p class="mt-7 font-display text-4xl font-bold">Rp129.000<span class="text-base font-medium text-gray-500 dark:text-gray-400">/bulan</span></p><p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Harga reguler bulanan</p>
+        <ul class="space-y-3 text-sm text-gray-700 dark:text-gray-300 mt-7 mb-8 flex-1" aria-label="Fitur paket Bisnis">
+          <li>✓ Hingga 50 proyek aktif</li><li>✓ 20 kolaborator per proyek</li><li>✓ Chat AI 2.000 pesan/bulan (maks 150/hari)</li><li>✓ Deploy web tanpa batas*</li><li>✓ Semua fitur Pro</li>
+        </ul>
+        <a href="https://app.clincoo.buzz/akun/langganan/upgrade/" class="min-h-12 inline-flex items-center justify-center rounded-xl border border-gray-300 dark:border-gray-600 font-bold text-sm hover:bg-gray-100 dark:hover:bg-[#222] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">Pilih Bisnis</a>
+      </article>
+    </div>
+    <p class="text-xs text-gray-500 dark:text-gray-400 text-center mt-6">*Sesuai ketentuan layanan. Pilih paket berbayar setelah masuk ke akun; detail, periode penagihan, dan promo yang tersedia ditampilkan saat checkout.</p>
   </div>
 </section>
 
@@ -313,7 +453,7 @@
     <div class="text-center px-2">
       <div class="w-10 h-10 rounded-full bg-black dark:bg-white text-white dark:text-black font-bold flex items-center justify-center mx-auto">1</div>
       <h3 class="font-semibold mt-4">Ceritakan idemu</h3>
-      <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 leading-relaxed">Mulai dari template siap pakai atau halaman kosong — asisten AI Clinqoo membantu menyiapkan struktur, konten, dan detail-detailnya.</p>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 leading-relaxed">Pilih template dari galeri atau mulai dari proyek kosong, lalu tentukan struktur dan konten situs yang ingin kamu buat.</p>
     </div>
     <div class="text-center px-2">
       <div class="w-10 h-10 rounded-full bg-black dark:bg-white text-white dark:text-black font-bold flex items-center justify-center mx-auto">2</div>
@@ -323,36 +463,36 @@
     <div class="text-center px-2">
       <div class="w-10 h-10 rounded-full bg-black dark:bg-white text-white dark:text-black font-bold flex items-center justify-center mx-auto">3</div>
       <h3 class="font-semibold mt-4">Deploy ke internet</h3>
-      <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 leading-relaxed">Satu klik (atau satu perintah ke AI) dan situsmu hidup — siap dibagikan ke siapa saja.</p>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 leading-relaxed">Tinjau tampilan situs, lalu terbitkan lewat menu Deploy. Setelah terbit, bagikan tautannya.</p>
     </div>
   </div>
 </section>
 
 <!-- UNTUK SIAPA -->
-<section class="bg-gray-50/80 dark:bg-[#0d0d0d] border-y border-gray-100 dark:border-[#1a1a1a] py-20 relative overflow-hidden">
+<section id="untuk-siapa" class="bg-gray-50/80 dark:bg-[#0d0d0d] border-y border-gray-100 dark:border-[#1a1a1a] py-20 relative overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-tr from-transparent to-gray-100/50 dark:to-white/5 pointer-events-none"></div>
   <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
     <div class="text-center mb-12">
       <h2 class="font-display font-bold text-3xl sm:text-4xl tracking-tight">Dibuat untuk siapa saja yang ingin online</h2>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-      <div class="card-hover rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-white dark:bg-[#111] p-6 text-center shadow-sm">
-        <p class="text-3xl">🎨</p>
+      <div class="card-hover rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-white dark:bg-[#111] p-6 text-center">
+        <svg class="w-10 h-10 mx-auto text-black dark:text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9.06 11.9 8.07-8.06a2.85 2.85 0 1 1 4.03 4.03l-8.06 8.08"/><path d="M7.07 14.94c-1.66 0-3 1.35-3 3.02 0 1.33-2.5 1.52-2 2.02 1.08 1.1 2.49 2.02 4 2.02 2.21 0 4-1.8 4-4.04 0-1.66-1.33-3.02-3-3.02z"/></svg>
         <h3 class="font-semibold mt-3 text-sm">Portfolio &amp; Personal Brand</h3>
         <p class="text-xs text-gray-500 dark:text-gray-400 mt-2 leading-relaxed">Tunjukkan karya dan jasa-mu dengan situs yang terlihat profesional dalam sehari.</p>
       </div>
-      <div class="card-hover rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-white dark:bg-[#111] p-6 text-center shadow-sm">
-        <p class="text-3xl">🛒</p>
+      <div class="card-hover rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-white dark:bg-[#111] p-6 text-center">
+        <svg class="w-10 h-10 mx-auto text-black dark:text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
         <h3 class="font-semibold mt-3 text-sm">UMKM &amp; Toko Online</h3>
         <p class="text-xs text-gray-500 dark:text-gray-400 mt-2 leading-relaxed">Jualan online tanpa ribet — katalog produk, top up, sampai pembayaran.</p>
       </div>
-      <div class="card-hover rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-white dark:bg-[#111] p-6 text-center shadow-sm">
-        <p class="text-3xl">🏢</p>
+      <div class="card-hover rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-white dark:bg-[#111] p-6 text-center">
+        <svg class="w-10 h-10 mx-auto text-black dark:text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>
         <h3 class="font-semibold mt-3 text-sm">Bisnis &amp; Properti</h3>
         <p class="text-xs text-gray-500 dark:text-gray-400 mt-2 leading-relaxed">Halaman bisnis dan katalog listing yang mudah diperbarui kapan saja.</p>
       </div>
-      <div class="card-hover rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-white dark:bg-[#111] p-6 text-center shadow-sm">
-        <p class="text-3xl">💻</p>
+      <div class="card-hover rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-white dark:bg-[#111] p-6 text-center">
+        <svg class="w-10 h-10 mx-auto text-black dark:text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
         <h3 class="font-semibold mt-3 text-sm">Developer &amp; Agensi</h3>
         <p class="text-xs text-gray-500 dark:text-gray-400 mt-2 leading-relaxed">Editor kode penuh dengan terminal dan git — plus asisten AI saat butuh bantuan.</p>
       </div>
@@ -368,14 +508,14 @@
   <div class="space-y-3">
     <details class="faq rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-gray-50/60 dark:bg-[#111] px-5 py-4">
       <summary class="flex items-center justify-between gap-3 font-semibold text-sm">
-        Apa itu Clinqoo?
+        Apa itu Clincoo?
         <svg class="chev w-4 h-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
       </summary>
       <p class="text-sm text-gray-600 dark:text-gray-400 mt-3 leading-relaxed">Ruang kerja untuk membangun, mengelola, dan mempublikasikan situs web — editor kode full-stack, template, deploy, dan asisten AI dalam satu tempat, langsung dari browser.</p>
     </details>
     <details class="faq rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-gray-50/60 dark:bg-[#111] px-5 py-4">
       <summary class="flex items-center justify-between gap-3 font-semibold text-sm">
-        Saya nggak bisa coding. Apakah Clinqoo cocok untuk saya?
+        Saya nggak bisa coding. Apakah Clincoo cocok untuk saya?
         <svg class="chev w-4 h-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
       </summary>
       <p class="text-sm text-gray-600 dark:text-gray-400 mt-3 leading-relaxed">Bisa banget. Mulai dari template siap pakai lalu personalisasi sendiri — dan kalau macet, asisten AI siap membantu memberi saran dan solusi lewat percakapan.</p>
@@ -385,7 +525,7 @@
         Apakah gratis?
         <svg class="chev w-4 h-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
       </summary>
-      <p class="text-sm text-gray-600 dark:text-gray-400 mt-3 leading-relaxed">Kamu bisa mulai gratis tanpa kartu kredit. Ada paket berbayar dengan kuota AI dan fitur yang lebih besar, seperti Mode Kolaborasi Tim AI.</p>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mt-3 leading-relaxed"><span id="faq-price">Starter gratis mencakup 3 proyek aktif dan 5 deploy web per bulan. Pro sedang promo Rp5.000/bulan untuk akun yang memenuhi syarat selama kuota tersedia (harga reguler Rp49.000/bulan). Bisnis Rp129.000/bulan; lihat detail di bagian Harga.</span></p>
     </details>
     <details class="faq rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-gray-50/60 dark:bg-[#111] px-5 py-4">
       <summary class="flex items-center justify-between gap-3 font-semibold text-sm">
@@ -399,22 +539,40 @@
         Bagaimana cara mempublikasikan situsnya?
         <svg class="chev w-4 h-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
       </summary>
-      <p class="text-sm text-gray-600 dark:text-gray-400 mt-3 leading-relaxed">Sekali klik dari dashboard, atau cukup bilang ke AI &ldquo;deploy situsku&rdquo; — situsmu langsung online dengan HTTPS.</p>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mt-3 leading-relaxed">Setelah meninjau situs di pratinjau, buka menu Deploy dari dashboard untuk menerbitkannya. Batas deploy tersedia di daftar harga.</p>
     </details>
   </div>
 </section>
 
 <!-- CTA -->
-<section class="max-w-6xl mx-auto px-4 sm:px-6 pb-20">
-  <div class="relative rounded-3xl overflow-hidden text-white text-center p-10 sm:p-16">
-    <div class="absolute inset-0 bg-cover bg-center" style="background-image:url('/assets/backgrounds/cta-collage.webp')"></div>
-    <div class="absolute inset-0 bg-black/80"></div>
+<section class="max-w-7xl mx-auto px-4 sm:px-6 pb-20">
+  <div class="relative rounded-xl overflow-hidden text-center p-10 sm:p-16 border border-gray-100 dark:border-[#1e1e1e]">
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image:linear-gradient(180deg, rgba(255,255,255,0.82) 0%, rgba(255,255,255,0.92) 55%, #ffffff 100%), url('https://app.clincoo.buzz/assets/backgrounds/bg-light-morning.webp')"></div>
+    <div class="absolute inset-0 hidden dark:block" style="background-image:linear-gradient(180deg, rgba(10,10,10,0.72) 0%, rgba(10,10,10,0.85) 55%, #0a0a0a 100%), url('https://app.clincoo.buzz/assets/backgrounds/bg-dark-night2.webp')"></div>
     <div class="relative">
-      <h2 class="font-display font-bold text-3xl sm:text-4xl tracking-tight">Publikasikan situs pertamamu hari ini</h2>
-      <p class="text-white/70 mt-3 max-w-xl mx-auto">Daftar gratis, chat dengan asisten AI, dan lihat situsmu online hari ini juga. Tanpa setup, tanpa kartu kredit.</p>
-      <a href="https://clinqoo.pages.dev/auth/" class="inline-block mt-7 px-7 py-3.5 rounded-xl bg-white text-black font-semibold text-base hover:opacity-85 transition-opacity">
-        Mulai Gratis Sekarang
+      <h2 class="font-display font-bold text-3xl sm:text-4xl tracking-tight text-black dark:text-white">Publikasikan situs pertamamu hari ini</h2>
+      <p id="cta-tagline" class="mt-3 max-w-xl mx-auto text-gray-600 dark:text-gray-400">Ide terbaik akan tetap sebatas ide kalau kamu tidak pernah memberanikan diri untuk mencobanya.</p>
+      <a href="https://app.clincoo.buzz" class="group inline-block mt-7 px-7 py-3.5 rounded-full bg-black text-white dark:bg-white dark:text-black font-semibold text-base hover:opacity-85 transition-opacity shadow-lg shadow-black/10">
+        Mulai Sekarang
       </a>
+      <script>
+      (function () {
+        var t = [
+          'Ide terbaik akan tetap sebatas ide kalau kamu tidak pernah memberanikan diri untuk mencobanya.',
+          'Tidak perlu jago ngoding untuk punya situs keren, yang kamu butuhkan hanya keberanian untuk memulai.',
+          'Semua situs besar di dunia ini bermula dari satu halaman sederhana yang berani tayang lebih dulu.',
+          'Lebih baik punya situs sederhana yang sudah tayang daripada situs sempurna yang tidak pernah selesai dibuat.',
+          'Satu jam dari sekarang, karya pertamamu bisa saja sudah mengudara dan dilihat banyak orang.',
+          'Keraguan itu mahal harganya, sementara situs pertamamu bisa kamu miliki hari ini secara gratis.',
+          'Setiap karya hebat yang kamu kagumi hari ini punya versi pertama yang jauh dari sempurna. Ini giliranmu.',
+          'Situs pertamamu tidak harus langsung sempurna, cukup tayang dulu lalu sempurnakan seiring waktu.',
+          'Tidak akan pernah ada waktu yang lebih pas dari hari ini untuk mulai mewujudkan idemu.',
+          'Biarkan dunia melihat apa yang sudah kamu buat, karena semuanya selalu dimulai dari satu klik pertama.',
+        ];
+        var p = document.getElementById('cta-tagline');
+        if (p) p.textContent = t[Math.floor(Math.random() * t.length)];
+      })();
+      </script>
     </div>
   </div>
 </section>
@@ -423,9 +581,9 @@
 <footer class="border-t border-gray-100 dark:border-[#1e1e1e] bg-gray-50/60 dark:bg-[#0d0d0d]">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 py-14 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 text-sm">
     <div class="col-span-2 sm:col-span-3 lg:col-span-1">
-      <a href="/landing/" class="flex items-center gap-2">
-        <img src="../assets/logo-clinqoo.png" alt="Clinqoo" class="w-6 h-6 rounded-full">
-        <span class="font-bold">Clinqoo</span>
+      <a href="https://www.clincoo.buzz/" class="flex items-center gap-2">
+        <img src="https://app.clincoo.buzz/assets/logo-clinqoo.png" alt="Clincoo" class="w-6 h-6 rounded-full">
+        <span class="font-bold">Clincoo</span>
       </a>
       <p class="text-gray-500 dark:text-gray-400 mt-3 leading-relaxed max-w-[220px]">Ruang kerja untuk membangun, mengelola, dan mempublikasikan situs web — langsung dari browser.</p>
     </div>
@@ -433,41 +591,125 @@
       <h4 class="font-semibold text-gray-900 dark:text-white mb-3">Produk</h4>
       <ul class="space-y-2 text-gray-500 dark:text-gray-400">
         <li><a href="#fitur" class="hover:text-black dark:hover:text-white transition-colors">Fitur</a></li>
-        <li><a href="https://clinqoo.pages.dev/templates/" class="hover:text-black dark:hover:text-white transition-colors">Galeri Template</a></li>
-        <li><a href="https://clinqoo.pages.dev/editor/" class="hover:text-black dark:hover:text-white transition-colors">Editor Kode</a></li>
+        <li><a href="#harga" class="hover:text-black dark:hover:text-white transition-colors">Harga Paket</a></li>
+        <li><a href="https://app.clincoo.buzz/templates/" class="hover:text-black dark:hover:text-white transition-colors">Galeri Template</a></li>
+        <li><a href="https://app.clincoo.buzz/editor/" class="hover:text-black dark:hover:text-white transition-colors">Editor Kode</a></li>
+        <li><a href="https://blog.clincoo.buzz/" class="hover:text-black dark:hover:text-white transition-colors">Blog</a></li>
         <li><a href="#cara-kerja" class="hover:text-black dark:hover:text-white transition-colors">Cara Kerja</a></li>
       </ul>
     </div>
     <div>
       <h4 class="font-semibold text-gray-900 dark:text-white mb-3">Akun</h4>
       <ul class="space-y-2 text-gray-500 dark:text-gray-400">
-        <li><a href="https://clinqoo.pages.dev/auth/" class="hover:text-black dark:hover:text-white transition-colors">Daftar Gratis</a></li>
-        <li><a href="https://clinqoo.pages.dev/auth/" class="hover:text-black dark:hover:text-white transition-colors">Masuk</a></li>
+        <li><a href="https://app.clincoo.buzz" class="hover:text-black dark:hover:text-white transition-colors">Mulai Gratis</a></li>
         <li><a href="#faq" class="hover:text-black dark:hover:text-white transition-colors">FAQ</a></li>
       </ul>
     </div>
     <div>
       <h4 class="font-semibold text-gray-900 dark:text-white mb-3">Legal</h4>
       <ul class="space-y-2 text-gray-500 dark:text-gray-400">
-        <li><a href="https://clinqoo-blog.pages.dev/legal/syarat-ketentuan/" class="hover:text-black dark:hover:text-white transition-colors">Syarat &amp; Ketentuan</a></li>
-        <li><a href="https://clinqoo-blog.pages.dev/legal/kebijakan-privasi/" class="hover:text-black dark:hover:text-white transition-colors">Kebijakan Privasi</a></li>
-        <li><a href="https://clinqoo-blog.pages.dev/legal/kebijakan-cookie/" class="hover:text-black dark:hover:text-white transition-colors">Kebijakan Cookie</a></li>
-        <li><a href="https://clinqoo-blog.pages.dev/legal/kebijakan-pembayaran/" class="hover:text-black dark:hover:text-white transition-colors">Kebijakan Pembayaran</a></li>
+        <li><a href="https://blog.clincoo.buzz/legal/syarat-ketentuan/" class="hover:text-black dark:hover:text-white transition-colors">Syarat &amp; Ketentuan</a></li>
+        <li><a href="https://blog.clincoo.buzz/legal/kebijakan-privasi/" class="hover:text-black dark:hover:text-white transition-colors">Kebijakan Privasi</a></li>
+        <li><a href="https://blog.clincoo.buzz/legal/kebijakan-cookie/" class="hover:text-black dark:hover:text-white transition-colors">Kebijakan Cookie</a></li>
+        <li><a href="https://blog.clincoo.buzz/legal/kebijakan-pembayaran/" class="hover:text-black dark:hover:text-white transition-colors">Kebijakan Pembayaran</a></li>
       </ul>
     </div>
     <div>
       <h4 class="font-semibold text-gray-900 dark:text-white mb-3">Kontak</h4>
       <ul class="space-y-2 text-gray-500 dark:text-gray-400">
-        <li><a href="mailto:muzawwied@gmail.com" class="hover:text-black dark:hover:text-white transition-colors">muzawwied@gmail.com</a></li>
+        <li><a href="mailto:halo@clincoo.buzz" class="hover:text-black dark:hover:text-white transition-colors">halo@clincoo.buzz</a></li>
       </ul>
     </div>
   </div>
   <div class="border-t border-gray-100 dark:border-[#1e1e1e]">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-5 text-xs text-gray-500 dark:text-gray-400 text-center sm:text-left">
-      &copy; 2026 Clinqoo. Publikasikan situsmu dengan mudah.
+      &copy; 2026 Clincoo. Publikasikan situsmu dengan mudah.
     </div>
   </div>
 </footer>
 
-</body>
+
+  <!-- WhatsApp floating -->
+  <a href="https://chat.whatsapp.com/Bfg6tVtUoTy2GtKqhhiOiW" target="_blank" rel="noopener" aria-label="Chat WhatsApp Clincoo" class="wa-float" style="position:fixed;right:20px;bottom:20px;z-index:60;width:56px;height:56px;border-radius:9999px;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 28px rgba(0,0,0,.28);transition:transform .25s ease, box-shadow .25s ease">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" fill="#ffffff" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+  <style>.wa-float:hover{transform:scale(1.08)}.wa-float:active{transform:scale(.95)}</style>
+<script>
+(function () {
+  var btn = document.getElementById('menu-btn');
+  var sb = document.getElementById('menu-sidebar');
+  var ov = document.getElementById('menu-overlay');
+  var cls = document.getElementById('menu-close');
+  function openMenu() { sb.classList.add('open'); ov.classList.add('open'); document.body.style.overflow = 'hidden'; btn.setAttribute('aria-expanded', 'true'); sb.setAttribute('aria-hidden', 'false'); }
+  function closeMenu() { sb.classList.remove('open'); ov.classList.remove('open'); document.body.style.overflow = ''; btn.setAttribute('aria-expanded', 'false'); sb.setAttribute('aria-hidden', 'true'); }
+  btn.addEventListener('click', openMenu);
+  cls.addEventListener('click', closeMenu);
+  ov.addEventListener('click', closeMenu);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
+  var links = sb.querySelectorAll('.menu-link');
+  for (var i = 0; i < links.length; i++) links[i].addEventListener('click', closeMenu);
+})();
+</script>
+<script>
+(function () {
+  function cleanHash() { if (window.location.hash) history.replaceState(null, '', window.location.pathname); }
+  window.addEventListener('hashchange', cleanHash);
+  cleanHash();
+  var links = document.querySelectorAll('a[href^="#"]');
+  for (var i = 0; i < links.length; i++) {
+    links[i].addEventListener('click', function (e) {
+      var target = document.getElementById(this.getAttribute('href').slice(1));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  }
+})();
+</script>
+<script>
+(function () {
+  var els = document.querySelectorAll('section, footer');
+  var list = [];
+  for (var i = 0; i < els.length; i++) {
+    var el = els[i];
+    if (el.id === 'untuk-siapa' || el.querySelector('.rise')) continue;
+    el.classList.add('sr');
+    list.push(el);
+  }
+  if (!('IntersectionObserver' in window)) {
+    for (var j = 0; j < list.length; j++) list[j].classList.add('sr-in');
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    for (var k = 0; k < entries.length; k++) {
+      if (entries[k].isIntersecting) {
+        entries[k].target.classList.add('sr-in');
+        io.unobserve(entries[k].target);
+      }
+    }
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+  for (var m = 0; m < list.length; m++) io.observe(list[m]);
+})();
+</script>
+<script>
+// Landing publik: tampilkan promo hanya selama aktif dan slotnya tersedia.
+// Kelayakan per akun tetap diputuskan halaman upgrade/checkout.
+(function () {
+  fetch('https://clincoo-be2.pages.dev/api/promo', {cache:'no-store'})
+    .then(function(r){ if(!r.ok) throw new Error('Promo unavailable'); return r.json(); })
+    .then(function(p){
+      if (p && p.active === true && Number(p.remaining) > 0 && Number(p.price) === 5000) return;
+      var price = document.getElementById('pro-price');
+      var note = document.getElementById('pro-price-note');
+      if (price) price.innerHTML = 'Rp49.000<span class="text-base font-medium text-gray-500 dark:text-gray-400">/bulan</span>';
+      if (note) note.textContent = 'Harga reguler bulanan';
+      var faq=document.getElementById('faq-price'); if(faq) faq.textContent='Starter gratis mencakup 3 proyek aktif dan 5 deploy web per bulan. Pro Rp49.000/bulan dan Bisnis Rp129.000/bulan memberi batas lebih besar; lihat detail di bagian Harga.';
+    })
+    .catch(function(){
+      var price = document.getElementById('pro-price');
+      var note = document.getElementById('pro-price-note');
+      if (price) price.innerHTML = 'Rp49.000<span class="text-base font-medium text-gray-500 dark:text-gray-400">/bulan</span>';
+      if (note) note.textContent = 'Harga reguler bulanan (promo tidak dapat diverifikasi)';
+      var faq=document.getElementById('faq-price'); if(faq) faq.textContent='Starter gratis mencakup 3 proyek aktif dan 5 deploy web per bulan. Pro Rp49.000/bulan dan Bisnis Rp129.000/bulan memberi batas lebih besar; lihat detail di bagian Harga.';
+    });
+})();
+</script></body>
 </html>

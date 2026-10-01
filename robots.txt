@@ -1,3 +1,4 @@
-# Clinqoo Landing — robots.txt
 User-agent: *
 Allow: /
+
+Sitemap: https://www.clincoo.buzz/sitemap.xml
