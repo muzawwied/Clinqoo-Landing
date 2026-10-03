@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Clincoo — Bangun & Publikasikan Situsmu dengan Mudah</title>
-<meta name="description" content="Bangun situs profesional dengan bantuan AI dan Monaco Editor, lalu publikasikan ke internet hanya dengan satu klik. Tanpa setup, tanpa ribet.">
+<meta name="description" content="Bangun situs profesional dengan bantuan AI dan editor kode penuh, lalu publikasikan ke internet hanya dengan satu klik. Tanpa setup, tanpa ribet.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="canonical" href="https://www.clincoo.buzz/">
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Clincoo">
 <meta property="og:locale" content="id_ID">
 <meta property="og:title" content="Clincoo — Bangun & Publikasikan Situsmu dengan Mudah">
-<meta property="og:description" content="Bangun situs profesional dengan bantuan AI dan Monaco Editor, lalu publikasikan ke internet hanya dengan satu klik. Tanpa setup, tanpa ribet.">
+<meta property="og:description" content="Bangun situs profesional dengan bantuan AI dan editor kode penuh, lalu publikasikan ke internet hanya dengan satu klik. Tanpa setup, tanpa ribet.">
 <meta property="og:url" content="https://www.clincoo.buzz/">
 <meta property="og:image" content="https://app.clincoo.buzz/assets/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -22,7 +22,7 @@
 <meta property="og:image:alt" content="Clincoo — ruang kerja untuk bikin dan publikasikan situs web">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Clincoo — Bangun & Publikasikan Situsmu dengan Mudah">
-<meta name="twitter:description" content="Bangun situs profesional dengan bantuan AI dan Monaco Editor, lalu publikasikan ke internet hanya dengan satu klik. Tanpa setup, tanpa ribet.">
+<meta name="twitter:description" content="Bangun situs profesional dengan bantuan AI dan editor kode penuh, lalu publikasikan ke internet hanya dengan satu klik. Tanpa setup, tanpa ribet.">
 <meta name="twitter:image" content="https://app.clincoo.buzz/assets/og-image.png">
 <meta name="twitter:image:alt" content="Clincoo — Bangun & Publikasikan Situsmu dengan Mudah">
 <link rel="icon" type="image/png" sizes="64x64" href="https://app.clincoo.buzz/assets/favicon.png?v=9">
@@ -37,7 +37,7 @@
 {"@context":"https://schema.org","@graph":[
 {"@type":"WebSite","@id":"https://www.clincoo.buzz/#website","name":"Clincoo","url":"https://www.clincoo.buzz/","description":"Ruang kerja untuk membangun, mengelola, dan mempublikasikan situs web — langsung dari browser.","inLanguage":"id"},
 {"@type":"Organization","@id":"https://www.clincoo.buzz/#organization","name":"Clincoo","url":"https://www.clincoo.buzz/","logo":"https://app.clincoo.buzz/assets/logo-clinqoo.png","sameAs":["https://www.tiktok.com/@clincoo.co?_r=1&_t=ZS-99qknXlhEXc"]},
-{"@type":"SoftwareApplication","name":"Clincoo","applicationCategory":"DeveloperApplication","operatingSystem":"Web","url":"https://www.clincoo.buzz/","description":"Ruang kerja untuk membangun dan mempublikasikan situs: template, Monaco Editor, asisten AI, dan deploy dari browser.","offers":{"@type":"Offer","price":"0","priceCurrency":"IDR"},"featureList":["Asisten AI","Editor kode full-stack","Deploy sekali klik","Template siap pakai"]}
+{"@type":"SoftwareApplication","name":"Clincoo","applicationCategory":"DeveloperApplication","operatingSystem":"Web","url":"https://www.clincoo.buzz/","description":"Ruang kerja untuk membangun dan mempublikasikan situs: template, editor kode full-stack, asisten AI, dan deploy dari browser.","offers":{"@type":"Offer","price":"0","priceCurrency":"IDR"},"featureList":["Asisten AI","Editor kode full-stack","Deploy sekali klik","Template siap pakai"]}
 ]}
 </script>
 
@@ -174,9 +174,11 @@
 <section class="relative overflow-hidden">
   <div id="hero-bg-light" class="absolute inset-0 bg-cover bg-center transition-opacity duration-700"></div>
   <div id="hero-bg-dark" class="absolute inset-0 hidden dark:block bg-cover bg-center transition-opacity duration-700"></div>
+  <canvas id="hero-3d" class="absolute inset-0 w-full h-full pointer-events-none" aria-hidden="true"></canvas>
+
   <div class="relative max-w-6xl mx-auto px-4 sm:px-6 pt-24 pb-24 text-center">
     <h1 id="hero-title" class="rise font-display font-bold text-4xl sm:text-5xl md:text-6xl tracking-tight max-w-3xl mx-auto leading-[1.08]">Bangun situsmu. Publikasikan dengan mudah.</h1>
-    <p id="hero-subtitle" class="rise rise-d1 text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mt-5 leading-relaxed">Mulai dari <strong>template siap pakai</strong>, ubah sesuai kebutuhan di <strong>editor Monaco</strong>, lalu <strong>publikasikan dari dashboard</strong>. Asisten AI siap membantu saat kamu membutuhkan arahan.</p>
+    <p id="hero-subtitle" class="rise rise-d1 text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mt-5 leading-relaxed">Mulai dari <strong>template siap pakai</strong>, ubah sesuai kebutuhan di <strong>editor kode</strong>, lalu <strong>publikasikan dari dashboard</strong>. Asisten AI siap membantu saat kamu membutuhkan arahan.</p>
     <div class="rise rise-d2 flex flex-col sm:flex-row items-center justify-center gap-3 mt-8">
       <a href="https://app.clincoo.buzz" class="group w-full sm:w-auto px-7 py-3.5 rounded-full bg-black text-white dark:bg-white dark:text-black font-semibold text-base hover:opacity-85 transition-opacity shadow-lg shadow-black/10">
         Mulai Bangun Sekarang
@@ -186,6 +188,34 @@
       </a>
     </div>
     <p class="rise rise-d3 text-xs text-gray-500 dark:text-gray-500 mt-4">Mulai dengan Starter gratis. Lihat rincian paket di <a href="#harga" class="underline underline-offset-2 hover:text-black dark:hover:text-white">daftar harga</a>.</p>
+    <div class="rise rise-d3 flex items-center justify-center mt-5">
+      <div id="hero-pill-carousel" class="inline-flex items-center justify-center overflow-hidden rounded-full border border-gray-300 dark:border-[#2f2f2f]" style="min-height:2.25rem;min-width:15rem;padding:0 1rem">
+        <span id="hero-pill-text" class="text-xs text-gray-600 dark:text-gray-400" style="transition:opacity .38s ease,transform .38s ease">Tanpa setup &amp; konfigurasi</span>
+      </div>
+    </div>
+<script>
+(function () {
+  var items = ['Tanpa setup & konfigurasi', 'Tanpa kartu kredit', 'Ekspor data kapan pun', 'Deploy sekali klik', 'Domain kustom & DNS otomatis'];
+  var el = document.getElementById('hero-pill-text');
+  if (!el || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var i = 1;
+  setInterval(function () {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(8px)';
+    setTimeout(function () {
+      el.textContent = items[i % items.length];
+      i++;
+      el.style.transition = 'none';
+      el.style.transform = 'translateY(-8px)';
+      void el.offsetWidth;
+      el.style.transition = 'opacity .38s ease,transform .38s ease';
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    }, 400);
+  }, 3400);
+})();
+</script>
+
   </div>
 </section>
 <script>
@@ -194,7 +224,7 @@
   var lightUrl = 'https://app.clincoo.buzz/assets/backgrounds/bg-light-morning.webp';
   var darkUrl = 'https://app.clincoo.buzz/assets/backgrounds/bg-dark-night2.webp';
   var texts = [
-    { t: 'Bangun situsmu. Publikasikan dengan mudah.', s: 'Mulai dari <strong>template siap pakai</strong>, ubah sesuai kebutuhan di <strong>editor Monaco</strong>, lalu <strong>publikasikan dari dashboard</strong>. Asisten AI siap membantu saat kamu membutuhkan arahan.' },
+    { t: 'Bangun situsmu. Publikasikan dengan mudah.', s: 'Mulai dari <strong>template siap pakai</strong>, ubah sesuai kebutuhan di <strong>editor kode</strong>, lalu <strong>publikasikan dari dashboard</strong>. Asisten AI siap membantu saat kamu membutuhkan arahan.' },
     { t: 'Dari ide menjadi situs yang siap dibagikan.', s: 'Kelola file proyek, edit kode di browser, cek hasilnya, lalu <strong>deploy situsmu</strong>.' }
   ];
   // Variasi posisi & tint tipis agar background yang sama tetap terasa berbeda tiap refresh
@@ -257,7 +287,7 @@
     <div class="rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-gray-50/60 dark:bg-[#111] p-6">
       <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-500 dark:text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
       <h3 class="font-semibold text-base mt-4">Editor Kode Full-Stack</h3>
-      <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 leading-relaxed">Monaco Editor langsung di browser: edit file, buka pratinjau, pakai terminal, dan lacak riwayat versi. Ideal untuk mengembangkan situs tahap demi tahap.</p>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 leading-relaxed">Editor kode penuh langsung di browser: edit file, buka pratinjau, pakai terminal, dan lacak riwayat versi. Ideal untuk mengembangkan situs tahap demi tahap.</p>
     </div>
     <div class="rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-gray-50/60 dark:bg-[#111] p-6">
       <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-500 dark:text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="M12 12v9"/><path d="m16 16-4-4-4 4"/></svg>
@@ -300,16 +330,62 @@
       <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 leading-relaxed">Aktifkan payment gateway di tiap proyek: situs yang kamu deploy bisa menerima pembayaran QRIS dari pengunjung — dana masuk otomatis ke saldo akunmu, lengkap dengan riwayat transaksi dan penarikan dana.</p>
     </div>
     <div class="rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-gray-50/60 dark:bg-[#111] p-6">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-500 dark:text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
-      <h3 class="font-semibold text-base mt-4">Notifikasi &amp; Email Otomatis</h3>
-      <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 leading-relaxed">Top up, langganan, dan aktivitas penting lainnya langsung tercatat sebagai notifikasi di dalam aplikasi plus email konfirmasi. Status akun dan transaksimu selalu jelas.</p>
-    </div>
-    <div class="rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-gray-50/60 dark:bg-[#111] p-6">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-500 dark:text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v4"/><circle cx="8.5" cy="7" r="4"/><path d="m22 11-10 10-3-3"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-500 dark:text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" x2="6" y1="3" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>
       <h3 class="font-semibold text-base mt-4">Impor Repositori Git</h3>
       <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 leading-relaxed">Sudah punya proyek berjalan? Impor repositori Git-nya, lalu lanjutkan pekerjaan di editor cloud Clincoo dengan semua file dan strukturnya utuh.</p>
     </div>
+    <div class="rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-gray-50/60 dark:bg-[#111] p-6">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-500 dark:text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4 17 10 11 4 5"/><line x1="12" x2="20" y1="19" y2="19"/></svg>
+      <h3 class="font-semibold text-base mt-4">Terminal Persisten</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 leading-relaxed">Jalankan perintah sungguhan lewat percakapan AI untuk menghitung, menguji kode, dan memasang tools.</p>
+    </div>
+    <div class="rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-gray-50/60 dark:bg-[#111] p-6">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-500 dark:text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      <h3 class="font-semibold text-base mt-4">Integrasi Plugin Eksternal</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 leading-relaxed">Hubungkan penyimpanan cloud, kalender, dan repositori — AI membaca serta mengelola semuanya langsung dari chat.</p>
+    </div>
+    <div class="rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-gray-50/60 dark:bg-[#111] p-6">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-500 dark:text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <h3 class="font-semibold text-base mt-4">Tugas Terjadwal &amp; Automasi</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 leading-relaxed">Susun tugas sekali jalan atau berulang — AI menjalankannya otomatis sesuai jadwal tanpa perlu dipantau.</p>
+    </div>
+
   </div>
+</section>
+
+<!-- KENAPA CLINCOO -->
+<section id="kenapa" class="max-w-6xl mx-auto px-4 sm:px-6 py-20">
+  <div class="text-center mb-12">
+    <h2 class="font-display font-bold text-3xl sm:text-4xl tracking-tight">Kenapa Clincoo beda dari workspace lain</h2>
+    <p class="text-gray-600 dark:text-gray-400 mt-3 max-w-xl mx-auto">Bukan sekadar menumpuk fitur — ini lima hal yang membuat cara kerjanya berbeda.</p>
+  </div>
+  <ol class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+<li class="rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-gray-50/60 dark:bg-[#111] p-6">
+      <span class="font-display font-bold text-sm text-gray-400 dark:text-gray-600">01</span>
+      <h3 class="font-semibold text-base mt-3">Jadi situs, bukan cuma kode</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 leading-relaxed">Di tempat lain, AI memberi potongan kode lalu kamu rakit sendiri. Di Clincoo, hasil obrolan langsung jadi halaman yang bisa dipratinjau dan dideploy.</p>
+    </li>
+<li class="rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-gray-50/60 dark:bg-[#111] p-6">
+      <span class="font-display font-bold text-sm text-gray-400 dark:text-gray-600">02</span>
+      <h3 class="font-semibold text-base mt-3">Sekali daftar, lima urusan beres</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 leading-relaxed">Editor, hosting, domain, email, sampai terima pembayaran biasanya tersebar di lima akun terpisah dengan tagihan sendiri-sendiri. Di sini semuanya satu workspace.</p>
+    </li>
+<li class="rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-gray-50/60 dark:bg-[#111] p-6">
+      <span class="font-display font-bold text-sm text-gray-400 dark:text-gray-600">03</span>
+      <h3 class="font-semibold text-base mt-3">Gak ada data yang disandera</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 leading-relaxed">Seluruh proyek bisa diekspor sebagai HTML atau arsip ZIP kapan pun. Kalau suatu hari kamu pindah, kerjaanmu ikut pindah.</p>
+    </li>
+<li class="rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-gray-50/60 dark:bg-[#111] p-6">
+      <span class="font-display font-bold text-sm text-gray-400 dark:text-gray-600">04</span>
+      <h3 class="font-semibold text-base mt-3">Backend tanpa infrastruktur</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 leading-relaxed">Situsmu bisa punya API dan database sendiri lewat backend functions. Tanpa setup server, tanpa urusan DevOps.</p>
+    </li>
+<li class="rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-gray-50/60 dark:bg-[#111] p-6">
+      <span class="font-display font-bold text-sm text-gray-400 dark:text-gray-600">05</span>
+      <h3 class="font-semibold text-base mt-3">Harga rupiah yang jelas</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 leading-relaxed">Mulai gratis, upgrade saat memang butuh, tanpa perpanjangan otomatis yang menagih diam-diam.</p>
+    </li>
+  </ol>
 </section>
 
 <!-- SOROTAN AI -->
@@ -350,7 +426,7 @@
   <ul class="space-y-4 order-2 md:order-1">
     <li class="flex items-start gap-3">
       <span class="mt-0.5 w-6 h-6 rounded-full bg-black dark:bg-white text-white dark:text-black flex items-center justify-center flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-      <div><p class="font-semibold text-sm">Editor Monaco — standar VS Code</p><p class="text-sm text-gray-500 dark:text-gray-400 mt-0.5">Syntax highlighting, multi-tab, auto-save, dan command palette.</p></div>
+      <div><p class="font-semibold text-sm">Editor kode sekelas IDE</p><p class="text-sm text-gray-500 dark:text-gray-400 mt-0.5">Syntax highlighting, multi-tab, auto-save, dan command palette.</p></div>
     </li>
     <li class="flex items-start gap-3">
       <span class="mt-0.5 w-6 h-6 rounded-full bg-black dark:bg-white text-white dark:text-black flex items-center justify-center flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
@@ -445,32 +521,26 @@
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-5 items-stretch">
       <article class="rounded-3xl border border-gray-200 dark:border-[#292929] bg-white dark:bg-[#141414] p-6 sm:p-7 flex flex-col">
-        <h3 class="font-display text-xl font-bold">Starter</h3><p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Untuk situs pertamamu.</p>
+        <h3 class="font-display text-xl font-bold">Starter</h3><p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Untuk individu yang baru memulai.</p>
         <p class="mt-7 font-display text-4xl font-bold">Gratis</p><p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Tanpa biaya langganan</p>
-        <ul class="space-y-3 text-sm text-gray-700 dark:text-gray-300 mt-7 mb-8 flex-1" aria-label="Fitur paket Starter">
-          <li>✓ Hingga 3 proyek aktif</li><li>✓ 1 kolaborator per proyek</li><li>✓ Chat AI 50 pesan/bulan (maks 10/hari)</li><li>✓ 3 template proyek siap pakai</li><li>✓ Penyimpanan 5 GB &amp; bandwidth 10 GB/bulan</li><li>✓ Deploy web 5x per bulan</li>
-        </ul>
+        <ul class="space-y-3 text-sm text-gray-700 dark:text-gray-300 mt-7 mb-8 flex-1" aria-label="Fitur paket Starter"><li>✓ Hingga 3 proyek aktif + editor kode di workspace</li><li>✓ 1 kolaborator per proyek</li><li>✓ Chat AI 50 pesan/bulan (maks 10/hari) dengan pencarian web</li><li>✓ 3 template proyek siap pakai</li><li>✓ Tugas terjadwal &amp; notifikasi</li><li>✓ Kelola 1 domain: verifikasi otomatis, DNS &amp; SSL</li><li>✓ Deploy web 5x per bulan</li><li>— Editor full-stack &amp; integrasi repositori</li><li>— Domain tanpa batas &amp; deploy tanpa batas</li></ul>
         <a href="https://app.clincoo.buzz" class="min-h-12 inline-flex items-center justify-center rounded-xl border border-gray-300 dark:border-gray-600 font-bold text-sm hover:bg-gray-100 dark:hover:bg-[#222] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">Mulai Gratis</a>
       </article>
       <article class="relative rounded-3xl border-2 border-black dark:border-white bg-white dark:bg-[#141414] p-6 sm:p-7 flex flex-col shadow-xl shadow-black/10">
         <span class="absolute -top-3 right-6 rounded-full bg-black text-white dark:bg-white dark:text-black px-3 py-1 text-[11px] font-bold">Paling populer</span>
-        <h3 class="font-display text-xl font-bold">Pro</h3><p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Untuk kreator yang rutin menerbitkan.</p>
+        <h3 class="font-display text-xl font-bold">Pro</h3><p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Untuk profesional dan kreator aktif.</p>
         <p class="mt-7 font-display text-4xl font-bold" id="pro-price">Rp5.000<span class="text-base font-medium text-gray-500 dark:text-gray-400">/bulan</span> <span class="text-sm font-medium text-gray-400" style="text-decoration:line-through;color:#9ca3af;white-space:nowrap">Rp49.000</span></p><p class="text-xs text-gray-500 dark:text-gray-400 mt-1" id="pro-price-note">Promo 100 pengguna pertama, untuk akun yang memenuhi syarat.</p>
-        <ul class="space-y-3 text-sm text-gray-700 dark:text-gray-300 mt-7 mb-8 flex-1" aria-label="Fitur paket Pro">
-          <li>✓ Hingga 10 proyek aktif</li><li>✓ 5 kolaborator per proyek</li><li>✓ Chat AI 500 pesan/bulan (maks 50/hari)</li><li>✓ Penyimpanan 50 GB &amp; bandwidth 100 GB/bulan</li><li>✓ Deploy web 25x per bulan</li><li>✓ Impor repositori Git</li><li>✓ Semua fitur Starter</li>
-        </ul>
+        <ul class="space-y-3 text-sm text-gray-700 dark:text-gray-300 mt-7 mb-8 flex-1" aria-label="Fitur paket Pro"><li>✓ Semua fitur Starter</li><li>✓ Hingga 10 proyek aktif &amp; 5 kolaborator per proyek</li><li>✓ Editor kode full-stack: bangun &amp; publikasikan dari browser</li><li>✓ Domain tanpa batas: verifikasi, DNS &amp; SSL otomatis</li><li>✓ Chat AI hingga 500 pesan/bulan (maks 50/hari)</li><li>✓ Deploy web hingga 25x per bulan ke domain sendiri</li><li>✓ Integrasi repositori Git: impor proyek &amp; AI bekerja langsung di repo kamu</li></ul>
         <a href="https://app.clincoo.buzz/akun/langganan/upgrade/" class="min-h-12 inline-flex items-center justify-center rounded-xl bg-black text-white dark:bg-white dark:text-black font-bold text-sm hover:bg-gray-800 dark:hover:bg-gray-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">Pilih Pro</a>
       </article>
       <article class="rounded-3xl border border-gray-200 dark:border-[#292929] bg-white dark:bg-[#141414] p-6 sm:p-7 flex flex-col">
-        <h3 class="font-display text-xl font-bold">Bisnis</h3><p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Untuk tim dan proyek lebih banyak.</p>
+        <h3 class="font-display text-xl font-bold">Bisnis</h3><p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Untuk tim dan operasi skala besar.</p>
         <p class="mt-7 font-display text-4xl font-bold">Rp129.000<span class="text-base font-medium text-gray-500 dark:text-gray-400">/bulan</span></p><p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Harga reguler bulanan</p>
-        <ul class="space-y-3 text-sm text-gray-700 dark:text-gray-300 mt-7 mb-8 flex-1" aria-label="Fitur paket Bisnis">
-          <li>✓ Hingga 50 proyek aktif</li><li>✓ 20 kolaborator per proyek</li><li>✓ Chat AI 2.000 pesan/bulan (maks 150/hari)</li><li>✓ Penyimpanan 200 GB &amp; bandwidth 500 GB/bulan</li><li>✓ Deploy web tanpa batas*</li><li>✓ Semua fitur Pro</li>
-        </ul>
+        <ul class="space-y-3 text-sm text-gray-700 dark:text-gray-300 mt-7 mb-8 flex-1" aria-label="Fitur paket Bisnis"><li>✓ Semua fitur Pro</li><li>✓ Chat AI hingga 2.000 pesan/bulan (maks 150/hari)</li><li>✓ Hingga 50 proyek aktif &amp; 20 kolaborator per proyek</li><li>✓ Dilindungi password &amp; ekspor data penuh akun</li><li>✓ Deploy web tanpa batas</li><li>✓ Kontrol akses &amp; keamanan proyek lanjutan</li></ul>
         <a href="https://app.clincoo.buzz/akun/langganan/upgrade/" class="min-h-12 inline-flex items-center justify-center rounded-xl border border-gray-300 dark:border-gray-600 font-bold text-sm hover:bg-gray-100 dark:hover:bg-[#222] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">Pilih Bisnis</a>
       </article>
     </div>
-    <p class="text-xs text-gray-500 dark:text-gray-400 text-center mt-6">*Sesuai ketentuan layanan. Pilih paket berbayar setelah masuk ke akun; detail, periode penagihan, dan promo yang tersedia ditampilkan saat checkout.</p>
+    <p class="text-xs text-gray-500 dark:text-gray-400 text-center mt-6 max-w-2xl mx-auto">Paket Tahunan: bayar 10 bulan, pakai 12 bulan — hemat 2 bulan. Tanpa perpanjangan otomatis; perpanjang di tengah periode, sisa masa aktif ditambahkan. Detail penagihan dan promo tampil saat checkout.</p>
   </div>
 </section>
 
@@ -571,6 +641,41 @@
       </summary>
       <p class="text-sm text-gray-600 dark:text-gray-400 mt-3 leading-relaxed">Setelah meninjau situs di pratinjau, buka menu Deploy dari dashboard untuk menerbitkannya. Batas deploy tersedia di daftar harga.</p>
     </details>
+    <details class="faq rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-gray-50/60 dark:bg-[#111] px-5 py-4">
+      <summary class="flex items-center justify-between gap-3 font-semibold text-sm">
+        Apa bedanya Clincoo dengan builder situs biasa?
+        <svg class="chev w-4 h-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mt-3 leading-relaxed">AI di Clincoo tidak cuma menyarankan — ia membaca file, menulis kode, menjalankan perintah, dan menguji hasilnya langsung di workspace, lengkap dengan terminal dan deploy sekali klik.</p>
+    </details>
+    <details class="faq rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-gray-50/60 dark:bg-[#111] px-5 py-4">
+      <summary class="flex items-center justify-between gap-3 font-semibold text-sm">
+        Apakah bisa pakai domain sendiri?
+        <svg class="chev w-4 h-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mt-3 leading-relaxed">Bisa. Tambahkan domainmu, sistem memverifikasi kepemilikan secara otomatis, lalu AI menyiapkan record DNS dan SSL-nya. Paket Pro ke atas bisa memasang domain tanpa batas.</p>
+    </details>
+    <details class="faq rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-gray-50/60 dark:bg-[#111] px-5 py-4">
+      <summary class="flex items-center justify-between gap-3 font-semibold text-sm">
+        Apakah situs saya bisa menerima pembayaran?
+        <svg class="chev w-4 h-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mt-3 leading-relaxed">Bisa. Aktifkan payment gateway di tiap proyek — situs yang kamu deploy bisa menerima pembayaran dari pengunjung, dan dananya masuk ke saldo akun yang bisa ditarik kapan pun.</p>
+    </details>
+    <details class="faq rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-gray-50/60 dark:bg-[#111] px-5 py-4">
+      <summary class="flex items-center justify-between gap-3 font-semibold text-sm">
+        Apakah saya perlu install aplikasi?
+        <svg class="chev w-4 h-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mt-3 leading-relaxed">Tidak. Editor, pratinjau, terminal, dan deploy semuanya berjalan langsung di browser — cukup buka Clincoo dan mulai bekerja.</p>
+    </details>
+    <details class="faq rounded-2xl border border-gray-100 dark:border-[#1e1e1e] bg-gray-50/60 dark:bg-[#111] px-5 py-4">
+      <summary class="flex items-center justify-between gap-3 font-semibold text-sm">
+        Bisa lanjutkan proyek dari repositori Git?
+        <svg class="chev w-4 h-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </summary>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mt-3 leading-relaxed">Bisa. Impor repositorimu, lalu lanjutkan pekerjaan di editor cloud dengan semua file dan strukturnya utuh.</p>
+    </details>
   </div>
 </section>
 
@@ -647,7 +752,7 @@
     <div>
       <h4 class="font-semibold text-gray-900 dark:text-white mb-3">Kontak</h4>
       <ul class="space-y-2 text-gray-500 dark:text-gray-400">
-        <li><a href="mailto:halo@clincoo.buzz" class="hover:text-black dark:hover:text-white transition-colors">halo@clincoo.buzz</a></li>
+        <li><a href="/cdn-cgi/l/email-protection#6a020b06052a0906030409050544081f1010" class="hover:text-black dark:hover:text-white transition-colors"><span class="__cf_email__" data-cfemail="3c545d50537c5f5055525f5353125e494646">[email&#160;protected]</span></a></li>
       </ul>
     </div>
   </div>
@@ -664,7 +769,7 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" fill="#ffffff" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </a>
   <style>.wa-float:hover{transform:scale(1.08)}.wa-float:active{transform:scale(.95)}</style>
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 (function () {
   var btn = document.getElementById('menu-btn');
   var sb = document.getElementById('menu-sidebar');
@@ -740,6 +845,70 @@
       if (note) note.textContent = 'Harga reguler bulanan (promo tidak dapat diverifikasi)';
       var faq=document.getElementById('faq-price'); if(faq) faq.textContent='Starter gratis mencakup 3 proyek aktif dan 5 deploy web per bulan. Pro Rp49.000/bulan dan Bisnis Rp129.000/bulan memberi batas lebih besar; lihat detail di bagian Harga.';
     });
+})();
+</script>
+<script type="module">
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js';
+(function () {
+  var canvas = document.getElementById('hero-3d');
+  if (!canvas || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var hero = canvas.parentElement;
+  var renderer;
+  try { renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true }); } catch (e) { return; }
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  var scene = new THREE.Scene();
+  var camera = new THREE.PerspectiveCamera(60, 1, 0.1, 100);
+  camera.position.z = 14;
+  var COUNT = 520;
+  var positions = new Float32Array(COUNT * 3);
+  var speeds = new Float32Array(COUNT);
+  for (var i = 0; i < COUNT; i++) {
+    positions[i * 3] = (Math.random() - 0.5) * 30;
+    positions[i * 3 + 1] = (Math.random() - 0.5) * 16;
+    positions[i * 3 + 2] = (Math.random() - 0.5) * 24;
+    speeds[i] = 0.002 + Math.random() * 0.006;
+  }
+  var geo = new THREE.BufferGeometry();
+  geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+  var mat = new THREE.PointsMaterial({ size: 0.05, transparent: true, opacity: 0.5, depthWrite: false });
+  var pts = new THREE.Points(geo, mat);
+  scene.add(pts);
+  function theme() {
+    var dark = document.documentElement.classList.contains('dark');
+    mat.color.set(dark ? 0xffffff : 0x404040);
+    mat.opacity = dark ? 0.5 : 0.38;
+  }
+  theme();
+  new MutationObserver(theme).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+  var mx = 0, my = 0;
+  window.addEventListener('pointermove', function (e) { mx = (e.clientX / window.innerWidth - 0.5) * 2; my = (e.clientY / window.innerHeight - 0.5) * 2; }, { passive: true });
+  function resize() {
+    var w = hero.clientWidth, h = hero.clientHeight;
+    renderer.setSize(w, h, false);
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+  }
+  resize();
+  window.addEventListener('resize', resize);
+  var running = true, ticking = false;
+  function raf() {
+    ticking = true;
+    var arr = geo.attributes.position.array;
+    for (var k = 0; k < COUNT; k++) {
+      arr[k * 3 + 2] += speeds[k];
+      if (arr[k * 3 + 2] > 12) arr[k * 3 + 2] = -12;
+    }
+    geo.attributes.position.needsUpdate = true;
+    pts.rotation.y = mx * 0.12;
+    pts.rotation.x = my * 0.08;
+    renderer.render(scene, camera);
+    if (running) requestAnimationFrame(raf); else ticking = false;
+  }
+  document.addEventListener('visibilitychange', function () {
+    running = !document.hidden;
+    if (running && !ticking) raf();
+  });
+  raf();
 })();
 </script></body>
 </html>
