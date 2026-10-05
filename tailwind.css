@@ -20,3 +20,25 @@
   #ai-logos-inner>div>span:last-child{font-size:12px;line-height:1rem}
   #ai-logos-inner img{width:2.25rem;height:2.25rem}
 }
+
+/* === Carousel logo Email provider — fix 2026-10-05: sama kasus AI carousel (kelas utility tidak ada di build), styling via ID + ukuran responsif === */
+#mail-logos-track{overflow-x:auto}
+#mail-logos-inner{display:flex;align-items:flex-start;gap:.5rem;width:max-content;padding:.5rem 1.25rem}
+#mail-logos-inner>div{display:flex;flex-direction:column;align-items:center;gap:.5rem;flex-shrink:0;width:4.5rem}
+#mail-logos-inner>div>span:first-child{width:2.5rem;height:2.5rem;border-radius:9999px;background:#fff;border:1px solid #e5e7eb;box-shadow:0 1px 2px 0 rgba(0,0,0,.05);display:flex;align-items:center;justify-content:center;overflow:hidden}
+#mail-logos-inner>div>span:last-child{font-size:10px;line-height:1.25rem;color:#4b5563;text-align:center}
+#mail-logos-inner svg{width:1.75rem;height:1.75rem}
+#mail-logos-prev,#mail-logos-next{display:none;position:absolute;top:50%;transform:translateY(-50%);z-index:10;width:2.25rem;height:2.25rem;align-items:center;justify-content:center;border-radius:9999px;background:#fff;border:1px solid #e5e7eb;box-shadow:0 1px 2px 0 rgba(0,0,0,.05)}
+#mail-logos-prev{left:0}
+#mail-logos-next{right:0}
+.dark #mail-logos-inner>div>span:first-child{border-color:#2a2a2a}
+.dark #mail-logos-inner>div>span:last-child{color:#9ca3af}
+.dark #mail-logos-prev,.dark #mail-logos-next{background:#141414;border-color:#2a2a2a}
+@media (min-width:640px){
+  #mail-logos-prev,#mail-logos-next{display:flex}
+  #mail-logos-inner{gap:.75rem;padding:.5rem 2.5rem}
+  #mail-logos-inner>div{width:6rem}
+  #mail-logos-inner>div>span:first-child{width:3.5rem;height:3.5rem}
+  #mail-logos-inner>div>span:last-child{font-size:12px;line-height:1rem}
+  #mail-logos-inner svg{width:2.25rem;height:2.25rem}
+}
